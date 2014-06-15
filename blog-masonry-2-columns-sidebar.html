@@ -1,0 +1,375 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	
+	<!-- mobile meta tag -->		
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<title>Patti - Blog - Masonry on 2 Columns with Sidebar</title> 
+	
+	<!-- main style -->
+	<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+	
+	<!-- color scheme -->
+	<link rel="stylesheet" type="text/css" href="color-schemes/orange/orange.css" media="screen" />
+	
+	<!--miscellaneous-->
+	<link rel="stylesheet" type="text/css" href="css/custom-styles.css" media="screen" />
+	<link rel="stylesheet" href="template-changer.css" type="text/css" />	
+
+	<!-- responsive stylesheet -->		
+	<link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen" />			
+	
+	<!-- Google Web Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>	
+	
+	<!-- jQuery -->
+	<script type="text/javascript" src="../../../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>	
+	
+	<!-- jQuery Scripts -->
+	<script type="text/javascript" src="js/scripts-top.js"></script>		
+
+	<script type="text/javascript" src="js/template-changer.js"></script>			
+
+</head> 
+
+<body> 
+	<!-- preloader-->
+	<div class="whitebg">
+		<div id="spinner"></div>
+	</div>
+
+	<div class="theme-changer-wrap">
+		<div class="theme-changer">
+			<div class="changer-inner">
+
+				<span>Color schemes</span>
+				<div id="stylesw">
+				<a href="#" rel="styles1" class="color-themes col1" id="styles1"></a>
+				<a href="#" rel="styles2" class="color-themes col2" id="styles2"></a>
+				<a href="#" rel="styles3" class="color-themes col3" id="styles3"></a>
+				<a href="#" rel="styles4" class="color-themes col4" id="styles4"></a>
+				<a href="#" rel="styles5" class="color-themes col5" id="styles5"></a>
+				<a href="#" rel="styles6" class="color-themes col6" id="styles6"></a>
+				</div>
+				<div style="clear:both"></div>
+				<span style="padding-top:25px;">Slider Versions</span>
+				<form>
+					<select name="URL" onchange="window.location.href=this.form.URL.options[this.form.URL.selectedIndex].value">
+						<option value="index-2.html">FullScreen Image Slider</option>
+						<option value="index-fullwidth.html">FullWidth Slider</option>
+						<option value="index-video.html">FullScreen Video Slider</option>
+					</select>
+				</form>				
+			</div>
+		</div>
+		<div class="open-close"></div>
+	</div> 	
+
+	<header id="header">
+		<div class="centered-wrapper">
+		
+			<div class="percent-one-fourth">
+				<div class="logo"><a href="index-2.html"><img src="images/logo.png" alt="" /></a></div>
+			</div><!--end one-fourth-->
+			
+			<a class="nav-btn"><i class="fa fa-bars"></i></a>
+			
+			<div class="percent-three-fourth column-last">					
+				<nav id="navigation">
+					<ul id="mainnav" class="sf-menu">
+						<li><a class="external" href="index-2.html#hello"><span>HELLO</span></a></li>
+						<li><a class="external" href="index-2.html#about"><span>ABOUT</span></a></li>
+						<li><a class="external" href="index-2.html#work"><span>WORK</span></a></li>						
+						<li><a class="external" href="index-2.html#services"><span>SERVICES</span></a></li>
+						<li class="current"><a class="external" href="index-2.html#blog"><span>JOURNAL</span></a></li>
+						<li><a href="#extra"><span>EXTRA</span></a>
+							<ul>
+								<li><a class="external" href="elements.html">Elements</a></li>							
+								<li><a class="external" href="portfolio-item-1.html">Portfolio Item 1</a></li>							
+								<li><a class="external" href="portfolio-item-2.html">Portfolio Item 2</a></li>							
+								<li><a class="external" href="portfolio-item-3.html">Portfolio Item 3</a></li>							
+								<li><a class="external" href="portfolio-item-4.html">Portfolio Item 4</a></li>							
+								<li><a class="external" href="portfolio-item-5.html">Portfolio Item 5</a></li>							
+								<li><a class="external" href="blog-masonry-3-columns.html">Blog - Masonry 3 Cols</a></li>
+								<li><a class="external" href="blog-masonry-2-columns.html">Blog - Masonry 2 Cols</a></li>
+								<li><a class="external" href="blog-masonry-2-columns-sidebar.html">Blog - Masonry 2 Cols + Sidebar</a></li>
+								<li><a class="external" href="blog.html">Blog - Regular Layout</a></li>
+								<li><a class="external" href="blog-single.html">Blog - Single</a></li>
+							</ul>
+						</li>							
+						<li><a class="external" href="index-2.html#contact"><span>CONTACT</span></a></li>
+					</ul>
+				</nav><!--end navigation-->
+			</div><!--end three-fourth-->
+			<div class="clear"></div>			
+		</div><!--end centered-wrapper-->
+	</header>	
+	
+<div id="wrapper">
+	
+	<div class="menu-fixer"></div>
+
+
+	<section id="blog" class="centered-wrapper">
+		
+		<div class="page-title-subtitle">
+			<h2>Blogging isn`t just writing...</h2>
+			<h3>Because we care, we want to keep you up to date with latest news</h3>
+		</div>
+		
+		<div class="percent-blog">
+			<div class="blog-page blog-masonry on-two-columns">
+					<article class="post post-masonry">
+						<div class="post-thumbnail">
+							<a href="#">
+								<span class="item-on-hover"><span class="hover-image"><i class="fa fa-search"></i></span></span>
+								<img src="images/blog/blog-image1.jpg" alt="" title="" />
+							</a>
+						</div>
+						<div class="post-content">
+							<h1 class="masonry-title"><a href="#">Perfect Sunday Morning Ride</a></h1>
+							<span class="post-meta"><i class="fa fa-pencil"></i><em>December 06, 2013</em></span>
+							<p>Nullam adipiscing sapien ut mi elementum sit amet dictum magna luctus. Donec id ligula ut tellus ultricies ornare quis vel nunc lorem ipsum dolor sit amet.</p>
+							<a class="post-read-more" href="#">READ MORE</a>
+						</div>
+					</article>
+
+					<article class="post post-masonry">
+						<div class="post-thumbnail">
+							<a href="#">
+								<span class="item-on-hover"><span class="hover-image"><i class="fa fa-external-link"></i></span></span>
+								<img src="images/blog/blog-image2.jpg" alt="" title="" />
+							</a>
+						</div>
+						<div class="post-content">
+							<h1 class="masonry-title"><a href="#">Working Like a Workaholic</a></h1>
+							<span class="post-meta"><i class="fa fa-pencil"></i><em>December 06, 2013</em></span>
+							<p>Nullam adipiscing sapien ut mi elementum sit amet dictum magna luctus. Donec id ligula ut tellus ultricies ornare quis vel nunc lorem ipsum dolor sit amet.</p>
+							<a class="post-read-more" href="#">READ MORE</a>
+						</div>
+					</article>	
+					
+					<article class="post post-masonry">
+						<div class="gallery-slider owl-carousel">
+							<div class="slider-item">
+								<a href="images/blog/image-gallery1.jpg" title="Image Gallery 1" rel="prettyPhoto[pp_gal]"><img src="images/blog/image-gallery1.jpg" alt="Picture 1" /></a>
+							</div>
+							<div class="slider-item">
+								<a href="images/blog/image-gallery2.jpg" title="Image Gallery 2" rel="prettyPhoto[pp_gal]"><img src="images/blog/image-gallery2.jpg" alt="Picture 2" /></a>
+							</div>		
+							<div class="slider-item">
+								<a href="images/blog/image-gallery3.jpg" title="Image Gallery 3" rel="prettyPhoto[pp_gal]"><img src="images/blog/image-gallery3.jpg" alt="Picture 3" /></a>
+							</div>							
+						</div>
+						<div class="post-content">
+							<h1 class="masonry-title"><a href="#">Case Study: Envato Website Redesign</a></h1>
+							<span class="post-meta"><i class="fa fa-camera"></i><em>December 06, 2013</em></span>
+							<p>Nullam adipiscing sapien ut mi elementum sit amet dictum magna luctus. Donec id ligula ut tellus ultricies ornare quis vel nunc lorem ipsum dolor sit amet.</p>
+							<a class="post-read-more" href="#">READ MORE</a>
+						</div>
+					</article>				
+
+					<article class="post post-masonry">
+						<div class="post-video">
+							<iframe src="http://player.vimeo.com/video/12158329" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						</div>
+						<div class="post-content">
+							<h1 class="masonry-title"><a href="#">How Videos Can Help Promote Your Business</a></h1>
+							<span class="post-meta"><i class="fa fa-video-camera"></i><em>December 06, 2013</em></span>
+							<p>Donec id ligula ut tellus ultricies ornare quis vel nunc. In id purus vel magna porta laoreet at a dolor. Aliquam aliquam mollis feugiat.</p>
+							<a class="post-read-more" href="#">READ MORE</a>
+						</div>
+					</article>
+
+					<article class="post post-masonry">
+						<div class="post-video">
+							<iframe width="640" height="360" src="http://www.youtube.com/embed/1iIZeIy7TqM" frameborder="0" allowfullscreen></iframe>
+						</div>
+						<div class="post-content">
+							<h1 class="masonry-title"><a href="#">Role of Size in Logo Design</a></h1>
+							<span class="post-meta"><i class="fa fa-video-camera"></i><em>November 23, 2013</em></span>
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+							<a class="post-read-more" href="#">READ MORE</a>
+						</div>
+					</article>
+				
+					<article class="post quote-post post-masonry">
+						<div class="post-content">
+							<h3>Logic will get you from A to B. Imagination will take you just about everywhere.</h3>
+							<span class="post-meta"><i class="fa fa-quote-right"></i><em>November 14, 2013</em></span>
+							<span class="quote-author">Albert Einstein</span>
+						</div>
+					</article>
+					
+					<article class="post post-masonry">
+						<div class="audio-item">
+							<div id="audio_jplayer" class="jp-jplayer"></div>
+							<div id="jp_container_1" class="jp-audio">
+								<div class="jp-type-single">
+									<div class="jp-gui jp-interface">
+										<div class="jp-controls">
+											<a href="javascript:;" class="jp-play" tabindex="1">play</a>
+											<a href="javascript:;" class="jp-pause" tabindex="1">pause</a>
+											<div class="jp-current-time"></div>
+											<div class="jp-progress">
+												<div class="jp-seek-bar">
+													<div class="jp-play-bar"></div>
+												</div>
+											</div>
+											<div class="jp-volume-bar">
+												<div class="jp-volume-bar-value"></div>
+											</div>																
+
+											<a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a>
+											<a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a>
+											<div class="jp-duration"></div>								
+										</div>
+									</div>
+									<div class="jp-no-solution">
+										<span>Update Required</span>
+										To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+									</div>
+								</div>
+								</div>			
+						</div>
+						
+						<div class="post-content">
+							<h1 class="masonry-title"><a href="#">Audio Post</a></h1>
+							<span class="post-meta"><i class="fa fa-music"></i><em>December 06, 2013</em></span>
+							<p>Nullam adipiscing sapien ut mi elementum sit amet dictum magna luctus. Donec id ligula ut tellus ultricies ornare quis vel nunc lorem ipsum dolor sit amet.</p>
+							<a class="post-read-more" href="#">READ MORE</a>
+						</div>
+					</article>
+			</div>		
+
+			<div class="clear"></div>
+			
+			<div class="pagenav">
+				<span class="pages">Page 1 of 3</span>
+				<span class="current">1</span>
+				<a href="#" class="page">2</a>
+				<a href="#" class="page">3</a>
+				<a href="#" class="nextpostslink">&raquo;</a>
+			</div> 			
+			
+		</div>
+			
+		<aside id="percent-sidebar" class="column-last">
+			<div class="widget">
+				<form class="search-form" method="get" action="#">
+					<input type="text" placeholder="Search..." id="s" name="s" value="" />
+					<button type="submit"><i class="fa fa-search"></i></button>
+				</form>				
+			</div>		
+			<div class="widget recent-posts">
+				<h3>Recent Posts</h3>
+				<div class="sidebar-post">
+					<h5><a href="blog-single.html">SEO Tips and Tricks for Local Businesses</a></h5>
+					<span>23 July 2012 / <a href="#">5 Comments</a></span>					
+				</div><!--end sidebar-post-->
+				<div class="sidebar-post">
+					<h5><a href="blog-single.html">From Inception to IPO: Facebook in 8 Years</a></h5>
+					<span>06 May 2012 / <a href="#">3 Comments</a></span>	
+				</div><!--end sidebar-post-->
+				<div class="sidebar-post">
+					<h5><a href="blog-single.html">A/B Testing: What is It?</a></h5>
+					<span>12 March 2012 / <a href="#">No Comments</a></span>	
+				</div><!--end sidebar-post-->
+			</div>
+			
+			<div class="widget categories ">
+				<h3>Categories</h3>
+				<ul>
+					<li><a href="#">Advertising</a></li>
+					<li><a href="#">Marketing</a></li>
+					<li><a href="#">Media</a></li>
+					<li><a href="#">Small Business</a></li>
+					<li><a href="#">Web Applications</a></li>
+				</ul>
+			</div><!--end widget-->
+			
+			<div class="widget tags ">
+				<h3>Tags</h3>
+				<ul>
+					<li><a href="#">Design</a></li>
+					<li><a href="#">Development</a></li>
+					<li><a href="#">Mobile</a></li>
+					<li><a href="#">Art</a></li>
+					<li><a href="#">Photography</a></li>
+					<li><a href="#">YouTube</a></li>
+					<li><a href="#">Nikon</a></li>
+					<li><a href="#">Twitter</a></li>
+				</ul>
+			</div><!--end widget-->			
+			
+			<div class="widget flickr-widget">
+				<h3>Flickr Feed</h3>
+				<div id="flickr"></div>
+			</div>			
+		</aside>
+
+		<div class="clear"></div>
+		<div class="double-space"></div>
+		
+	</section>	
+
+	<section class="parallax-section" id="twitter">
+		<div class="darker-overlay">	
+			<section class="centered-wrapper">
+				<div class="double-space"></div>
+				
+				<h1 class="section-title"><i class="fa fa-twitter"></i></h1>	
+				<div class="half-space"></div>
+				
+				<div class="twitter-carousel">	
+						<div class="tweet"></div>
+				</div><!--end carousel-->	
+				
+				<div class="double-space"></div>
+			</section>	
+		</div>
+		
+	</section>	
+	<footer id="footer">		
+		<div id="bottomfooter">		
+			<div class="centered-wrapper">		
+				<div class="percent-two-third">
+					<p>Copyright &copy; 2014 - Patti | All Rights Reserved</p>
+				</div><!--end one-half-->
+
+				<div class="percent-one-third column-last">
+					<ul id="social">
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+					</ul>	
+					<!-- You can add social icons for forrst, dribbble, vimeo, linkedin, etc. Just add "<li><a href="#"><i class="fa fa-twitter"></i></a></li>"
+					to the list. The social icons are generated by FontAwesome font. Get the icons from http://fontawesome.io/ 	-->	
+				</div><!--end one-half-->
+			</div><!--end centered-wrapper-->				
+		</div><!--end bottomfooter-->
+		
+		<a href="#" class="totop"><i class="fa fa-angle-double-up"></i></a>
+		
+	</footer><!--end footer-->	
+	
+</div><!--end wrapper-->
+
+
+	<!-- JQUERY SCRIPTS -->
+	
+	<script type="text/javascript" src="twitter/jquery.tweet.min.js"></script>
+	
+	<script type="text/javascript" src="js/scripts-bottom.js"></script>		
+
+	<!-- ISOTOPE -->
+	<script type="text/javascript" src="js/jquery.isotope.min.js"></script>	
+	<script type="text/javascript" src="js/custom-isotope.js"></script>	
+	
+	<!-- CUSTOM -->
+	<script type="text/javascript" src="js/custom.js"></script>
+
+</body> 
+</html>

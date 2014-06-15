@@ -3,17 +3,17 @@
  * @package   theme_essential
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
- 
+
  /* @group Core */
 
 @font-face {
-    font-family: 'FontAwesome'; 
+    font-family: 'FontAwesome';
     font-weight: normal;
     font-style: normal;
     src: url('[[setting:fontwww]]fontawesome-webfont.eot?v=4.0.0');
-    src: url('[[setting:fontwww]]fontawesome-webfont.eot?#iefix&v=4.0.0') format('embedded-opentype'), 
-      			url('[[setting:fontwww]]fontawesome-webfont.woff?v=4.0.0') format('woff'), 
-      			url('[[setting:fontwww]]fontawesome-webfont.ttf?v=4.0.0') format('truetype'), 
+    src: url('[[setting:fontwww]]fontawesome-webfont.eot?#iefix&v=4.0.0') format('embedded-opentype'),
+      			url('[[setting:fontwww]]fontawesome-webfont.woff?v=4.0.0') format('woff'),
+      			url('[[setting:fontwww]]fontawesome-webfont.ttf?v=4.0.0') format('truetype'),
       			url('[[setting:fontwww]]fontawesome-webfont.svg#fontawesomeregular?v=4.0.0') format('svg');
 }
 
@@ -83,7 +83,7 @@ h1#title {
 /* @group Social Buttons */
 
 a.website:hover, a.website:focus {
-    background-color: [[setting:themecolor]];    
+    background-color: [[setting:themecolor]];
 }
 
 /* @end */
@@ -143,7 +143,7 @@ a:hover .colours-alternative3 {
 /* @group Navbar
  */
 
-ul.breadcrumb li:after { 
+ul.breadcrumb li:after {
     content: "[[setting:navbarsep]]";
 }
 
@@ -159,7 +159,7 @@ ul.breadcrumb li:after {
 }
 
 .navbar .nav > li > a{
-    border-left:1px solid [[setting:themehovercolor]];
+
 }
 
 .navbar .nav > li > a:hover{
@@ -176,7 +176,7 @@ ul.breadcrumb li:after {
 }
 
 .navbar .nav > li > a {
-    border-left: 1px solid [[setting:themehovercolor]];
+
 }
 
 /* @end */
@@ -378,31 +378,31 @@ a#button:hover {
 }
 
 /* @group Footer Block Formatting */
-    
+
 #page-footer .block .header .title h2:before {
     color: [[setting:footerheadingcolor]];
 }
-    
+
 #page-footer .block .header .title h2 {
     color: [[setting:footerheadingcolor]];
 }
-    
+
 #page-footer .block .header .title {
     border-bottom: 1px solid [[setting:footersepcolor]];
 }
-    
+
 #page-footer .block_login input[type="submit"] {
     background: [[setting:themecolor]];
 }
-    
+
 #page-footer .block_login input[type="submit"]:hover {
     background: [[setting:themehovercolor]];
 }
-    
+
 #page-footer .block_rss_client .content a {
     color: [[setting:themecolor]];
 }
-    
+
 /* @end */
 
 /* @end */
@@ -460,7 +460,7 @@ a#button:hover {
 /* @end */
 
 /* @group Tabs */
- 
+
 .nav-tabs>li>a {
     background-color: [[setting:themecolor]];
 }
@@ -503,8 +503,8 @@ table#user-grades th.courseitem {
     border-bottom-color: [[setting:themecolor]];
 }
 
-table#user-grades td.controls, 
-.path-grade-report-grader table tr.avg .cell, 
+table#user-grades td.controls,
+.path-grade-report-grader table tr.avg .cell,
 .path-grade-report-grader table tr.range .cell {
     background-color: [[setting:themecolor]];
 }

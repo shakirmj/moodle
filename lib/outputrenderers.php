@@ -649,11 +649,11 @@ class core_renderer extends renderer_base {
         } else {
             $loggedinas = get_string('loggedinnot', 'moodle');
             if (!$loginpage && $withlinks) {
-                $loggedinas .= " (<a href=\"$loginurl\">".get_string('login').'</a>)';
+                $loggedinas .= " (<a class=\"external\" href=\"$loginurl\">".get_string('login').'</a>)';
             }
         }
 
-        $loggedinas = '<div class="logininfo">'.$loggedinas.'</div>';
+        $loggedinas = '<div class="logininfo external">'.$loggedinas.'</div>';
 
         if (isset($SESSION->justloggedin)) {
             unset($SESSION->justloggedin);
