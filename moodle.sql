@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2014 at 05:01 PM
+-- Generation Time: Jun 15, 2014 at 04:15 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -56,7 +56,14 @@ CREATE TABLE IF NOT EXISTS `mdl_assign` (
   PRIMARY KEY (`id`),
   KEY `mdl_assi_cou_ix` (`course`),
   KEY `mdl_assi_tea_ix` (`teamsubmissiongroupingid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='This table saves information about an instance of mod_assign' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='This table saves information about an instance of mod_assign' AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `mdl_assign`
+--
+
+INSERT INTO `mdl_assign` (`id`, `course`, `name`, `intro`, `introformat`, `alwaysshowdescription`, `nosubmissions`, `submissiondrafts`, `sendnotifications`, `sendlatenotifications`, `duedate`, `allowsubmissionsfromdate`, `grade`, `timemodified`, `requiresubmissionstatement`, `completionsubmit`, `cutoffdate`, `teamsubmission`, `requireallteammemberssubmit`, `teamsubmissiongroupingid`, `blindmarking`, `revealidentities`, `attemptreopenmethod`, `maxattempts`, `markingworkflow`, `markingallocation`) VALUES
+(1, 3, 'First Assignemnt', '<p>Take this firts</p>', 1, 1, 0, 0, 0, 0, 1403426400, 1402794600, 100, 1402837321, 0, 0, 0, 0, 0, 0, 0, 0, 'none', -1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -282,7 +289,22 @@ CREATE TABLE IF NOT EXISTS `mdl_assign_plugin_config` (
   KEY `mdl_assiplugconf_sub_ix` (`subtype`),
   KEY `mdl_assiplugconf_nam_ix` (`name`),
   KEY `mdl_assiplugconf_ass_ix` (`assignment`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Config data for an instance of a plugin in an assignment.' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Config data for an instance of a plugin in an assignment.' AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data for table `mdl_assign_plugin_config`
+--
+
+INSERT INTO `mdl_assign_plugin_config` (`id`, `assignment`, `plugin`, `subtype`, `name`, `value`) VALUES
+(1, 1, 'onlinetext', 'assignsubmission', 'enabled', '0'),
+(2, 1, 'file', 'assignsubmission', 'enabled', '1'),
+(3, 1, 'file', 'assignsubmission', 'maxfilesubmissions', '1'),
+(4, 1, 'file', 'assignsubmission', 'maxsubmissionsizebytes', '0'),
+(5, 1, 'comments', 'assignsubmission', 'enabled', '1'),
+(6, 1, 'comments', 'assignfeedback', 'enabled', '1'),
+(7, 1, 'editpdf', 'assignfeedback', 'enabled', '0'),
+(8, 1, 'offline', 'assignfeedback', 'enabled', '0'),
+(9, 1, 'file', 'assignfeedback', 'enabled', '0');
 
 -- --------------------------------------------------------
 
@@ -658,16 +680,16 @@ CREATE TABLE IF NOT EXISTS `mdl_block_instances` (
   PRIMARY KEY (`id`),
   KEY `mdl_blocinst_parshopagsub_ix` (`parentcontextid`,`showinsubcontexts`,`pagetypepattern`,`subpagepattern`),
   KEY `mdl_blocinst_par_ix` (`parentcontextid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='This table stores block instances. The type of block this is' AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='This table stores block instances. The type of block this is' AUTO_INCREMENT=25 ;
 
 --
 -- Dumping data for table `mdl_block_instances`
 --
 
 INSERT INTO `mdl_block_instances` (`id`, `blockname`, `parentcontextid`, `showinsubcontexts`, `pagetypepattern`, `subpagepattern`, `defaultregion`, `defaultweight`, `configdata`) VALUES
-(1, 'site_main_menu', 2, 0, 'site-index', NULL, 'hidden-dock', -3, ''),
-(2, 'course_summary', 2, 0, 'site-index', NULL, 'hidden-dock', 1, ''),
-(3, 'calendar_month', 2, 0, 'site-index', NULL, 'hidden-dock', -1, ''),
+(1, 'site_main_menu', 2, 0, 'site-index', NULL, 'hidden-dock', -4, ''),
+(2, 'course_summary', 2, 0, 'site-index', NULL, 'hidden-dock', 0, ''),
+(3, 'calendar_month', 2, 0, 'site-index', NULL, 'side-post', 3, 'Tzo4OiJzdGRDbGFzcyI6MDp7fQ=='),
 (4, 'navigation', 1, 1, '*', NULL, 'side-pre', 0, ''),
 (5, 'settings', 1, 1, '*', NULL, 'side-pre', 1, ''),
 (6, 'admin_bookmarks', 1, 0, 'admin-*', NULL, 'side-pre', 0, ''),
@@ -678,7 +700,17 @@ INSERT INTO `mdl_block_instances` (`id`, `blockname`, `parentcontextid`, `showin
 (11, 'news_items', 16, 0, 'course-view-*', NULL, 'side-post', 1, ''),
 (12, 'calendar_upcoming', 16, 0, 'course-view-*', NULL, 'side-post', 2, ''),
 (13, 'recent_activity', 16, 0, 'course-view-*', NULL, 'side-post', 3, ''),
-(14, 'participants', 2, 0, 'site-index', NULL, 'hidden-dock', 2, '');
+(14, 'participants', 2, 0, 'site-index', NULL, 'hidden-dock', 4, 'Tzo4OiJzdGRDbGFzcyI6MDp7fQ=='),
+(15, 'course_list', 2, 0, 'site-index', NULL, 'home-left', 0, ''),
+(16, 'activity_modules', 2, 0, 'site-index', NULL, 'hidden-dock', 2, ''),
+(17, 'news_items', 2, 0, 'site-index', NULL, 'home-middle', 6, ''),
+(18, 'calendar_upcoming', 2, 0, 'site-index', NULL, 'home-left', -1, ''),
+(19, 'online_users', 2, 0, 'site-index', NULL, 'footer-right', 0, ''),
+(20, 'blog_menu', 2, 0, 'site-index', NULL, 'hidden-dock', 5, ''),
+(21, 'search_forums', 31, 0, 'course-view-*', NULL, 'side-post', 0, ''),
+(22, 'news_items', 31, 0, 'course-view-*', NULL, 'side-post', 1, ''),
+(23, 'calendar_upcoming', 31, 0, 'course-view-*', NULL, 'side-post', 2, ''),
+(24, 'recent_activity', 31, 0, 'course-view-*', NULL, 'side-post', 3, '');
 
 -- --------------------------------------------------------
 
@@ -706,8 +738,8 @@ CREATE TABLE IF NOT EXISTS `mdl_block_positions` (
 --
 
 INSERT INTO `mdl_block_positions` (`id`, `blockinstanceid`, `contextid`, `pagetype`, `subpage`, `visible`, `region`, `weight`) VALUES
-(1, 3, 2, 'site-index', '', 0, 'hidden-dock', -1),
-(2, 4, 2, 'site-index', '', 1, 'hidden-dock', 0),
+(1, 3, 2, 'site-index', '', 1, 'home-right', 1),
+(2, 4, 2, 'site-index', '', 1, 'hidden-dock', -1),
 (3, 5, 2, 'site-index', '', 1, 'hidden-dock', -2);
 
 -- --------------------------------------------------------
@@ -836,17 +868,24 @@ CREATE TABLE IF NOT EXISTS `mdl_cache_flags` (
   PRIMARY KEY (`id`),
   KEY `mdl_cachflag_fla_ix` (`flagtype`),
   KEY `mdl_cachflag_nam_ix` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Cache of time-sensitive flags' AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Cache of time-sensitive flags' AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `mdl_cache_flags`
 --
 
 INSERT INTO `mdl_cache_flags` (`id`, `flagtype`, `name`, `timemodified`, `value`, `expiry`) VALUES
-(1, 'userpreferenceschanged', '2', 1402752795, '1', 1402759995),
+(1, 'userpreferenceschanged', '2', 1402839213, '1', 1402846413),
 (2, 'accesslib/dirtycontexts', '/1/3/16', 1402746083, '1', 1402753283),
 (3, 'accesslib/dirtycontexts', '/1/2/15', 1402748002, '1', 1402755202),
-(4, 'accesslib/dirtycontexts', '/1/2/23', 1402752804, '1', 1402760004);
+(4, 'accesslib/dirtycontexts', '/1/2/23', 1402752804, '1', 1402760004),
+(5, 'userpreferenceschanged', '3', 1402839504, '1', 1402846704),
+(6, 'accesslib/dirtycontexts', '/1/3/31', 1402837717, '1', 1402844917),
+(7, 'accesslib/dirtycontexts', '/1/37', 1402832677, '1', 1402839877),
+(8, 'accesslib/dirtycontexts', '/1', 1402835681, '1', 1402842881),
+(9, 'userpreferenceschanged', '4', 1402839409, '1', 1402846609),
+(10, 'accesslib/dirtycontexts', '/1/24', 1402834699, '1', 1402841899),
+(11, 'accesslib/dirtycontexts', '/1/2', 1402837205, '1', 1402844405);
 
 -- --------------------------------------------------------
 
@@ -862,136 +901,110 @@ CREATE TABLE IF NOT EXISTS `mdl_cache_text` (
   PRIMARY KEY (`id`),
   KEY `mdl_cachtext_md5_ix` (`md5key`),
   KEY `mdl_cachtext_tim_ix` (`timemodified`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='For storing temporary copies of processed texts' AUTO_INCREMENT=122 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='For storing temporary copies of processed texts' AUTO_INCREMENT=97 ;
 
 --
 -- Dumping data for table `mdl_cache_text`
 --
 
 INSERT INTO `mdl_cache_text` (`id`, `md5key`, `formattedtext`, `timemodified`) VALUES
-(1, '9ddbc4549b7a680d4c1ab908bca279ee', '<p>Here you can find various settings to change many of the colours found in this theme.</p>\n', 1402750740),
-(2, '7e417a6825bc9c1d13e188438fbe87a1', '<p>This creates a dynamic slideshow of up to 4 slides for you to promote important elements of your site.</p>\n', 1402750741),
-(3, '29eb99acfa924b9209f8e6f51fa6080e', '<p>This adds a custom content area inbetween the Slideshow and the Marketing boxes for your own custom content</p>\n', 1402750741),
-(4, '050576f57a783232db5cb433f4208c2e', '<p>This theme provides the option of enabling three "marketing" or "ad" spots just under the slideshow.  These allow you to easily identify core information to your users and provide direct links.</p>\n', 1402750741),
-(5, 'd8716256b1866f5de12529ac4450e477', '<p>Provide direct links to the core social networks that promote your brand.  These will appear in the header of every page.</p>\n', 1402750741),
-(6, 'd59b01b4027ee4466f0b19640cebfe7c', '<p>If enabled this will allow you to set icons for each category of course.</p>\n', 1402750741),
-(7, 'c14aeceba48baeaa76cd68bbf2e5f809', '<p>Have you got a web app on the App Store or Google Play Store?  Provide a link here so your users can grab the apps online</p>\n', 1402750741),
-(8, '0f490335051cb1a8709026159746fd18', '<p>This will display an alert (or multiple) in three different styles to your users on the Moodle frontpage. Please remember to disable these when no longer needed.</p>\n', 1402750741),
-(9, '7a0ffc273b618c1e65aa9d84f4804481', '<p>Here you can enable Google Analytics for your moodle site. You will need to sign up for a free account at the Google Analytics site (<a href="http://analytics.google.com" target="_blank">http://analytics.google.com</a>)</p>\n', 1402750741),
-(10, '7088784e04c075cc90016a72cf938cb2', '<p>When players are enabled in these settings, files can be embedded using the media filter (if enabled) or using a File or URL resources with the Embed option. When not enabled, these formats are not embedded and users can manually download or follow links to these resources.</p>\n\n<p>Where two players support the same format, enabling both increases compatibility across different devices such as mobile phones. It is possible to increase compatibility further by providing multiple files in different formats for a single audio or video clip.</p>\n', 1402750741),
-(11, 'b53e05db5ae61f17c795e7b764243cd7', '<div class="text_to_html"> <div class="clearfix"><div class="well"><h2>Essential</h2><p><img class="img-polaroid" src="essential/pix/screenshot.jpg" alt="screenshot.jpg" /></p></div><div class="well"><h3>About Essential</h3><p>Essential is a modified Moodle bootstrap theme which inherits styles and renderers from its parent theme.</p><h3>Parents</h3><p>This theme is based upon the Bootstrap theme, which was created for Moodle 2.5, with the help of:<br /> Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans.</p><h3>Theme Credits</h3><p>Authors: Julian Ridden<br /> Contact: julian@moodleman.net<br /> Website: <a href="http://www.moodleman.net">www.moodleman.net</a></p></div></div></div>', 1402746507),
-(12, '7e31a3a47403fbddd73b19e93770801b', '<p>The assignment activity module enables a teacher to communicate tasks, collect work and provide grades and feedback.</p>\n\n<p>Students can submit any digital content (files), such as word-processed documents, spreadsheets, images, or audio and video clips. Alternatively, or in addition, the assignment may require students to type text directly into the text editor. An assignment can also be used to remind students of ''real-world'' assignments they need to complete offline, such as art work, and thus not require any digital content. Students can submit work individually or as a member of a group.</p>\n\n<p>When reviewing assignments, teachers can leave feedback comments and upload files, such as marked-up student submissions, documents with comments or spoken audio feedback. Assignments can be graded using a numerical or custom scale or an advanced grading method such as a rubric. Final grades are recorded in the gradebook.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/assignment/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402747633),
-(13, '7535d9dfc9c1a7178a5e1b7ee6003dc2', '<p>The chat activity module enables participants to have text-based, real-time synchronous discussions.</p>\n\n<p>The chat may be a one-time activity or it may be repeated at the same time each day or each week. Chat sessions are saved and can be made available for everyone to view or restricted to users with the capability to view chat session logs.</p>\n\n<p>Chats are especially useful when the group chatting is not able to meet face-to-face, such as</p>\n\n<ul><li>Regular meetings of students participating in online courses to enable them to share experiences with others in the same course but in a different location</li>\n<li>A student temporarily unable to attend in person chatting with their teacher to catch up with work</li>\n<li>Students out on work experience getting together to discuss their experiences with each other and their teacher</li>\n<li>Younger children using chat at home in the evenings as a controlled (monitored) introduction to the world of social networking</li>\n<li>A question and answer session with an invited speaker in a different location</li>\n<li>Sessions to help students prepare for tests where the teacher, or other students, would pose sample questions</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/chat/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402747633),
-(14, 'b95880f6d3956332cacd58f88306fbc0', '<p>The choice activity module enables a teacher to ask a single question and offer a selection of possible responses.</p>\n\n<p>Choice results may be published after students have answered, after a certain date, or not at all. Results may be published with student names or anonymously.</p>\n\n<p>A choice activity may be used</p>\n\n<ul><li>As a quick poll to stimulate thinking about a topic</li>\n<li>To quickly test students'' understanding</li>\n<li>To facilitate student decision-making, for example allowing students to vote on a direction for the course</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/choice/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402747633),
-(15, '087e1ae247975216ba3b798dbf039027', '<p>The database activity module enables participants to create, maintain and search a collection of entries (i.e. records).  The structure of the entries is defined by the teacher as a number of fields. Field types include checkbox, radio buttons, dropdown menu, text area, URL, picture and uploaded file.</p>\n\n<p>The visual layout of information when listing, viewing or editing database entries may be controlled by database templates. Database activities may be shared between courses as presets and a teacher may also import and export database entries.</p>\n\n<p>If the database auto-linking filter is enabled, any entries in a database will be automatically linked where the words or phrases appear within the course.</p>\n\n<p>A teacher can allow comments on entries. Entries can also be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Database activities have many uses, such as</p>\n\n<ul><li>A collaborative collection of web links, books, book reviews, journal references etc</li>\n<li>For displaying student-created photos, posters, websites or poems for peer comment and review</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/data/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402747633),
-(16, '8a4ccc6303a87fde5e2a4457a9b984ad', '<p>The external tool activity module enables students to interact with learning resources and activities on other web sites. For example, an external tool could provide access to a new activity type or learning materials from a publisher.</p>\n\n<p>To create an external tool activity, a tool provider which supports LTI (Learning Tools Interoperability) is required. A teacher can create an external tool activity or make use of a tool configured by the site administrator.</p>\n\n<p>External tool activities differ from URL resources in a few ways:</p>\n\n<ul><li>External tools are context aware i.e. they have access to information about the user who launched the tool, such as institution, course and name</li>\n<li>External tools support reading, updating, and deleting grades associated with the activity instance</li>\n<li>External tool configurations create a trust relationship between your site and the tool provider, allowing secure communication between them</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/lti/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402747633),
-(17, '19900184056635c40f3579c1510d8a1f', '<p>The forum activity module enables participants to have asynchronous discussions i.e. discussions that take place over an extended period of time.</p>\n\n<p>There are several forum types to choose from, such as a standard forum where anyone can start a new discussion at any time; a forum where each student can post exactly one discussion; or a question and answer forum where students must first post before being able to view other students'' posts. A teacher can allow files to be attached to forum posts. Attached images are displayed in the forum post.</p>\n\n<p>Participants can subscribe to a forum to receive notifications of new forum posts. A teacher can set the subscription mode to optional, forced or auto, or prevent subscription completely. If required, students can be blocked from posting more than a given number of posts in a given time period; this can prevent individuals from dominating discussions.</p>\n\n<p>Forum posts can be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Forums have many uses, such as</p>\n\n<ul><li>A social space for students to get to know each other</li>\n<li>For course announcements (using a news forum with forced subscription)</li>\n<li>For discussing course content or reading materials</li>\n<li>For continuing online an issue raised previously in a face-to-face session</li>\n<li>For teacher-only discussions (using a hidden forum)</li>\n<li>A help centre where tutors and students can give advice</li>\n<li>A one-on-one support area for private student-teacher communications (using a forum with separate groups and with one student per group)</li>\n<li>For extension activities, for example ‘brain teasers’ for students to ponder and suggest solutions to</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/forum/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402747633),
-(18, 'df0d1ff5751f814dadafba1ea52413d6', '<p>The glossary activity module enables participants to create and maintain a list of definitions, like a dictionary, or to collect and organise resources or information.</p>\n\n<p>A teacher can allow files to be attached to glossary entries. Attached images are displayed in the entry. Entries can be searched or browsed alphabetically or by category, date or author. Entries can be approved by default or require approval by a teacher before they are viewable by everyone.</p>\n\n<p>If the glossary auto-linking filter is enabled, entries will be automatically linked where the concept words and/or phrases appear within the course.</p>\n\n<p>A teacher can allow comments on entries. Entries can also be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Glossaries have many uses, such as</p>\n\n<ul><li>A collaborative bank of key terms</li>\n<li>A ‘getting to know you’ space where new students add their name and personal details</li>\n<li>A ‘handy tips’ resource of best practice in a practical subject</li>\n<li>A sharing area of useful videos, images or sound files</li>\n<li>A revision resource of facts to remember</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/glossary/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402747633),
-(19, '15fede1709895ad450853d00868a9fc2', '<p>The lesson activity module enables a teacher to deliver content and/or practice activities in  interesting and flexible ways. A teacher can use the lesson to create a linear set of content pages or instructional activities that offer a variety of paths or options for the learner. In either case, teachers can choose to increase engagement and ensure understanding by including a variety of questions, such as multiple choice, matching and short answer. Depending on the student''s choice of answer and how the teacher develops the lesson, students may progress to the next page, be taken back to a previous page or redirected down a different path entirely.</p>\n\n<p>A lesson may be graded, with the grade recorded in the gradebook.</p>\n\n<p>Lessons may be used</p>\n\n<ul><li>For self-directed learning of a new topic</li>\n<li>For  scenarios or simulations/decision-making exercises</li>\n<li>For differentiated revision, with different sets of revision questions depending upon answers given to initial questions</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/lesson/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402747633),
-(20, '767e77c596f7788a6e33b55588387dbc', '<p>The quiz activity enables a teacher to create quizzes comprising questions of various types, including multiple choice, matching, short-answer and numerical.</p>\n\n<p>The teacher can allow the quiz to be attempted multiple times, with the questions shuffled or randomly selected from the question bank. A time limit may be set.</p>\n\n<p>Each attempt is marked automatically, with the exception of essay questions, and the grade is recorded in the gradebook.</p>\n\n<p>The teacher can choose when and if hints, feedback and correct answers are shown to students.</p>\n\n<p>Quizzes may be used</p>\n\n<ul><li>As course exams</li>\n<li>As mini tests for reading assignments or at the end of a topic</li>\n<li>As exam practice using questions from past exams</li>\n<li>To deliver immediate feedback about performance</li>\n<li>For self-assessment</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/quiz/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402747633),
-(21, '524bf4224bb8a3393d220ebcad540e11', '<p>A SCORM package is a collection of files which are packaged according to an agreed standard for learning objects. The SCORM activity module enables SCORM or AICC packages to be uploaded as a zip file and added to a course.</p>\n\n<p>Content is usually displayed over several pages, with navigation between the pages. There are various options for displaying content in a pop-up window, with a table of contents, with navigation buttons etc. SCORM activities generally include questions, with grades being recorded in the gradebook.</p>\n\n<p>SCORM activities may be used</p>\n\n<ul><li>For presenting multimedia content and animations</li>\n<li>As an assessment tool</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/scorm/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402747633),
-(22, '200b19cb2a32aba55d7a77110bc0e505', '<p>The survey activity module provides a number of verified survey instruments that have been found useful in assessing and stimulating learning in online environments. A teacher can use these to gather data from their students that will help them learn about their class and reflect on their own teaching.</p>\n\n<p>Note that these survey tools are pre-populated with questions. Teachers who wish to create their own survey should use the feedback activity module.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/survey/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402747633),
-(23, '053a3678648e8f6c725245cd157d4123', '<p>The wiki activity module enables participants to add and edit a collection of web pages. A wiki can be collaborative, with everyone being able to edit it, or individual, where everyone has their own wiki which only they can edit.</p>\n\n<p>A history of previous versions of each page in the wiki is kept, listing the edits made by each participant.</p>\n\n<p>Wikis have many uses, such as</p>\n\n<ul><li>For group lecture notes or study guides</li>\n<li>For members of a faculty to plan a scheme of work or meeting agenda together</li>\n<li>For students to collaboratively author an online book, creating content on a topic set by their tutor</li>\n<li>For collaborative storytelling or poetry creation, where each participant writes a line or verse</li>\n<li>As a personal journal for examination notes or revision (using an individual wiki)</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/wiki/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402747633),
-(24, '6fc234c0a8b68a716b0855502b482062', '<p>The workshop activity module enables the collection, review and peer assessment of students'' work.</p>\n\n<p>Students can submit any digital content (files), such as word-processed documents or spreadsheets and can also type text directly into a field using the text editor.</p>\n\n<p>Submissions are assessed using a multi-criteria assessment form defined by the teacher. The process of peer assessment and understanding the assessment form can be practised in advance with example submissions provided by the teacher, together with a reference assessment. Students are given the opportunity to assess one or more of their peers'' submissions. Submissions and reviewers may be anonymous if required.</p>\n\n<p>Students obtain two grades in a workshop activity - a grade for their submission and a grade for their assessment of their peers'' submissions. Both grades are recorded in the gradebook.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/workshop/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402747633),
-(25, '6c0186636bbcf978c5e06bd59f8dc811', '<p>The book module enables a teacher to create a multi-page resource in a book-like format, with chapters and subchapters. Books can contain media files as well as text and are useful for displaying lengthy passages of information which can be broken down into sections.</p>\n\n<p>A book may be used</p>\n\n<ul><li>To display reading material for individual modules of study</li>\n<li>As a staff departmental handbook</li>\n<li>As a showcase portfolio of student work</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/book/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402747633),
-(26, '61287f7924b3c108da04965e2dc654f5', '<p>The file module enables a teacher to provide a file as a course resource. Where possible, the file will be displayed within the course interface; otherwise students will be prompted to download it. The file may include supporting files, for example an HTML page may have embedded images or Flash objects.</p>\n\n<p>Note that students need to have the appropriate software on their computers in order to open the file.</p>\n\n<p>A file may be used</p>\n\n<ul><li>To share presentations given in class</li>\n<li>To include a mini website as a course resource</li>\n<li>To provide draft files of certain software programs (eg Photoshop .psd) so students can edit and submit them for assessment</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/resource/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402747633),
-(27, '1c7ba7ffec01fc017e8b5bd536b90187', '<p>The folder module enables a teacher to display a number of related files inside a single folder, reducing scrolling on the course page. A zipped folder may be uploaded and unzipped for display, or an empty folder created and files uploaded into it.</p>\n\n<p>A folder may be used</p>\n\n<ul><li>For a series of files on one topic, for example a set of past examination papers in pdf format or a collection of image files for use in student projects</li>\n<li>To provide a shared uploading space for teachers on the course page (keeping the folder hidden so that only teachers can see it)</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/folder/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402747633),
-(28, 'a33e35ee2effb85ab3686942ee8944b5', '<p>An IMS content package is a collection of files which are packaged according to an agreed standard so they can be reused in different systems. The IMS content package module enables such content packages to be uploaded as a zip file and added to a course as a resource.</p>\n\n<p>Content is usually displayed over several pages, with navigation between the pages. There are various options for displaying content in a pop-up window, with a navigation menu or buttons etc.</p>\n\n<p>An IMS content package may be used for presenting multimedia content and animations.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/imscp/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402747634),
-(29, '2f801bd544e41c69aa2e63925fc266b5', '<p>The label module enables text and multimedia to be inserted into the course page in between links to other resources and activities. Labels are very versatile and can help to improve the appearance of a course if used thoughtfully.</p>\n\n<p>Labels may be used</p>\n\n<ul><li>To split up a long list of activities with a subheading or an image</li>\n<li>To display an embedded sound file or video directly on the course page</li>\n<li>To add a short description to a course section</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/label/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402747634),
-(30, 'bad5592308060c65b9dbc9b61de45ca2', '<p>The page module enables a teacher to create a web page resource using the text editor. A page can display text, images, sound, video, web links and embedded code, such as Google maps.</p>\n\n<p>Advantages of using the page module rather than the file module include the resource being more accessible (for example to users of mobile devices) and easier to update.</p>\n\n<p>For large amounts of content, it''s recommended that a book is used rather than a page.</p>\n\n<p>A page may be used</p>\n\n<ul><li>To present the terms and conditions of a course or a summary of the course syllabus</li>\n<li>To embed several videos or sound files together with some explanatory text</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/page/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402747634),
-(31, 'ba71a7d8bbc4de64f96c9d598107ba3f', '<p>The URL module enables a teacher to provide a web link as a course resource. Anything that is freely available online, such as documents or images, can be linked to; the URL doesn’t have to be the home page of a website. The URL of a particular web page may be copied and pasted or a teacher can use the file picker and choose a link from a repository such as Flickr, YouTube or Wikimedia (depending upon which repositories are enabled for the site).</p>\n\n<p>There are a number of display options for the URL, such as embedded or opening in a new window and advanced options for passing information, such as a student''s name, to the URL if required.</p>\n\n<p>Note that URLs can also be added to any other resource or activity type through the text editor.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/url/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402747634),
-(32, '5f92dea42c8e4496ac7bb4889529ee6d', '<div class="no-overflow"><p>sads</p></div>', 1402747868),
-(33, 'e17df3377eacca1005aa33298e389f50', '<p>The assignment activity module enables a teacher to communicate tasks, collect work and provide grades and feedback.</p>\n\n<p>Students can submit any digital content (files), such as word-processed documents, spreadsheets, images, or audio and video clips. Alternatively, or in addition, the assignment may require students to type text directly into the text editor. An assignment can also be used to remind students of ''real-world'' assignments they need to complete offline, such as art work, and thus not require any digital content. Students can submit work individually or as a member of a group.</p>\n\n<p>When reviewing assignments, teachers can leave feedback comments and upload files, such as marked-up student submissions, documents with comments or spoken audio feedback. Assignments can be graded using a numerical or custom scale or an advanced grading method such as a rubric. Final grades are recorded in the gradebook.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/assignment/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402746981),
-(34, 'f01b7e295672f6c0035a8266c50459ef', '<p>The chat activity module enables participants to have text-based, real-time synchronous discussions.</p>\n\n<p>The chat may be a one-time activity or it may be repeated at the same time each day or each week. Chat sessions are saved and can be made available for everyone to view or restricted to users with the capability to view chat session logs.</p>\n\n<p>Chats are especially useful when the group chatting is not able to meet face-to-face, such as</p>\n\n<ul><li>Regular meetings of students participating in online courses to enable them to share experiences with others in the same course but in a different location</li>\n<li>A student temporarily unable to attend in person chatting with their teacher to catch up with work</li>\n<li>Students out on work experience getting together to discuss their experiences with each other and their teacher</li>\n<li>Younger children using chat at home in the evenings as a controlled (monitored) introduction to the world of social networking</li>\n<li>A question and answer session with an invited speaker in a different location</li>\n<li>Sessions to help students prepare for tests where the teacher, or other students, would pose sample questions</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/chat/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402746981),
-(35, '0186a118ba8ae45c7db932e36a653642', '<p>The choice activity module enables a teacher to ask a single question and offer a selection of possible responses.</p>\n\n<p>Choice results may be published after students have answered, after a certain date, or not at all. Results may be published with student names or anonymously.</p>\n\n<p>A choice activity may be used</p>\n\n<ul><li>As a quick poll to stimulate thinking about a topic</li>\n<li>To quickly test students'' understanding</li>\n<li>To facilitate student decision-making, for example allowing students to vote on a direction for the course</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/choice/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402746981),
-(36, 'd6474bfdec82fb3711e667bc32a4786b', '<p>The database activity module enables participants to create, maintain and search a collection of entries (i.e. records).  The structure of the entries is defined by the teacher as a number of fields. Field types include checkbox, radio buttons, dropdown menu, text area, URL, picture and uploaded file.</p>\n\n<p>The visual layout of information when listing, viewing or editing database entries may be controlled by database templates. Database activities may be shared between courses as presets and a teacher may also import and export database entries.</p>\n\n<p>If the database auto-linking filter is enabled, any entries in a database will be automatically linked where the words or phrases appear within the course.</p>\n\n<p>A teacher can allow comments on entries. Entries can also be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Database activities have many uses, such as</p>\n\n<ul><li>A collaborative collection of web links, books, book reviews, journal references etc</li>\n<li>For displaying student-created photos, posters, websites or poems for peer comment and review</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/data/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402746981),
-(37, '408478120306ea02265a02b5598b3673', '<p>The external tool activity module enables students to interact with learning resources and activities on other web sites. For example, an external tool could provide access to a new activity type or learning materials from a publisher.</p>\n\n<p>To create an external tool activity, a tool provider which supports LTI (Learning Tools Interoperability) is required. A teacher can create an external tool activity or make use of a tool configured by the site administrator.</p>\n\n<p>External tool activities differ from URL resources in a few ways:</p>\n\n<ul><li>External tools are context aware i.e. they have access to information about the user who launched the tool, such as institution, course and name</li>\n<li>External tools support reading, updating, and deleting grades associated with the activity instance</li>\n<li>External tool configurations create a trust relationship between your site and the tool provider, allowing secure communication between them</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/lti/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402746981),
-(38, 'de08e7b9d3bf8cb4d9c5ddeb3443cfad', '<p>The forum activity module enables participants to have asynchronous discussions i.e. discussions that take place over an extended period of time.</p>\n\n<p>There are several forum types to choose from, such as a standard forum where anyone can start a new discussion at any time; a forum where each student can post exactly one discussion; or a question and answer forum where students must first post before being able to view other students'' posts. A teacher can allow files to be attached to forum posts. Attached images are displayed in the forum post.</p>\n\n<p>Participants can subscribe to a forum to receive notifications of new forum posts. A teacher can set the subscription mode to optional, forced or auto, or prevent subscription completely. If required, students can be blocked from posting more than a given number of posts in a given time period; this can prevent individuals from dominating discussions.</p>\n\n<p>Forum posts can be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Forums have many uses, such as</p>\n\n<ul><li>A social space for students to get to know each other</li>\n<li>For course announcements (using a news forum with forced subscription)</li>\n<li>For discussing course content or reading materials</li>\n<li>For continuing online an issue raised previously in a face-to-face session</li>\n<li>For teacher-only discussions (using a hidden forum)</li>\n<li>A help centre where tutors and students can give advice</li>\n<li>A one-on-one support area for private student-teacher communications (using a forum with separate groups and with one student per group)</li>\n<li>For extension activities, for example ‘brain teasers’ for students to ponder and suggest solutions to</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/forum/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402746981),
-(39, 'a33ff23f40b6cbabd316eb91abf809e2', '<p>The glossary activity module enables participants to create and maintain a list of definitions, like a dictionary, or to collect and organise resources or information.</p>\n\n<p>A teacher can allow files to be attached to glossary entries. Attached images are displayed in the entry. Entries can be searched or browsed alphabetically or by category, date or author. Entries can be approved by default or require approval by a teacher before they are viewable by everyone.</p>\n\n<p>If the glossary auto-linking filter is enabled, entries will be automatically linked where the concept words and/or phrases appear within the course.</p>\n\n<p>A teacher can allow comments on entries. Entries can also be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Glossaries have many uses, such as</p>\n\n<ul><li>A collaborative bank of key terms</li>\n<li>A ‘getting to know you’ space where new students add their name and personal details</li>\n<li>A ‘handy tips’ resource of best practice in a practical subject</li>\n<li>A sharing area of useful videos, images or sound files</li>\n<li>A revision resource of facts to remember</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/glossary/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402746981),
-(40, '533d30e628c4456b79f14ec335886648', '<p>The lesson activity module enables a teacher to deliver content and/or practice activities in  interesting and flexible ways. A teacher can use the lesson to create a linear set of content pages or instructional activities that offer a variety of paths or options for the learner. In either case, teachers can choose to increase engagement and ensure understanding by including a variety of questions, such as multiple choice, matching and short answer. Depending on the student''s choice of answer and how the teacher develops the lesson, students may progress to the next page, be taken back to a previous page or redirected down a different path entirely.</p>\n\n<p>A lesson may be graded, with the grade recorded in the gradebook.</p>\n\n<p>Lessons may be used</p>\n\n<ul><li>For self-directed learning of a new topic</li>\n<li>For  scenarios or simulations/decision-making exercises</li>\n<li>For differentiated revision, with different sets of revision questions depending upon answers given to initial questions</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/lesson/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402746981),
-(41, '6af72562f625e18ddafc767d397ffb6b', '<p>The quiz activity enables a teacher to create quizzes comprising questions of various types, including multiple choice, matching, short-answer and numerical.</p>\n\n<p>The teacher can allow the quiz to be attempted multiple times, with the questions shuffled or randomly selected from the question bank. A time limit may be set.</p>\n\n<p>Each attempt is marked automatically, with the exception of essay questions, and the grade is recorded in the gradebook.</p>\n\n<p>The teacher can choose when and if hints, feedback and correct answers are shown to students.</p>\n\n<p>Quizzes may be used</p>\n\n<ul><li>As course exams</li>\n<li>As mini tests for reading assignments or at the end of a topic</li>\n<li>As exam practice using questions from past exams</li>\n<li>To deliver immediate feedback about performance</li>\n<li>For self-assessment</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/quiz/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402746981),
-(42, 'd2087126f4ad8dfcfc561d542e88b26e', '<p>A SCORM package is a collection of files which are packaged according to an agreed standard for learning objects. The SCORM activity module enables SCORM or AICC packages to be uploaded as a zip file and added to a course.</p>\n\n<p>Content is usually displayed over several pages, with navigation between the pages. There are various options for displaying content in a pop-up window, with a table of contents, with navigation buttons etc. SCORM activities generally include questions, with grades being recorded in the gradebook.</p>\n\n<p>SCORM activities may be used</p>\n\n<ul><li>For presenting multimedia content and animations</li>\n<li>As an assessment tool</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/scorm/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402746981),
-(43, 'fcc6725e9389499e606f453f5d1edafe', '<p>The survey activity module provides a number of verified survey instruments that have been found useful in assessing and stimulating learning in online environments. A teacher can use these to gather data from their students that will help them learn about their class and reflect on their own teaching.</p>\n\n<p>Note that these survey tools are pre-populated with questions. Teachers who wish to create their own survey should use the feedback activity module.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/survey/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402746981),
-(44, 'b2212b8fb081b98d44f8b27cf8d3f7ff', '<p>The wiki activity module enables participants to add and edit a collection of web pages. A wiki can be collaborative, with everyone being able to edit it, or individual, where everyone has their own wiki which only they can edit.</p>\n\n<p>A history of previous versions of each page in the wiki is kept, listing the edits made by each participant.</p>\n\n<p>Wikis have many uses, such as</p>\n\n<ul><li>For group lecture notes or study guides</li>\n<li>For members of a faculty to plan a scheme of work or meeting agenda together</li>\n<li>For students to collaboratively author an online book, creating content on a topic set by their tutor</li>\n<li>For collaborative storytelling or poetry creation, where each participant writes a line or verse</li>\n<li>As a personal journal for examination notes or revision (using an individual wiki)</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/wiki/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402746981),
-(45, '56a1bc7a82728090494c01388a2f78c9', '<p>The workshop activity module enables the collection, review and peer assessment of students'' work.</p>\n\n<p>Students can submit any digital content (files), such as word-processed documents or spreadsheets and can also type text directly into a field using the text editor.</p>\n\n<p>Submissions are assessed using a multi-criteria assessment form defined by the teacher. The process of peer assessment and understanding the assessment form can be practised in advance with example submissions provided by the teacher, together with a reference assessment. Students are given the opportunity to assess one or more of their peers'' submissions. Submissions and reviewers may be anonymous if required.</p>\n\n<p>Students obtain two grades in a workshop activity - a grade for their submission and a grade for their assessment of their peers'' submissions. Both grades are recorded in the gradebook.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/workshop/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402746981),
-(46, '81b065b93207e7a1f17a52baeb1d8957', '<p>The book module enables a teacher to create a multi-page resource in a book-like format, with chapters and subchapters. Books can contain media files as well as text and are useful for displaying lengthy passages of information which can be broken down into sections.</p>\n\n<p>A book may be used</p>\n\n<ul><li>To display reading material for individual modules of study</li>\n<li>As a staff departmental handbook</li>\n<li>As a showcase portfolio of student work</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/book/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402746981),
-(47, '00f3dbcf2ff6cce6fcc6609f02501c3b', '<p>The file module enables a teacher to provide a file as a course resource. Where possible, the file will be displayed within the course interface; otherwise students will be prompted to download it. The file may include supporting files, for example an HTML page may have embedded images or Flash objects.</p>\n\n<p>Note that students need to have the appropriate software on their computers in order to open the file.</p>\n\n<p>A file may be used</p>\n\n<ul><li>To share presentations given in class</li>\n<li>To include a mini website as a course resource</li>\n<li>To provide draft files of certain software programs (eg Photoshop .psd) so students can edit and submit them for assessment</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/resource/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402746981),
-(48, '89d93db7d371eed7082565f8fded7ea3', '<p>The folder module enables a teacher to display a number of related files inside a single folder, reducing scrolling on the course page. A zipped folder may be uploaded and unzipped for display, or an empty folder created and files uploaded into it.</p>\n\n<p>A folder may be used</p>\n\n<ul><li>For a series of files on one topic, for example a set of past examination papers in pdf format or a collection of image files for use in student projects</li>\n<li>To provide a shared uploading space for teachers on the course page (keeping the folder hidden so that only teachers can see it)</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/folder/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402746981),
-(49, '6509c996955dcfafa8f0be7979edae4c', '<p>An IMS content package is a collection of files which are packaged according to an agreed standard so they can be reused in different systems. The IMS content package module enables such content packages to be uploaded as a zip file and added to a course as a resource.</p>\n\n<p>Content is usually displayed over several pages, with navigation between the pages. There are various options for displaying content in a pop-up window, with a navigation menu or buttons etc.</p>\n\n<p>An IMS content package may be used for presenting multimedia content and animations.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/imscp/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402746982),
-(50, 'a9cedaaf7981020219b1be99a7202899', '<p>The label module enables text and multimedia to be inserted into the course page in between links to other resources and activities. Labels are very versatile and can help to improve the appearance of a course if used thoughtfully.</p>\n\n<p>Labels may be used</p>\n\n<ul><li>To split up a long list of activities with a subheading or an image</li>\n<li>To display an embedded sound file or video directly on the course page</li>\n<li>To add a short description to a course section</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/label/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402746982),
-(51, 'f3f8c130035c35c735ecc6412e612a2e', '<p>The page module enables a teacher to create a web page resource using the text editor. A page can display text, images, sound, video, web links and embedded code, such as Google maps.</p>\n\n<p>Advantages of using the page module rather than the file module include the resource being more accessible (for example to users of mobile devices) and easier to update.</p>\n\n<p>For large amounts of content, it''s recommended that a book is used rather than a page.</p>\n\n<p>A page may be used</p>\n\n<ul><li>To present the terms and conditions of a course or a summary of the course syllabus</li>\n<li>To embed several videos or sound files together with some explanatory text</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/page/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402746982);
+(1, '9ddbc4549b7a680d4c1ab908bca279ee', '<p>Here you can find various settings to change many of the colours found in this theme.</p>\n', 1402839155),
+(2, '7e417a6825bc9c1d13e188438fbe87a1', '<p>This creates a dynamic slideshow of up to 4 slides for you to promote important elements of your site.</p>\n', 1402839155),
+(3, '29eb99acfa924b9209f8e6f51fa6080e', '<p>This adds a custom content area inbetween the Slideshow and the Marketing boxes for your own custom content</p>\n', 1402839155),
+(4, '050576f57a783232db5cb433f4208c2e', '<p>This theme provides the option of enabling three "marketing" or "ad" spots just under the slideshow.  These allow you to easily identify core information to your users and provide direct links.</p>\n', 1402839155),
+(5, 'd8716256b1866f5de12529ac4450e477', '<p>Provide direct links to the core social networks that promote your brand.  These will appear in the header of every page.</p>\n', 1402839155),
+(6, 'd59b01b4027ee4466f0b19640cebfe7c', '<p>If enabled this will allow you to set icons for each category of course.</p>\n', 1402839155),
+(7, 'c14aeceba48baeaa76cd68bbf2e5f809', '<p>Have you got a web app on the App Store or Google Play Store?  Provide a link here so your users can grab the apps online</p>\n', 1402839155),
+(8, '0f490335051cb1a8709026159746fd18', '<p>This will display an alert (or multiple) in three different styles to your users on the Moodle frontpage. Please remember to disable these when no longer needed.</p>\n', 1402839155),
+(9, '7a0ffc273b618c1e65aa9d84f4804481', '<p>Here you can enable Google Analytics for your moodle site. You will need to sign up for a free account at the Google Analytics site (<a href="http://analytics.google.com" target="_blank">http://analytics.google.com</a>)</p>\n', 1402839156),
+(10, '7088784e04c075cc90016a72cf938cb2', '<p>When players are enabled in these settings, files can be embedded using the media filter (if enabled) or using a File or URL resources with the Embed option. When not enabled, these formats are not embedded and users can manually download or follow links to these resources.</p>\n\n<p>Where two players support the same format, enabling both increases compatibility across different devices such as mobile phones. It is possible to increase compatibility further by providing multiple files in different formats for a single audio or video clip.</p>\n', 1402839156),
+(11, '74411bcd162b03a9f2c983b4c1511f87', '<div class="no-overflow"><div class="text_to_html"><p>Online Tutoring That Delivers Results</p></div></div>', 1402841692),
+(12, '91aacf1c59c94f20d0d73d106e84bd1c', '<p>The assignment activity module enables a teacher to communicate tasks, collect work and provide grades and feedback.</p>\n\n<p>Students can submit any digital content (files), such as word-processed documents, spreadsheets, images, or audio and video clips. Alternatively, or in addition, the assignment may require students to type text directly into the text editor. An assignment can also be used to remind students of ''real-world'' assignments they need to complete offline, such as art work, and thus not require any digital content. Students can submit work individually or as a member of a group.</p>\n\n<p>When reviewing assignments, teachers can leave feedback comments and upload files, such as marked-up student submissions, documents with comments or spoken audio feedback. Assignments can be graded using a numerical or custom scale or an advanced grading method such as a rubric. Final grades are recorded in the gradebook.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/assignment/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(13, 'efa5daa1b7f0930476e6417d48e4823e', '<p>The chat activity module enables participants to have text-based, real-time synchronous discussions.</p>\n\n<p>The chat may be a one-time activity or it may be repeated at the same time each day or each week. Chat sessions are saved and can be made available for everyone to view or restricted to users with the capability to view chat session logs.</p>\n\n<p>Chats are especially useful when the group chatting is not able to meet face-to-face, such as</p>\n\n<ul><li>Regular meetings of students participating in online courses to enable them to share experiences with others in the same course but in a different location</li>\n<li>A student temporarily unable to attend in person chatting with their teacher to catch up with work</li>\n<li>Students out on work experience getting together to discuss their experiences with each other and their teacher</li>\n<li>Younger children using chat at home in the evenings as a controlled (monitored) introduction to the world of social networking</li>\n<li>A question and answer session with an invited speaker in a different location</li>\n<li>Sessions to help students prepare for tests where the teacher, or other students, would pose sample questions</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/chat/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(14, 'b423d91f112edaf9f26f403d18c63a75', '<p>The choice activity module enables a teacher to ask a single question and offer a selection of possible responses.</p>\n\n<p>Choice results may be published after students have answered, after a certain date, or not at all. Results may be published with student names or anonymously.</p>\n\n<p>A choice activity may be used</p>\n\n<ul><li>As a quick poll to stimulate thinking about a topic</li>\n<li>To quickly test students'' understanding</li>\n<li>To facilitate student decision-making, for example allowing students to vote on a direction for the course</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/choice/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(15, 'a191e04c21e3bb7ab7285a61effe9303', '<p>The database activity module enables participants to create, maintain and search a collection of entries (i.e. records).  The structure of the entries is defined by the teacher as a number of fields. Field types include checkbox, radio buttons, dropdown menu, text area, URL, picture and uploaded file.</p>\n\n<p>The visual layout of information when listing, viewing or editing database entries may be controlled by database templates. Database activities may be shared between courses as presets and a teacher may also import and export database entries.</p>\n\n<p>If the database auto-linking filter is enabled, any entries in a database will be automatically linked where the words or phrases appear within the course.</p>\n\n<p>A teacher can allow comments on entries. Entries can also be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Database activities have many uses, such as</p>\n\n<ul><li>A collaborative collection of web links, books, book reviews, journal references etc</li>\n<li>For displaying student-created photos, posters, websites or poems for peer comment and review</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/data/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(16, '69004b0d95d2b368fd02d9b2a7311112', '<p>The external tool activity module enables students to interact with learning resources and activities on other web sites. For example, an external tool could provide access to a new activity type or learning materials from a publisher.</p>\n\n<p>To create an external tool activity, a tool provider which supports LTI (Learning Tools Interoperability) is required. A teacher can create an external tool activity or make use of a tool configured by the site administrator.</p>\n\n<p>External tool activities differ from URL resources in a few ways:</p>\n\n<ul><li>External tools are context aware i.e. they have access to information about the user who launched the tool, such as institution, course and name</li>\n<li>External tools support reading, updating, and deleting grades associated with the activity instance</li>\n<li>External tool configurations create a trust relationship between your site and the tool provider, allowing secure communication between them</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/lti/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(17, 'a8801e41d5349b59e1d96fab02686973', '<p>The forum activity module enables participants to have asynchronous discussions i.e. discussions that take place over an extended period of time.</p>\n\n<p>There are several forum types to choose from, such as a standard forum where anyone can start a new discussion at any time; a forum where each student can post exactly one discussion; or a question and answer forum where students must first post before being able to view other students'' posts. A teacher can allow files to be attached to forum posts. Attached images are displayed in the forum post.</p>\n\n<p>Participants can subscribe to a forum to receive notifications of new forum posts. A teacher can set the subscription mode to optional, forced or auto, or prevent subscription completely. If required, students can be blocked from posting more than a given number of posts in a given time period; this can prevent individuals from dominating discussions.</p>\n\n<p>Forum posts can be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Forums have many uses, such as</p>\n\n<ul><li>A social space for students to get to know each other</li>\n<li>For course announcements (using a news forum with forced subscription)</li>\n<li>For discussing course content or reading materials</li>\n<li>For continuing online an issue raised previously in a face-to-face session</li>\n<li>For teacher-only discussions (using a hidden forum)</li>\n<li>A help centre where tutors and students can give advice</li>\n<li>A one-on-one support area for private student-teacher communications (using a forum with separate groups and with one student per group)</li>\n<li>For extension activities, for example ‘brain teasers’ for students to ponder and suggest solutions to</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/forum/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(18, '72b907a602c9250570b15e8855acce0d', '<p>The glossary activity module enables participants to create and maintain a list of definitions, like a dictionary, or to collect and organise resources or information.</p>\n\n<p>A teacher can allow files to be attached to glossary entries. Attached images are displayed in the entry. Entries can be searched or browsed alphabetically or by category, date or author. Entries can be approved by default or require approval by a teacher before they are viewable by everyone.</p>\n\n<p>If the glossary auto-linking filter is enabled, entries will be automatically linked where the concept words and/or phrases appear within the course.</p>\n\n<p>A teacher can allow comments on entries. Entries can also be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Glossaries have many uses, such as</p>\n\n<ul><li>A collaborative bank of key terms</li>\n<li>A ‘getting to know you’ space where new students add their name and personal details</li>\n<li>A ‘handy tips’ resource of best practice in a practical subject</li>\n<li>A sharing area of useful videos, images or sound files</li>\n<li>A revision resource of facts to remember</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/glossary/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(19, '98c68852f977e1665e206501aed858c6', '<p>The lesson activity module enables a teacher to deliver content and/or practice activities in  interesting and flexible ways. A teacher can use the lesson to create a linear set of content pages or instructional activities that offer a variety of paths or options for the learner. In either case, teachers can choose to increase engagement and ensure understanding by including a variety of questions, such as multiple choice, matching and short answer. Depending on the student''s choice of answer and how the teacher develops the lesson, students may progress to the next page, be taken back to a previous page or redirected down a different path entirely.</p>\n\n<p>A lesson may be graded, with the grade recorded in the gradebook.</p>\n\n<p>Lessons may be used</p>\n\n<ul><li>For self-directed learning of a new topic</li>\n<li>For  scenarios or simulations/decision-making exercises</li>\n<li>For differentiated revision, with different sets of revision questions depending upon answers given to initial questions</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/lesson/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(20, '79e4ba94879b239b5fdc028f398e862e', '<p>The quiz activity enables a teacher to create quizzes comprising questions of various types, including multiple choice, matching, short-answer and numerical.</p>\n\n<p>The teacher can allow the quiz to be attempted multiple times, with the questions shuffled or randomly selected from the question bank. A time limit may be set.</p>\n\n<p>Each attempt is marked automatically, with the exception of essay questions, and the grade is recorded in the gradebook.</p>\n\n<p>The teacher can choose when and if hints, feedback and correct answers are shown to students.</p>\n\n<p>Quizzes may be used</p>\n\n<ul><li>As course exams</li>\n<li>As mini tests for reading assignments or at the end of a topic</li>\n<li>As exam practice using questions from past exams</li>\n<li>To deliver immediate feedback about performance</li>\n<li>For self-assessment</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/quiz/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(21, 'd5b3b6b1ed9e50998999064ca7a0ee90', '<p>The scheduler activity helps you in scheduling appointments with your students.</p>\n\n<p>Teachers specify time slots for meetings, students then choose one of them on Moodle.\nTeachers in turn can record the outcome of the meeting - and optionally a grade - within the scheduler.</p>\n\n<p>Group scheduling is supported; that is, each time slot can accomodate several students, and optionally it is possible to schedule appointments for entire groups at the same time.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/scheduler/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(22, 'a7dfee89d0f9abe07d4ccef0687ee55d', '<p>A SCORM package is a collection of files which are packaged according to an agreed standard for learning objects. The SCORM activity module enables SCORM or AICC packages to be uploaded as a zip file and added to a course.</p>\n\n<p>Content is usually displayed over several pages, with navigation between the pages. There are various options for displaying content in a pop-up window, with a table of contents, with navigation buttons etc. SCORM activities generally include questions, with grades being recorded in the gradebook.</p>\n\n<p>SCORM activities may be used</p>\n\n<ul><li>For presenting multimedia content and animations</li>\n<li>As an assessment tool</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/scorm/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(23, '2068602cf9138b85999f837597528a63', '<p>The survey activity module provides a number of verified survey instruments that have been found useful in assessing and stimulating learning in online environments. A teacher can use these to gather data from their students that will help them learn about their class and reflect on their own teaching.</p>\n\n<p>Note that these survey tools are pre-populated with questions. Teachers who wish to create their own survey should use the feedback activity module.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/survey/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(24, '7948ada17a534ee4f161fb45bfd36ac0', '<p>The wiki activity module enables participants to add and edit a collection of web pages. A wiki can be collaborative, with everyone being able to edit it, or individual, where everyone has their own wiki which only they can edit.</p>\n\n<p>A history of previous versions of each page in the wiki is kept, listing the edits made by each participant.</p>\n\n<p>Wikis have many uses, such as</p>\n\n<ul><li>For group lecture notes or study guides</li>\n<li>For members of a faculty to plan a scheme of work or meeting agenda together</li>\n<li>For students to collaboratively author an online book, creating content on a topic set by their tutor</li>\n<li>For collaborative storytelling or poetry creation, where each participant writes a line or verse</li>\n<li>As a personal journal for examination notes or revision (using an individual wiki)</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/wiki/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(25, '9145a6f0eea75c0ed6b6c683244d3812', '<p>The workshop activity module enables the collection, review and peer assessment of students'' work.</p>\n\n<p>Students can submit any digital content (files), such as word-processed documents or spreadsheets and can also type text directly into a field using the text editor.</p>\n\n<p>Submissions are assessed using a multi-criteria assessment form defined by the teacher. The process of peer assessment and understanding the assessment form can be practised in advance with example submissions provided by the teacher, together with a reference assessment. Students are given the opportunity to assess one or more of their peers'' submissions. Submissions and reviewers may be anonymous if required.</p>\n\n<p>Students obtain two grades in a workshop activity - a grade for their submission and a grade for their assessment of their peers'' submissions. Both grades are recorded in the gradebook.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/workshop/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(26, 'a7cbeeac4ef11b1b967e361a16df07e0', '<p>The book module enables a teacher to create a multi-page resource in a book-like format, with chapters and subchapters. Books can contain media files as well as text and are useful for displaying lengthy passages of information which can be broken down into sections.</p>\n\n<p>A book may be used</p>\n\n<ul><li>To display reading material for individual modules of study</li>\n<li>As a staff departmental handbook</li>\n<li>As a showcase portfolio of student work</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/book/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(27, '2a36151e6257cd9e7845ebc7d64a7683', '<p>The file module enables a teacher to provide a file as a course resource. Where possible, the file will be displayed within the course interface; otherwise students will be prompted to download it. The file may include supporting files, for example an HTML page may have embedded images or Flash objects.</p>\n\n<p>Note that students need to have the appropriate software on their computers in order to open the file.</p>\n\n<p>A file may be used</p>\n\n<ul><li>To share presentations given in class</li>\n<li>To include a mini website as a course resource</li>\n<li>To provide draft files of certain software programs (eg Photoshop .psd) so students can edit and submit them for assessment</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/resource/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(28, '6214fe2dd46adfbaba678bc5a9ef36b7', '<p>The folder module enables a teacher to display a number of related files inside a single folder, reducing scrolling on the course page. A zipped folder may be uploaded and unzipped for display, or an empty folder created and files uploaded into it.</p>\n\n<p>A folder may be used</p>\n\n<ul><li>For a series of files on one topic, for example a set of past examination papers in pdf format or a collection of image files for use in student projects</li>\n<li>To provide a shared uploading space for teachers on the course page (keeping the folder hidden so that only teachers can see it)</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/folder/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(29, '6e2fe85c9e2dd291b707ffd3e7e42553', '<p>An IMS content package is a collection of files which are packaged according to an agreed standard so they can be reused in different systems. The IMS content package module enables such content packages to be uploaded as a zip file and added to a course as a resource.</p>\n\n<p>Content is usually displayed over several pages, with navigation between the pages. There are various options for displaying content in a pop-up window, with a navigation menu or buttons etc.</p>\n\n<p>An IMS content package may be used for presenting multimedia content and animations.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/imscp/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(30, 'ce7a7d46b384913853eda8306265c125', '<p>The label module enables text and multimedia to be inserted into the course page in between links to other resources and activities. Labels are very versatile and can help to improve the appearance of a course if used thoughtfully.</p>\n\n<p>Labels may be used</p>\n\n<ul><li>To split up a long list of activities with a subheading or an image</li>\n<li>To display an embedded sound file or video directly on the course page</li>\n<li>To add a short description to a course section</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/label/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(31, 'dca72205eee77c44deb584c1185c5f6c', '<p>The page module enables a teacher to create a web page resource using the text editor. A page can display text, images, sound, video, web links and embedded code, such as Google maps.</p>\n\n<p>Advantages of using the page module rather than the file module include the resource being more accessible (for example to users of mobile devices) and easier to update.</p>\n\n<p>For large amounts of content, it''s recommended that a book is used rather than a page.</p>\n\n<p>A page may be used</p>\n\n<ul><li>To present the terms and conditions of a course or a summary of the course syllabus</li>\n<li>To embed several videos or sound files together with some explanatory text</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/page/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(32, '632697eeb9c9699ae06b2059e074ed05', '<p>The URL module enables a teacher to provide a web link as a course resource. Anything that is freely available online, such as documents or images, can be linked to; the URL doesn’t have to be the home page of a website. The URL of a particular web page may be copied and pasted or a teacher can use the file picker and choose a link from a repository such as Flickr, YouTube or Wikimedia (depending upon which repositories are enabled for the site).</p>\n\n<p>There are a number of display options for the URL, such as embedded or opening in a new window and advanced options for passing information, such as a student''s name, to the URL if required.</p>\n\n<p>Note that URLs can also be added to any other resource or activity type through the text editor.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/url/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837514),
+(33, 'd2ef8fd640993ef6114a0a1bfc251619', '<div class="no-overflow"><p>FAll 14 classes</p></div>', 1402839228),
+(34, '8a6168ef479fea96d997525d69fd8994', '<p>Here you can find various settings to change many of the colours found in this theme.</p>\n', 1402837982),
+(35, 'e9de929e33a40909a399b649cdfa4f97', '<p>This creates a dynamic slideshow of up to 4 slides for you to promote important elements of your site.</p>\n', 1402837982),
+(36, 'b784de5ce27824e87acf71751d9bd909', '<p>This adds a custom content area inbetween the Slideshow and the Marketing boxes for your own custom content</p>\n', 1402837982),
+(37, 'f1a6ae1037af9a15b66a00e30ea98d7e', '<p>This theme provides the option of enabling three "marketing" or "ad" spots just under the slideshow.  These allow you to easily identify core information to your users and provide direct links.</p>\n', 1402837982),
+(38, '606714284798ae805fadf2f6462f8e11', '<p>Provide direct links to the core social networks that promote your brand.  These will appear in the header of every page.</p>\n', 1402837982),
+(39, '26e5c6f83b4b3a9d25b0d14e1d4ad41c', '<p>If enabled this will allow you to set icons for each category of course.</p>\n', 1402837982),
+(40, 'dcea1b0e54d6a5687accf46bbe5eaaef', '<p>Have you got a web app on the App Store or Google Play Store?  Provide a link here so your users can grab the apps online</p>\n', 1402837982),
+(41, '7d8d63442d10ed79047c4effcf33779d', '<p>This will display an alert (or multiple) in three different styles to your users on the Moodle frontpage. Please remember to disable these when no longer needed.</p>\n', 1402837982),
+(42, '61fb583f2fbc71f427d6d6a74519899c', '<p>Here you can enable Google Analytics for your moodle site. You will need to sign up for a free account at the Google Analytics site (<a href="http://analytics.google.com" target="_blank">http://analytics.google.com</a>)</p>\n', 1402837982),
+(43, '8d6d3d12a562c2bbec012713441740de', '<p>When players are enabled in these settings, files can be embedded using the media filter (if enabled) or using a File or URL resources with the Embed option. When not enabled, these formats are not embedded and users can manually download or follow links to these resources.</p>\n\n<p>Where two players support the same format, enabling both increases compatibility across different devices such as mobile phones. It is possible to increase compatibility further by providing multiple files in different formats for a single audio or video clip.</p>\n', 1402837982),
+(44, 'd7e38eabf283d3f16e3c84deaec46863', '<div class="no-overflow"><p>testing course summary</p></div>', 1402839673),
+(45, '5f92dea42c8e4496ac7bb4889529ee6d', '<div class="no-overflow"><p>sads</p></div>', 1402839673),
+(46, 'f30c5d35d9642636972458b394e46ad7', '<p>By assigning a role to a user in a context, you are granting them the permissions contained in that role, for the current context and all lower contexts. For example, if a user is assigned the role of student in a course, they will also have the role of student for all activities and blocks within the course.</p>\n', 1402835598),
+(47, '2d67083378c33b0965ff56146a91148d', '<div class="no-overflow"><p>new CAtegory</p></div>', 1402835905),
+(48, '45eb2dcf8fba0c0b0a9d3465d66addae', '<div class="no-overflow">General news and announcements</div>', 1402837260),
+(49, 'e705776b43f8aa588c90a19672efd3b2', '<p>The assignment activity module enables a teacher to communicate tasks, collect work and provide grades and feedback.</p>\n\n<p>Students can submit any digital content (files), such as word-processed documents, spreadsheets, images, or audio and video clips. Alternatively, or in addition, the assignment may require students to type text directly into the text editor. An assignment can also be used to remind students of ''real-world'' assignments they need to complete offline, such as art work, and thus not require any digital content. Students can submit work individually or as a member of a group.</p>\n\n<p>When reviewing assignments, teachers can leave feedback comments and upload files, such as marked-up student submissions, documents with comments or spoken audio feedback. Assignments can be graded using a numerical or custom scale or an advanced grading method such as a rubric. Final grades are recorded in the gradebook.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/assignment/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837521),
+(50, 'f1ab7856e0ee537a041863b161be72a1', '<p>The chat activity module enables participants to have text-based, real-time synchronous discussions.</p>\n\n<p>The chat may be a one-time activity or it may be repeated at the same time each day or each week. Chat sessions are saved and can be made available for everyone to view or restricted to users with the capability to view chat session logs.</p>\n\n<p>Chats are especially useful when the group chatting is not able to meet face-to-face, such as</p>\n\n<ul><li>Regular meetings of students participating in online courses to enable them to share experiences with others in the same course but in a different location</li>\n<li>A student temporarily unable to attend in person chatting with their teacher to catch up with work</li>\n<li>Students out on work experience getting together to discuss their experiences with each other and their teacher</li>\n<li>Younger children using chat at home in the evenings as a controlled (monitored) introduction to the world of social networking</li>\n<li>A question and answer session with an invited speaker in a different location</li>\n<li>Sessions to help students prepare for tests where the teacher, or other students, would pose sample questions</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/chat/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837521),
+(51, '1ce0673384da1c26cb0e738b718d820d', '<p>The choice activity module enables a teacher to ask a single question and offer a selection of possible responses.</p>\n\n<p>Choice results may be published after students have answered, after a certain date, or not at all. Results may be published with student names or anonymously.</p>\n\n<p>A choice activity may be used</p>\n\n<ul><li>As a quick poll to stimulate thinking about a topic</li>\n<li>To quickly test students'' understanding</li>\n<li>To facilitate student decision-making, for example allowing students to vote on a direction for the course</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/choice/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837521),
+(52, '65285668034c61932692fa9878004ba9', '<p>The database activity module enables participants to create, maintain and search a collection of entries (i.e. records).  The structure of the entries is defined by the teacher as a number of fields. Field types include checkbox, radio buttons, dropdown menu, text area, URL, picture and uploaded file.</p>\n\n<p>The visual layout of information when listing, viewing or editing database entries may be controlled by database templates. Database activities may be shared between courses as presets and a teacher may also import and export database entries.</p>\n\n<p>If the database auto-linking filter is enabled, any entries in a database will be automatically linked where the words or phrases appear within the course.</p>\n\n<p>A teacher can allow comments on entries. Entries can also be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Database activities have many uses, such as</p>\n\n<ul><li>A collaborative collection of web links, books, book reviews, journal references etc</li>\n<li>For displaying student-created photos, posters, websites or poems for peer comment and review</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/data/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837521),
+(53, '1bb9a54906327ca6e901163319016629', '<p>The external tool activity module enables students to interact with learning resources and activities on other web sites. For example, an external tool could provide access to a new activity type or learning materials from a publisher.</p>\n\n<p>To create an external tool activity, a tool provider which supports LTI (Learning Tools Interoperability) is required. A teacher can create an external tool activity or make use of a tool configured by the site administrator.</p>\n\n<p>External tool activities differ from URL resources in a few ways:</p>\n\n<ul><li>External tools are context aware i.e. they have access to information about the user who launched the tool, such as institution, course and name</li>\n<li>External tools support reading, updating, and deleting grades associated with the activity instance</li>\n<li>External tool configurations create a trust relationship between your site and the tool provider, allowing secure communication between them</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/lti/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837521),
+(54, '74956cd7213d15a2fc3ee8d83d6131b1', '<p>The forum activity module enables participants to have asynchronous discussions i.e. discussions that take place over an extended period of time.</p>\n\n<p>There are several forum types to choose from, such as a standard forum where anyone can start a new discussion at any time; a forum where each student can post exactly one discussion; or a question and answer forum where students must first post before being able to view other students'' posts. A teacher can allow files to be attached to forum posts. Attached images are displayed in the forum post.</p>\n\n<p>Participants can subscribe to a forum to receive notifications of new forum posts. A teacher can set the subscription mode to optional, forced or auto, or prevent subscription completely. If required, students can be blocked from posting more than a given number of posts in a given time period; this can prevent individuals from dominating discussions.</p>\n\n<p>Forum posts can be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Forums have many uses, such as</p>\n\n<ul><li>A social space for students to get to know each other</li>\n<li>For course announcements (using a news forum with forced subscription)</li>\n<li>For discussing course content or reading materials</li>\n<li>For continuing online an issue raised previously in a face-to-face session</li>\n<li>For teacher-only discussions (using a hidden forum)</li>\n<li>A help centre where tutors and students can give advice</li>\n<li>A one-on-one support area for private student-teacher communications (using a forum with separate groups and with one student per group)</li>\n<li>For extension activities, for example ‘brain teasers’ for students to ponder and suggest solutions to</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/forum/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837521),
+(55, 'f85495103781c10cc032e699d52cb697', '<p>The glossary activity module enables participants to create and maintain a list of definitions, like a dictionary, or to collect and organise resources or information.</p>\n\n<p>A teacher can allow files to be attached to glossary entries. Attached images are displayed in the entry. Entries can be searched or browsed alphabetically or by category, date or author. Entries can be approved by default or require approval by a teacher before they are viewable by everyone.</p>\n\n<p>If the glossary auto-linking filter is enabled, entries will be automatically linked where the concept words and/or phrases appear within the course.</p>\n\n<p>A teacher can allow comments on entries. Entries can also be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Glossaries have many uses, such as</p>\n\n<ul><li>A collaborative bank of key terms</li>\n<li>A ‘getting to know you’ space where new students add their name and personal details</li>\n<li>A ‘handy tips’ resource of best practice in a practical subject</li>\n<li>A sharing area of useful videos, images or sound files</li>\n<li>A revision resource of facts to remember</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/glossary/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837521),
+(56, 'fcb760b874e153a61c344f1b54983416', '<p>The lesson activity module enables a teacher to deliver content and/or practice activities in  interesting and flexible ways. A teacher can use the lesson to create a linear set of content pages or instructional activities that offer a variety of paths or options for the learner. In either case, teachers can choose to increase engagement and ensure understanding by including a variety of questions, such as multiple choice, matching and short answer. Depending on the student''s choice of answer and how the teacher develops the lesson, students may progress to the next page, be taken back to a previous page or redirected down a different path entirely.</p>\n\n<p>A lesson may be graded, with the grade recorded in the gradebook.</p>\n\n<p>Lessons may be used</p>\n\n<ul><li>For self-directed learning of a new topic</li>\n<li>For  scenarios or simulations/decision-making exercises</li>\n<li>For differentiated revision, with different sets of revision questions depending upon answers given to initial questions</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/lesson/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837521),
+(57, 'a7855760a60a7b46d8a494f96c9a6efc', '<p>The quiz activity enables a teacher to create quizzes comprising questions of various types, including multiple choice, matching, short-answer and numerical.</p>\n\n<p>The teacher can allow the quiz to be attempted multiple times, with the questions shuffled or randomly selected from the question bank. A time limit may be set.</p>\n\n<p>Each attempt is marked automatically, with the exception of essay questions, and the grade is recorded in the gradebook.</p>\n\n<p>The teacher can choose when and if hints, feedback and correct answers are shown to students.</p>\n\n<p>Quizzes may be used</p>\n\n<ul><li>As course exams</li>\n<li>As mini tests for reading assignments or at the end of a topic</li>\n<li>As exam practice using questions from past exams</li>\n<li>To deliver immediate feedback about performance</li>\n<li>For self-assessment</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/quiz/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837521),
+(58, 'b4afbfa6b5af7e9077b85c494c0d0d94', '<p>The scheduler activity helps you in scheduling appointments with your students.</p>\n\n<p>Teachers specify time slots for meetings, students then choose one of them on Moodle.\nTeachers in turn can record the outcome of the meeting - and optionally a grade - within the scheduler.</p>\n\n<p>Group scheduling is supported; that is, each time slot can accomodate several students, and optionally it is possible to schedule appointments for entire groups at the same time.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/scheduler/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837521),
+(59, '3ad797bec0620c8f53c353f879ed7035', '<p>A SCORM package is a collection of files which are packaged according to an agreed standard for learning objects. The SCORM activity module enables SCORM or AICC packages to be uploaded as a zip file and added to a course.</p>\n\n<p>Content is usually displayed over several pages, with navigation between the pages. There are various options for displaying content in a pop-up window, with a table of contents, with navigation buttons etc. SCORM activities generally include questions, with grades being recorded in the gradebook.</p>\n\n<p>SCORM activities may be used</p>\n\n<ul><li>For presenting multimedia content and animations</li>\n<li>As an assessment tool</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/scorm/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837521),
+(60, '1f5b7ef1c71f5e1683ddf928ef7fdadf', '<p>The survey activity module provides a number of verified survey instruments that have been found useful in assessing and stimulating learning in online environments. A teacher can use these to gather data from their students that will help them learn about their class and reflect on their own teaching.</p>\n\n<p>Note that these survey tools are pre-populated with questions. Teachers who wish to create their own survey should use the feedback activity module.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/survey/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837521),
+(61, '271016f4d3ec562e11340792ec4ea7d8', '<p>The wiki activity module enables participants to add and edit a collection of web pages. A wiki can be collaborative, with everyone being able to edit it, or individual, where everyone has their own wiki which only they can edit.</p>\n\n<p>A history of previous versions of each page in the wiki is kept, listing the edits made by each participant.</p>\n\n<p>Wikis have many uses, such as</p>\n\n<ul><li>For group lecture notes or study guides</li>\n<li>For members of a faculty to plan a scheme of work or meeting agenda together</li>\n<li>For students to collaboratively author an online book, creating content on a topic set by their tutor</li>\n<li>For collaborative storytelling or poetry creation, where each participant writes a line or verse</li>\n<li>As a personal journal for examination notes or revision (using an individual wiki)</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/wiki/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837521),
+(62, '31466f594107a37ecdd82f4ffb488212', '<p>The workshop activity module enables the collection, review and peer assessment of students'' work.</p>\n\n<p>Students can submit any digital content (files), such as word-processed documents or spreadsheets and can also type text directly into a field using the text editor.</p>\n\n<p>Submissions are assessed using a multi-criteria assessment form defined by the teacher. The process of peer assessment and understanding the assessment form can be practised in advance with example submissions provided by the teacher, together with a reference assessment. Students are given the opportunity to assess one or more of their peers'' submissions. Submissions and reviewers may be anonymous if required.</p>\n\n<p>Students obtain two grades in a workshop activity - a grade for their submission and a grade for their assessment of their peers'' submissions. Both grades are recorded in the gradebook.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/workshop/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837521),
+(63, '730ef8678d788fbcbf62c4cee915d229', '<p>The book module enables a teacher to create a multi-page resource in a book-like format, with chapters and subchapters. Books can contain media files as well as text and are useful for displaying lengthy passages of information which can be broken down into sections.</p>\n\n<p>A book may be used</p>\n\n<ul><li>To display reading material for individual modules of study</li>\n<li>As a staff departmental handbook</li>\n<li>As a showcase portfolio of student work</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/book/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837521),
+(64, 'c0d26d83308d0ee62cc4aa4b0c119b10', '<p>The file module enables a teacher to provide a file as a course resource. Where possible, the file will be displayed within the course interface; otherwise students will be prompted to download it. The file may include supporting files, for example an HTML page may have embedded images or Flash objects.</p>\n\n<p>Note that students need to have the appropriate software on their computers in order to open the file.</p>\n\n<p>A file may be used</p>\n\n<ul><li>To share presentations given in class</li>\n<li>To include a mini website as a course resource</li>\n<li>To provide draft files of certain software programs (eg Photoshop .psd) so students can edit and submit them for assessment</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/resource/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837522);
 INSERT INTO `mdl_cache_text` (`id`, `md5key`, `formattedtext`, `timemodified`) VALUES
-(52, 'f0c76bef4b9e70e9fa08cc1c6018eb60', '<p>The URL module enables a teacher to provide a web link as a course resource. Anything that is freely available online, such as documents or images, can be linked to; the URL doesn’t have to be the home page of a website. The URL of a particular web page may be copied and pasted or a teacher can use the file picker and choose a link from a repository such as Flickr, YouTube or Wikimedia (depending upon which repositories are enabled for the site).</p>\n\n<p>There are a number of display options for the URL, such as embedded or opening in a new window and advanced options for passing information, such as a student''s name, to the URL if required.</p>\n\n<p>Note that URLs can also be added to any other resource or activity type through the text editor.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/url/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402746575/docs" />More help</a></div>\n', 1402746982),
-(53, 'b1e8d2cbcf9ae65839470e44637e5df8', '<p>The assignment activity module enables a teacher to communicate tasks, collect work and provide grades and feedback.</p>\n\n<p>Students can submit any digital content (files), such as word-processed documents, spreadsheets, images, or audio and video clips. Alternatively, or in addition, the assignment may require students to type text directly into the text editor. An assignment can also be used to remind students of ''real-world'' assignments they need to complete offline, such as art work, and thus not require any digital content. Students can submit work individually or as a member of a group.</p>\n\n<p>When reviewing assignments, teachers can leave feedback comments and upload files, such as marked-up student submissions, documents with comments or spoken audio feedback. Assignments can be graded using a numerical or custom scale or an advanced grading method such as a rubric. Final grades are recorded in the gradebook.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/assignment/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747769/docs" />More help</a></div>\n', 1402747775),
-(54, '416473ca865ba25ce251746c9a75ad29', '<p>The chat activity module enables participants to have text-based, real-time synchronous discussions.</p>\n\n<p>The chat may be a one-time activity or it may be repeated at the same time each day or each week. Chat sessions are saved and can be made available for everyone to view or restricted to users with the capability to view chat session logs.</p>\n\n<p>Chats are especially useful when the group chatting is not able to meet face-to-face, such as</p>\n\n<ul><li>Regular meetings of students participating in online courses to enable them to share experiences with others in the same course but in a different location</li>\n<li>A student temporarily unable to attend in person chatting with their teacher to catch up with work</li>\n<li>Students out on work experience getting together to discuss their experiences with each other and their teacher</li>\n<li>Younger children using chat at home in the evenings as a controlled (monitored) introduction to the world of social networking</li>\n<li>A question and answer session with an invited speaker in a different location</li>\n<li>Sessions to help students prepare for tests where the teacher, or other students, would pose sample questions</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/chat/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747769/docs" />More help</a></div>\n', 1402747775),
-(55, '3b9e51c6d2036401edfcaaf9eeac4e8b', '<p>The choice activity module enables a teacher to ask a single question and offer a selection of possible responses.</p>\n\n<p>Choice results may be published after students have answered, after a certain date, or not at all. Results may be published with student names or anonymously.</p>\n\n<p>A choice activity may be used</p>\n\n<ul><li>As a quick poll to stimulate thinking about a topic</li>\n<li>To quickly test students'' understanding</li>\n<li>To facilitate student decision-making, for example allowing students to vote on a direction for the course</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/choice/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747769/docs" />More help</a></div>\n', 1402747775),
-(56, '446948f96c8916fc55280e30ade2ed5b', '<p>The database activity module enables participants to create, maintain and search a collection of entries (i.e. records).  The structure of the entries is defined by the teacher as a number of fields. Field types include checkbox, radio buttons, dropdown menu, text area, URL, picture and uploaded file.</p>\n\n<p>The visual layout of information when listing, viewing or editing database entries may be controlled by database templates. Database activities may be shared between courses as presets and a teacher may also import and export database entries.</p>\n\n<p>If the database auto-linking filter is enabled, any entries in a database will be automatically linked where the words or phrases appear within the course.</p>\n\n<p>A teacher can allow comments on entries. Entries can also be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Database activities have many uses, such as</p>\n\n<ul><li>A collaborative collection of web links, books, book reviews, journal references etc</li>\n<li>For displaying student-created photos, posters, websites or poems for peer comment and review</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/data/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747769/docs" />More help</a></div>\n', 1402747775),
-(57, '4110595329398fbbd2e191f277e1d990', '<p>The external tool activity module enables students to interact with learning resources and activities on other web sites. For example, an external tool could provide access to a new activity type or learning materials from a publisher.</p>\n\n<p>To create an external tool activity, a tool provider which supports LTI (Learning Tools Interoperability) is required. A teacher can create an external tool activity or make use of a tool configured by the site administrator.</p>\n\n<p>External tool activities differ from URL resources in a few ways:</p>\n\n<ul><li>External tools are context aware i.e. they have access to information about the user who launched the tool, such as institution, course and name</li>\n<li>External tools support reading, updating, and deleting grades associated with the activity instance</li>\n<li>External tool configurations create a trust relationship between your site and the tool provider, allowing secure communication between them</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/lti/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747769/docs" />More help</a></div>\n', 1402747775),
-(58, 'f4401eee15978425feb9da8439dcc53a', '<p>The forum activity module enables participants to have asynchronous discussions i.e. discussions that take place over an extended period of time.</p>\n\n<p>There are several forum types to choose from, such as a standard forum where anyone can start a new discussion at any time; a forum where each student can post exactly one discussion; or a question and answer forum where students must first post before being able to view other students'' posts. A teacher can allow files to be attached to forum posts. Attached images are displayed in the forum post.</p>\n\n<p>Participants can subscribe to a forum to receive notifications of new forum posts. A teacher can set the subscription mode to optional, forced or auto, or prevent subscription completely. If required, students can be blocked from posting more than a given number of posts in a given time period; this can prevent individuals from dominating discussions.</p>\n\n<p>Forum posts can be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Forums have many uses, such as</p>\n\n<ul><li>A social space for students to get to know each other</li>\n<li>For course announcements (using a news forum with forced subscription)</li>\n<li>For discussing course content or reading materials</li>\n<li>For continuing online an issue raised previously in a face-to-face session</li>\n<li>For teacher-only discussions (using a hidden forum)</li>\n<li>A help centre where tutors and students can give advice</li>\n<li>A one-on-one support area for private student-teacher communications (using a forum with separate groups and with one student per group)</li>\n<li>For extension activities, for example ‘brain teasers’ for students to ponder and suggest solutions to</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/forum/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747769/docs" />More help</a></div>\n', 1402747775),
-(59, '864237b158465a316913a91ccc760011', '<p>The glossary activity module enables participants to create and maintain a list of definitions, like a dictionary, or to collect and organise resources or information.</p>\n\n<p>A teacher can allow files to be attached to glossary entries. Attached images are displayed in the entry. Entries can be searched or browsed alphabetically or by category, date or author. Entries can be approved by default or require approval by a teacher before they are viewable by everyone.</p>\n\n<p>If the glossary auto-linking filter is enabled, entries will be automatically linked where the concept words and/or phrases appear within the course.</p>\n\n<p>A teacher can allow comments on entries. Entries can also be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Glossaries have many uses, such as</p>\n\n<ul><li>A collaborative bank of key terms</li>\n<li>A ‘getting to know you’ space where new students add their name and personal details</li>\n<li>A ‘handy tips’ resource of best practice in a practical subject</li>\n<li>A sharing area of useful videos, images or sound files</li>\n<li>A revision resource of facts to remember</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/glossary/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747769/docs" />More help</a></div>\n', 1402747775),
-(60, '04cb5f0d9281e1621624bb45c3b44703', '<p>The lesson activity module enables a teacher to deliver content and/or practice activities in  interesting and flexible ways. A teacher can use the lesson to create a linear set of content pages or instructional activities that offer a variety of paths or options for the learner. In either case, teachers can choose to increase engagement and ensure understanding by including a variety of questions, such as multiple choice, matching and short answer. Depending on the student''s choice of answer and how the teacher develops the lesson, students may progress to the next page, be taken back to a previous page or redirected down a different path entirely.</p>\n\n<p>A lesson may be graded, with the grade recorded in the gradebook.</p>\n\n<p>Lessons may be used</p>\n\n<ul><li>For self-directed learning of a new topic</li>\n<li>For  scenarios or simulations/decision-making exercises</li>\n<li>For differentiated revision, with different sets of revision questions depending upon answers given to initial questions</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/lesson/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747769/docs" />More help</a></div>\n', 1402747776),
-(61, '4d768bbf82a062eb1637678e2ee35a07', '<p>The quiz activity enables a teacher to create quizzes comprising questions of various types, including multiple choice, matching, short-answer and numerical.</p>\n\n<p>The teacher can allow the quiz to be attempted multiple times, with the questions shuffled or randomly selected from the question bank. A time limit may be set.</p>\n\n<p>Each attempt is marked automatically, with the exception of essay questions, and the grade is recorded in the gradebook.</p>\n\n<p>The teacher can choose when and if hints, feedback and correct answers are shown to students.</p>\n\n<p>Quizzes may be used</p>\n\n<ul><li>As course exams</li>\n<li>As mini tests for reading assignments or at the end of a topic</li>\n<li>As exam practice using questions from past exams</li>\n<li>To deliver immediate feedback about performance</li>\n<li>For self-assessment</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/quiz/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747769/docs" />More help</a></div>\n', 1402747776),
-(62, 'adef95fb79ea99eac54fcb387a79f02e', '<p>A SCORM package is a collection of files which are packaged according to an agreed standard for learning objects. The SCORM activity module enables SCORM or AICC packages to be uploaded as a zip file and added to a course.</p>\n\n<p>Content is usually displayed over several pages, with navigation between the pages. There are various options for displaying content in a pop-up window, with a table of contents, with navigation buttons etc. SCORM activities generally include questions, with grades being recorded in the gradebook.</p>\n\n<p>SCORM activities may be used</p>\n\n<ul><li>For presenting multimedia content and animations</li>\n<li>As an assessment tool</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/scorm/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747769/docs" />More help</a></div>\n', 1402747776),
-(63, '9e1cd88e54a4e3e4ba60d5ffd50da46f', '<p>The survey activity module provides a number of verified survey instruments that have been found useful in assessing and stimulating learning in online environments. A teacher can use these to gather data from their students that will help them learn about their class and reflect on their own teaching.</p>\n\n<p>Note that these survey tools are pre-populated with questions. Teachers who wish to create their own survey should use the feedback activity module.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/survey/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747769/docs" />More help</a></div>\n', 1402747776),
-(64, '91af2a0092b230c9788521c9efc329c4', '<p>The wiki activity module enables participants to add and edit a collection of web pages. A wiki can be collaborative, with everyone being able to edit it, or individual, where everyone has their own wiki which only they can edit.</p>\n\n<p>A history of previous versions of each page in the wiki is kept, listing the edits made by each participant.</p>\n\n<p>Wikis have many uses, such as</p>\n\n<ul><li>For group lecture notes or study guides</li>\n<li>For members of a faculty to plan a scheme of work or meeting agenda together</li>\n<li>For students to collaboratively author an online book, creating content on a topic set by their tutor</li>\n<li>For collaborative storytelling or poetry creation, where each participant writes a line or verse</li>\n<li>As a personal journal for examination notes or revision (using an individual wiki)</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/wiki/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747769/docs" />More help</a></div>\n', 1402747776),
-(65, 'ca83d75c312d29c06a1522266904d3ef', '<p>The workshop activity module enables the collection, review and peer assessment of students'' work.</p>\n\n<p>Students can submit any digital content (files), such as word-processed documents or spreadsheets and can also type text directly into a field using the text editor.</p>\n\n<p>Submissions are assessed using a multi-criteria assessment form defined by the teacher. The process of peer assessment and understanding the assessment form can be practised in advance with example submissions provided by the teacher, together with a reference assessment. Students are given the opportunity to assess one or more of their peers'' submissions. Submissions and reviewers may be anonymous if required.</p>\n\n<p>Students obtain two grades in a workshop activity - a grade for their submission and a grade for their assessment of their peers'' submissions. Both grades are recorded in the gradebook.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/workshop/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747769/docs" />More help</a></div>\n', 1402747776),
-(66, 'be05cd8a71fa26740113a1ac56a4a3cb', '<p>The book module enables a teacher to create a multi-page resource in a book-like format, with chapters and subchapters. Books can contain media files as well as text and are useful for displaying lengthy passages of information which can be broken down into sections.</p>\n\n<p>A book may be used</p>\n\n<ul><li>To display reading material for individual modules of study</li>\n<li>As a staff departmental handbook</li>\n<li>As a showcase portfolio of student work</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/book/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747769/docs" />More help</a></div>\n', 1402747776),
-(67, '6524ef05c5c1e57a6175d821634846da', '<p>The file module enables a teacher to provide a file as a course resource. Where possible, the file will be displayed within the course interface; otherwise students will be prompted to download it. The file may include supporting files, for example an HTML page may have embedded images or Flash objects.</p>\n\n<p>Note that students need to have the appropriate software on their computers in order to open the file.</p>\n\n<p>A file may be used</p>\n\n<ul><li>To share presentations given in class</li>\n<li>To include a mini website as a course resource</li>\n<li>To provide draft files of certain software programs (eg Photoshop .psd) so students can edit and submit them for assessment</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/resource/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747769/docs" />More help</a></div>\n', 1402747776),
-(68, '59ca8f876e95f867c55f396e6f2e936f', '<p>The folder module enables a teacher to display a number of related files inside a single folder, reducing scrolling on the course page. A zipped folder may be uploaded and unzipped for display, or an empty folder created and files uploaded into it.</p>\n\n<p>A folder may be used</p>\n\n<ul><li>For a series of files on one topic, for example a set of past examination papers in pdf format or a collection of image files for use in student projects</li>\n<li>To provide a shared uploading space for teachers on the course page (keeping the folder hidden so that only teachers can see it)</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/folder/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747769/docs" />More help</a></div>\n', 1402747776),
-(69, '547b259895337603a071dcb99c5129fb', '<p>An IMS content package is a collection of files which are packaged according to an agreed standard so they can be reused in different systems. The IMS content package module enables such content packages to be uploaded as a zip file and added to a course as a resource.</p>\n\n<p>Content is usually displayed over several pages, with navigation between the pages. There are various options for displaying content in a pop-up window, with a navigation menu or buttons etc.</p>\n\n<p>An IMS content package may be used for presenting multimedia content and animations.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/imscp/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747769/docs" />More help</a></div>\n', 1402747776),
-(70, '177f69fd516ef45f77369df009aca58d', '<p>The label module enables text and multimedia to be inserted into the course page in between links to other resources and activities. Labels are very versatile and can help to improve the appearance of a course if used thoughtfully.</p>\n\n<p>Labels may be used</p>\n\n<ul><li>To split up a long list of activities with a subheading or an image</li>\n<li>To display an embedded sound file or video directly on the course page</li>\n<li>To add a short description to a course section</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/label/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747769/docs" />More help</a></div>\n', 1402747776),
-(71, '522b1dd1e179b10d35012af1ae8bf466', '<p>The page module enables a teacher to create a web page resource using the text editor. A page can display text, images, sound, video, web links and embedded code, such as Google maps.</p>\n\n<p>Advantages of using the page module rather than the file module include the resource being more accessible (for example to users of mobile devices) and easier to update.</p>\n\n<p>For large amounts of content, it''s recommended that a book is used rather than a page.</p>\n\n<p>A page may be used</p>\n\n<ul><li>To present the terms and conditions of a course or a summary of the course syllabus</li>\n<li>To embed several videos or sound files together with some explanatory text</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/page/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747769/docs" />More help</a></div>\n', 1402747776),
-(72, 'cf20560505092765a658ab89e981b78f', '<p>The URL module enables a teacher to provide a web link as a course resource. Anything that is freely available online, such as documents or images, can be linked to; the URL doesn’t have to be the home page of a website. The URL of a particular web page may be copied and pasted or a teacher can use the file picker and choose a link from a repository such as Flickr, YouTube or Wikimedia (depending upon which repositories are enabled for the site).</p>\n\n<p>There are a number of display options for the URL, such as embedded or opening in a new window and advanced options for passing information, such as a student''s name, to the URL if required.</p>\n\n<p>Note that URLs can also be added to any other resource or activity type through the text editor.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/url/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747769/docs" />More help</a></div>\n', 1402747776),
-(73, 'd95d6a2cf5112966f55db526e7886acb', '<p>The assignment activity module enables a teacher to communicate tasks, collect work and provide grades and feedback.</p>\n\n<p>Students can submit any digital content (files), such as word-processed documents, spreadsheets, images, or audio and video clips. Alternatively, or in addition, the assignment may require students to type text directly into the text editor. An assignment can also be used to remind students of ''real-world'' assignments they need to complete offline, such as art work, and thus not require any digital content. Students can submit work individually or as a member of a group.</p>\n\n<p>When reviewing assignments, teachers can leave feedback comments and upload files, such as marked-up student submissions, documents with comments or spoken audio feedback. Assignments can be graded using a numerical or custom scale or an advanced grading method such as a rubric. Final grades are recorded in the gradebook.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/assignment/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747822/docs" />More help</a></div>\n', 1402747826),
-(74, '66d1c568c7eac90b9cdcc36dd30cef89', '<p>The chat activity module enables participants to have text-based, real-time synchronous discussions.</p>\n\n<p>The chat may be a one-time activity or it may be repeated at the same time each day or each week. Chat sessions are saved and can be made available for everyone to view or restricted to users with the capability to view chat session logs.</p>\n\n<p>Chats are especially useful when the group chatting is not able to meet face-to-face, such as</p>\n\n<ul><li>Regular meetings of students participating in online courses to enable them to share experiences with others in the same course but in a different location</li>\n<li>A student temporarily unable to attend in person chatting with their teacher to catch up with work</li>\n<li>Students out on work experience getting together to discuss their experiences with each other and their teacher</li>\n<li>Younger children using chat at home in the evenings as a controlled (monitored) introduction to the world of social networking</li>\n<li>A question and answer session with an invited speaker in a different location</li>\n<li>Sessions to help students prepare for tests where the teacher, or other students, would pose sample questions</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/chat/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747822/docs" />More help</a></div>\n', 1402747826),
-(75, 'dd8cfcec20c561737c37cb47507fde3c', '<p>The choice activity module enables a teacher to ask a single question and offer a selection of possible responses.</p>\n\n<p>Choice results may be published after students have answered, after a certain date, or not at all. Results may be published with student names or anonymously.</p>\n\n<p>A choice activity may be used</p>\n\n<ul><li>As a quick poll to stimulate thinking about a topic</li>\n<li>To quickly test students'' understanding</li>\n<li>To facilitate student decision-making, for example allowing students to vote on a direction for the course</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/choice/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747822/docs" />More help</a></div>\n', 1402747826),
-(76, '659096135e0e17933b0f4485cbacd04a', '<p>The database activity module enables participants to create, maintain and search a collection of entries (i.e. records).  The structure of the entries is defined by the teacher as a number of fields. Field types include checkbox, radio buttons, dropdown menu, text area, URL, picture and uploaded file.</p>\n\n<p>The visual layout of information when listing, viewing or editing database entries may be controlled by database templates. Database activities may be shared between courses as presets and a teacher may also import and export database entries.</p>\n\n<p>If the database auto-linking filter is enabled, any entries in a database will be automatically linked where the words or phrases appear within the course.</p>\n\n<p>A teacher can allow comments on entries. Entries can also be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Database activities have many uses, such as</p>\n\n<ul><li>A collaborative collection of web links, books, book reviews, journal references etc</li>\n<li>For displaying student-created photos, posters, websites or poems for peer comment and review</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/data/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747822/docs" />More help</a></div>\n', 1402747826),
-(77, 'c36150f330b9ed499c65dfa391c8ebd7', '<p>The external tool activity module enables students to interact with learning resources and activities on other web sites. For example, an external tool could provide access to a new activity type or learning materials from a publisher.</p>\n\n<p>To create an external tool activity, a tool provider which supports LTI (Learning Tools Interoperability) is required. A teacher can create an external tool activity or make use of a tool configured by the site administrator.</p>\n\n<p>External tool activities differ from URL resources in a few ways:</p>\n\n<ul><li>External tools are context aware i.e. they have access to information about the user who launched the tool, such as institution, course and name</li>\n<li>External tools support reading, updating, and deleting grades associated with the activity instance</li>\n<li>External tool configurations create a trust relationship between your site and the tool provider, allowing secure communication between them</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/lti/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747822/docs" />More help</a></div>\n', 1402747826),
-(78, '72c3297210e5786d7116a0f1f8a7a786', '<p>The forum activity module enables participants to have asynchronous discussions i.e. discussions that take place over an extended period of time.</p>\n\n<p>There are several forum types to choose from, such as a standard forum where anyone can start a new discussion at any time; a forum where each student can post exactly one discussion; or a question and answer forum where students must first post before being able to view other students'' posts. A teacher can allow files to be attached to forum posts. Attached images are displayed in the forum post.</p>\n\n<p>Participants can subscribe to a forum to receive notifications of new forum posts. A teacher can set the subscription mode to optional, forced or auto, or prevent subscription completely. If required, students can be blocked from posting more than a given number of posts in a given time period; this can prevent individuals from dominating discussions.</p>\n\n<p>Forum posts can be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Forums have many uses, such as</p>\n\n<ul><li>A social space for students to get to know each other</li>\n<li>For course announcements (using a news forum with forced subscription)</li>\n<li>For discussing course content or reading materials</li>\n<li>For continuing online an issue raised previously in a face-to-face session</li>\n<li>For teacher-only discussions (using a hidden forum)</li>\n<li>A help centre where tutors and students can give advice</li>\n<li>A one-on-one support area for private student-teacher communications (using a forum with separate groups and with one student per group)</li>\n<li>For extension activities, for example ‘brain teasers’ for students to ponder and suggest solutions to</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/forum/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747822/docs" />More help</a></div>\n', 1402747826),
-(79, '676718602bb912a83c8a6ceec14e0d54', '<p>The glossary activity module enables participants to create and maintain a list of definitions, like a dictionary, or to collect and organise resources or information.</p>\n\n<p>A teacher can allow files to be attached to glossary entries. Attached images are displayed in the entry. Entries can be searched or browsed alphabetically or by category, date or author. Entries can be approved by default or require approval by a teacher before they are viewable by everyone.</p>\n\n<p>If the glossary auto-linking filter is enabled, entries will be automatically linked where the concept words and/or phrases appear within the course.</p>\n\n<p>A teacher can allow comments on entries. Entries can also be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Glossaries have many uses, such as</p>\n\n<ul><li>A collaborative bank of key terms</li>\n<li>A ‘getting to know you’ space where new students add their name and personal details</li>\n<li>A ‘handy tips’ resource of best practice in a practical subject</li>\n<li>A sharing area of useful videos, images or sound files</li>\n<li>A revision resource of facts to remember</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/glossary/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747822/docs" />More help</a></div>\n', 1402747826),
-(80, 'b68480202435f269fd08787e6d7e4472', '<p>The lesson activity module enables a teacher to deliver content and/or practice activities in  interesting and flexible ways. A teacher can use the lesson to create a linear set of content pages or instructional activities that offer a variety of paths or options for the learner. In either case, teachers can choose to increase engagement and ensure understanding by including a variety of questions, such as multiple choice, matching and short answer. Depending on the student''s choice of answer and how the teacher develops the lesson, students may progress to the next page, be taken back to a previous page or redirected down a different path entirely.</p>\n\n<p>A lesson may be graded, with the grade recorded in the gradebook.</p>\n\n<p>Lessons may be used</p>\n\n<ul><li>For self-directed learning of a new topic</li>\n<li>For  scenarios or simulations/decision-making exercises</li>\n<li>For differentiated revision, with different sets of revision questions depending upon answers given to initial questions</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/lesson/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747822/docs" />More help</a></div>\n', 1402747826),
-(81, '7ded26f823bd1499215278dc84f6ae1c', '<p>The quiz activity enables a teacher to create quizzes comprising questions of various types, including multiple choice, matching, short-answer and numerical.</p>\n\n<p>The teacher can allow the quiz to be attempted multiple times, with the questions shuffled or randomly selected from the question bank. A time limit may be set.</p>\n\n<p>Each attempt is marked automatically, with the exception of essay questions, and the grade is recorded in the gradebook.</p>\n\n<p>The teacher can choose when and if hints, feedback and correct answers are shown to students.</p>\n\n<p>Quizzes may be used</p>\n\n<ul><li>As course exams</li>\n<li>As mini tests for reading assignments or at the end of a topic</li>\n<li>As exam practice using questions from past exams</li>\n<li>To deliver immediate feedback about performance</li>\n<li>For self-assessment</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/quiz/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747822/docs" />More help</a></div>\n', 1402747826),
-(82, '3b27426f327e159c808dcb37261cf7fe', '<p>A SCORM package is a collection of files which are packaged according to an agreed standard for learning objects. The SCORM activity module enables SCORM or AICC packages to be uploaded as a zip file and added to a course.</p>\n\n<p>Content is usually displayed over several pages, with navigation between the pages. There are various options for displaying content in a pop-up window, with a table of contents, with navigation buttons etc. SCORM activities generally include questions, with grades being recorded in the gradebook.</p>\n\n<p>SCORM activities may be used</p>\n\n<ul><li>For presenting multimedia content and animations</li>\n<li>As an assessment tool</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/scorm/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747822/docs" />More help</a></div>\n', 1402747826),
-(83, '72694398aa67800ae97c24dc630ee0aa', '<p>The survey activity module provides a number of verified survey instruments that have been found useful in assessing and stimulating learning in online environments. A teacher can use these to gather data from their students that will help them learn about their class and reflect on their own teaching.</p>\n\n<p>Note that these survey tools are pre-populated with questions. Teachers who wish to create their own survey should use the feedback activity module.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/survey/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747822/docs" />More help</a></div>\n', 1402747827),
-(84, '7129055fa6767e052f747a052c638ae2', '<p>The wiki activity module enables participants to add and edit a collection of web pages. A wiki can be collaborative, with everyone being able to edit it, or individual, where everyone has their own wiki which only they can edit.</p>\n\n<p>A history of previous versions of each page in the wiki is kept, listing the edits made by each participant.</p>\n\n<p>Wikis have many uses, such as</p>\n\n<ul><li>For group lecture notes or study guides</li>\n<li>For members of a faculty to plan a scheme of work or meeting agenda together</li>\n<li>For students to collaboratively author an online book, creating content on a topic set by their tutor</li>\n<li>For collaborative storytelling or poetry creation, where each participant writes a line or verse</li>\n<li>As a personal journal for examination notes or revision (using an individual wiki)</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/wiki/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747822/docs" />More help</a></div>\n', 1402747827),
-(85, '7ba88383327a5afce366d433015bbd3d', '<p>The workshop activity module enables the collection, review and peer assessment of students'' work.</p>\n\n<p>Students can submit any digital content (files), such as word-processed documents or spreadsheets and can also type text directly into a field using the text editor.</p>\n\n<p>Submissions are assessed using a multi-criteria assessment form defined by the teacher. The process of peer assessment and understanding the assessment form can be practised in advance with example submissions provided by the teacher, together with a reference assessment. Students are given the opportunity to assess one or more of their peers'' submissions. Submissions and reviewers may be anonymous if required.</p>\n\n<p>Students obtain two grades in a workshop activity - a grade for their submission and a grade for their assessment of their peers'' submissions. Both grades are recorded in the gradebook.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/workshop/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747822/docs" />More help</a></div>\n', 1402747827),
-(86, 'c5ccc4b1deffa3aacc849b9854ddc3b0', '<p>The book module enables a teacher to create a multi-page resource in a book-like format, with chapters and subchapters. Books can contain media files as well as text and are useful for displaying lengthy passages of information which can be broken down into sections.</p>\n\n<p>A book may be used</p>\n\n<ul><li>To display reading material for individual modules of study</li>\n<li>As a staff departmental handbook</li>\n<li>As a showcase portfolio of student work</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/book/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747822/docs" />More help</a></div>\n', 1402747827),
-(87, '9e3d92806197c012f10aba2c81c885eb', '<p>The file module enables a teacher to provide a file as a course resource. Where possible, the file will be displayed within the course interface; otherwise students will be prompted to download it. The file may include supporting files, for example an HTML page may have embedded images or Flash objects.</p>\n\n<p>Note that students need to have the appropriate software on their computers in order to open the file.</p>\n\n<p>A file may be used</p>\n\n<ul><li>To share presentations given in class</li>\n<li>To include a mini website as a course resource</li>\n<li>To provide draft files of certain software programs (eg Photoshop .psd) so students can edit and submit them for assessment</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/resource/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747822/docs" />More help</a></div>\n', 1402747827),
-(88, '488cd907f238cb008bae0119216d6207', '<p>The folder module enables a teacher to display a number of related files inside a single folder, reducing scrolling on the course page. A zipped folder may be uploaded and unzipped for display, or an empty folder created and files uploaded into it.</p>\n\n<p>A folder may be used</p>\n\n<ul><li>For a series of files on one topic, for example a set of past examination papers in pdf format or a collection of image files for use in student projects</li>\n<li>To provide a shared uploading space for teachers on the course page (keeping the folder hidden so that only teachers can see it)</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/folder/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747822/docs" />More help</a></div>\n', 1402747827),
-(89, '669fc3a30614738a4dcafec274e32efa', '<p>An IMS content package is a collection of files which are packaged according to an agreed standard so they can be reused in different systems. The IMS content package module enables such content packages to be uploaded as a zip file and added to a course as a resource.</p>\n\n<p>Content is usually displayed over several pages, with navigation between the pages. There are various options for displaying content in a pop-up window, with a navigation menu or buttons etc.</p>\n\n<p>An IMS content package may be used for presenting multimedia content and animations.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/imscp/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747822/docs" />More help</a></div>\n', 1402747827),
-(90, 'ca0f0b0a0d41f75e7feede0bf9034a8c', '<p>The label module enables text and multimedia to be inserted into the course page in between links to other resources and activities. Labels are very versatile and can help to improve the appearance of a course if used thoughtfully.</p>\n\n<p>Labels may be used</p>\n\n<ul><li>To split up a long list of activities with a subheading or an image</li>\n<li>To display an embedded sound file or video directly on the course page</li>\n<li>To add a short description to a course section</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/label/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747822/docs" />More help</a></div>\n', 1402747827),
-(91, 'bf5838bfbc413319fd2132638414e6d0', '<p>The page module enables a teacher to create a web page resource using the text editor. A page can display text, images, sound, video, web links and embedded code, such as Google maps.</p>\n\n<p>Advantages of using the page module rather than the file module include the resource being more accessible (for example to users of mobile devices) and easier to update.</p>\n\n<p>For large amounts of content, it''s recommended that a book is used rather than a page.</p>\n\n<p>A page may be used</p>\n\n<ul><li>To present the terms and conditions of a course or a summary of the course syllabus</li>\n<li>To embed several videos or sound files together with some explanatory text</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/page/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747822/docs" />More help</a></div>\n', 1402747827),
-(92, 'dc32dc40f07f48e53809839858c27379', '<p>The URL module enables a teacher to provide a web link as a course resource. Anything that is freely available online, such as documents or images, can be linked to; the URL doesn’t have to be the home page of a website. The URL of a particular web page may be copied and pasted or a teacher can use the file picker and choose a link from a repository such as Flickr, YouTube or Wikimedia (depending upon which repositories are enabled for the site).</p>\n\n<p>There are a number of display options for the URL, such as embedded or opening in a new window and advanced options for passing information, such as a student''s name, to the URL if required.</p>\n\n<p>Note that URLs can also be added to any other resource or activity type through the text editor.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/url/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747822/docs" />More help</a></div>\n', 1402747827),
-(93, 'fba0be9b8c48bc1dea510383613c695e', '<p>The assignment activity module enables a teacher to communicate tasks, collect work and provide grades and feedback.</p>\n\n<p>Students can submit any digital content (files), such as word-processed documents, spreadsheets, images, or audio and video clips. Alternatively, or in addition, the assignment may require students to type text directly into the text editor. An assignment can also be used to remind students of ''real-world'' assignments they need to complete offline, such as art work, and thus not require any digital content. Students can submit work individually or as a member of a group.</p>\n\n<p>When reviewing assignments, teachers can leave feedback comments and upload files, such as marked-up student submissions, documents with comments or spoken audio feedback. Assignments can be graded using a numerical or custom scale or an advanced grading method such as a rubric. Final grades are recorded in the gradebook.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/assignment/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747862/docs" />More help</a></div>\n', 1402752805);
-INSERT INTO `mdl_cache_text` (`id`, `md5key`, `formattedtext`, `timemodified`) VALUES
-(94, '44adb5deb7eb52d4d389bb521202b829', '<p>The chat activity module enables participants to have text-based, real-time synchronous discussions.</p>\n\n<p>The chat may be a one-time activity or it may be repeated at the same time each day or each week. Chat sessions are saved and can be made available for everyone to view or restricted to users with the capability to view chat session logs.</p>\n\n<p>Chats are especially useful when the group chatting is not able to meet face-to-face, such as</p>\n\n<ul><li>Regular meetings of students participating in online courses to enable them to share experiences with others in the same course but in a different location</li>\n<li>A student temporarily unable to attend in person chatting with their teacher to catch up with work</li>\n<li>Students out on work experience getting together to discuss their experiences with each other and their teacher</li>\n<li>Younger children using chat at home in the evenings as a controlled (monitored) introduction to the world of social networking</li>\n<li>A question and answer session with an invited speaker in a different location</li>\n<li>Sessions to help students prepare for tests where the teacher, or other students, would pose sample questions</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/chat/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747862/docs" />More help</a></div>\n', 1402752805),
-(95, '43b4dd9193793d5e8ad53f55a4a63c14', '<p>The choice activity module enables a teacher to ask a single question and offer a selection of possible responses.</p>\n\n<p>Choice results may be published after students have answered, after a certain date, or not at all. Results may be published with student names or anonymously.</p>\n\n<p>A choice activity may be used</p>\n\n<ul><li>As a quick poll to stimulate thinking about a topic</li>\n<li>To quickly test students'' understanding</li>\n<li>To facilitate student decision-making, for example allowing students to vote on a direction for the course</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/choice/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747862/docs" />More help</a></div>\n', 1402752805),
-(96, 'e277d922f4e206debb2da8811aa77599', '<p>The database activity module enables participants to create, maintain and search a collection of entries (i.e. records).  The structure of the entries is defined by the teacher as a number of fields. Field types include checkbox, radio buttons, dropdown menu, text area, URL, picture and uploaded file.</p>\n\n<p>The visual layout of information when listing, viewing or editing database entries may be controlled by database templates. Database activities may be shared between courses as presets and a teacher may also import and export database entries.</p>\n\n<p>If the database auto-linking filter is enabled, any entries in a database will be automatically linked where the words or phrases appear within the course.</p>\n\n<p>A teacher can allow comments on entries. Entries can also be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Database activities have many uses, such as</p>\n\n<ul><li>A collaborative collection of web links, books, book reviews, journal references etc</li>\n<li>For displaying student-created photos, posters, websites or poems for peer comment and review</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/data/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747862/docs" />More help</a></div>\n', 1402752805),
-(97, '8f0b84dceedd92c9a09d0ce58a9d88c4', '<p>The external tool activity module enables students to interact with learning resources and activities on other web sites. For example, an external tool could provide access to a new activity type or learning materials from a publisher.</p>\n\n<p>To create an external tool activity, a tool provider which supports LTI (Learning Tools Interoperability) is required. A teacher can create an external tool activity or make use of a tool configured by the site administrator.</p>\n\n<p>External tool activities differ from URL resources in a few ways:</p>\n\n<ul><li>External tools are context aware i.e. they have access to information about the user who launched the tool, such as institution, course and name</li>\n<li>External tools support reading, updating, and deleting grades associated with the activity instance</li>\n<li>External tool configurations create a trust relationship between your site and the tool provider, allowing secure communication between them</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/lti/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747862/docs" />More help</a></div>\n', 1402752805),
-(98, 'c99523e5daaa641ff9e0c7d0b2130e99', '<p>The forum activity module enables participants to have asynchronous discussions i.e. discussions that take place over an extended period of time.</p>\n\n<p>There are several forum types to choose from, such as a standard forum where anyone can start a new discussion at any time; a forum where each student can post exactly one discussion; or a question and answer forum where students must first post before being able to view other students'' posts. A teacher can allow files to be attached to forum posts. Attached images are displayed in the forum post.</p>\n\n<p>Participants can subscribe to a forum to receive notifications of new forum posts. A teacher can set the subscription mode to optional, forced or auto, or prevent subscription completely. If required, students can be blocked from posting more than a given number of posts in a given time period; this can prevent individuals from dominating discussions.</p>\n\n<p>Forum posts can be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Forums have many uses, such as</p>\n\n<ul><li>A social space for students to get to know each other</li>\n<li>For course announcements (using a news forum with forced subscription)</li>\n<li>For discussing course content or reading materials</li>\n<li>For continuing online an issue raised previously in a face-to-face session</li>\n<li>For teacher-only discussions (using a hidden forum)</li>\n<li>A help centre where tutors and students can give advice</li>\n<li>A one-on-one support area for private student-teacher communications (using a forum with separate groups and with one student per group)</li>\n<li>For extension activities, for example ‘brain teasers’ for students to ponder and suggest solutions to</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/forum/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747862/docs" />More help</a></div>\n', 1402752805),
-(99, 'c6227a0cf58f9c97194bf0fcfe4749a6', '<p>The glossary activity module enables participants to create and maintain a list of definitions, like a dictionary, or to collect and organise resources or information.</p>\n\n<p>A teacher can allow files to be attached to glossary entries. Attached images are displayed in the entry. Entries can be searched or browsed alphabetically or by category, date or author. Entries can be approved by default or require approval by a teacher before they are viewable by everyone.</p>\n\n<p>If the glossary auto-linking filter is enabled, entries will be automatically linked where the concept words and/or phrases appear within the course.</p>\n\n<p>A teacher can allow comments on entries. Entries can also be rated by teachers or students (peer evaluation). Ratings can be aggregated to form a final grade which is recorded in the gradebook.</p>\n\n<p>Glossaries have many uses, such as</p>\n\n<ul><li>A collaborative bank of key terms</li>\n<li>A ‘getting to know you’ space where new students add their name and personal details</li>\n<li>A ‘handy tips’ resource of best practice in a practical subject</li>\n<li>A sharing area of useful videos, images or sound files</li>\n<li>A revision resource of facts to remember</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/glossary/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747862/docs" />More help</a></div>\n', 1402752805),
-(100, '6d1fed260d0ba9dd56929ae827c53860', '<p>The lesson activity module enables a teacher to deliver content and/or practice activities in  interesting and flexible ways. A teacher can use the lesson to create a linear set of content pages or instructional activities that offer a variety of paths or options for the learner. In either case, teachers can choose to increase engagement and ensure understanding by including a variety of questions, such as multiple choice, matching and short answer. Depending on the student''s choice of answer and how the teacher develops the lesson, students may progress to the next page, be taken back to a previous page or redirected down a different path entirely.</p>\n\n<p>A lesson may be graded, with the grade recorded in the gradebook.</p>\n\n<p>Lessons may be used</p>\n\n<ul><li>For self-directed learning of a new topic</li>\n<li>For  scenarios or simulations/decision-making exercises</li>\n<li>For differentiated revision, with different sets of revision questions depending upon answers given to initial questions</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/lesson/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747862/docs" />More help</a></div>\n', 1402752805),
-(101, '8091c15ad0836f8e1e444f5dd9c8a301', '<p>The quiz activity enables a teacher to create quizzes comprising questions of various types, including multiple choice, matching, short-answer and numerical.</p>\n\n<p>The teacher can allow the quiz to be attempted multiple times, with the questions shuffled or randomly selected from the question bank. A time limit may be set.</p>\n\n<p>Each attempt is marked automatically, with the exception of essay questions, and the grade is recorded in the gradebook.</p>\n\n<p>The teacher can choose when and if hints, feedback and correct answers are shown to students.</p>\n\n<p>Quizzes may be used</p>\n\n<ul><li>As course exams</li>\n<li>As mini tests for reading assignments or at the end of a topic</li>\n<li>As exam practice using questions from past exams</li>\n<li>To deliver immediate feedback about performance</li>\n<li>For self-assessment</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/quiz/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747862/docs" />More help</a></div>\n', 1402752805),
-(102, '115f5dc1ce4717146334872fa5cd8e3f', '<p>A SCORM package is a collection of files which are packaged according to an agreed standard for learning objects. The SCORM activity module enables SCORM or AICC packages to be uploaded as a zip file and added to a course.</p>\n\n<p>Content is usually displayed over several pages, with navigation between the pages. There are various options for displaying content in a pop-up window, with a table of contents, with navigation buttons etc. SCORM activities generally include questions, with grades being recorded in the gradebook.</p>\n\n<p>SCORM activities may be used</p>\n\n<ul><li>For presenting multimedia content and animations</li>\n<li>As an assessment tool</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/scorm/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747862/docs" />More help</a></div>\n', 1402752805),
-(103, '53ac2e58162f650694b991ac2fa07e78', '<p>The survey activity module provides a number of verified survey instruments that have been found useful in assessing and stimulating learning in online environments. A teacher can use these to gather data from their students that will help them learn about their class and reflect on their own teaching.</p>\n\n<p>Note that these survey tools are pre-populated with questions. Teachers who wish to create their own survey should use the feedback activity module.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/survey/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747862/docs" />More help</a></div>\n', 1402752805),
-(104, 'eebbe2b71af2cb11528b6ee95fd95a48', '<p>The wiki activity module enables participants to add and edit a collection of web pages. A wiki can be collaborative, with everyone being able to edit it, or individual, where everyone has their own wiki which only they can edit.</p>\n\n<p>A history of previous versions of each page in the wiki is kept, listing the edits made by each participant.</p>\n\n<p>Wikis have many uses, such as</p>\n\n<ul><li>For group lecture notes or study guides</li>\n<li>For members of a faculty to plan a scheme of work or meeting agenda together</li>\n<li>For students to collaboratively author an online book, creating content on a topic set by their tutor</li>\n<li>For collaborative storytelling or poetry creation, where each participant writes a line or verse</li>\n<li>As a personal journal for examination notes or revision (using an individual wiki)</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/wiki/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747862/docs" />More help</a></div>\n', 1402752805),
-(105, 'b7a75328f527a86a7951138ebd547957', '<p>The workshop activity module enables the collection, review and peer assessment of students'' work.</p>\n\n<p>Students can submit any digital content (files), such as word-processed documents or spreadsheets and can also type text directly into a field using the text editor.</p>\n\n<p>Submissions are assessed using a multi-criteria assessment form defined by the teacher. The process of peer assessment and understanding the assessment form can be practised in advance with example submissions provided by the teacher, together with a reference assessment. Students are given the opportunity to assess one or more of their peers'' submissions. Submissions and reviewers may be anonymous if required.</p>\n\n<p>Students obtain two grades in a workshop activity - a grade for their submission and a grade for their assessment of their peers'' submissions. Both grades are recorded in the gradebook.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/workshop/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747862/docs" />More help</a></div>\n', 1402752805),
-(106, 'b9cb8462ecc884ea3550980c09bfa315', '<p>The book module enables a teacher to create a multi-page resource in a book-like format, with chapters and subchapters. Books can contain media files as well as text and are useful for displaying lengthy passages of information which can be broken down into sections.</p>\n\n<p>A book may be used</p>\n\n<ul><li>To display reading material for individual modules of study</li>\n<li>As a staff departmental handbook</li>\n<li>As a showcase portfolio of student work</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/book/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747862/docs" />More help</a></div>\n', 1402752805),
-(107, 'bea50478e0119636a5c1bc78a2aac5bd', '<p>The file module enables a teacher to provide a file as a course resource. Where possible, the file will be displayed within the course interface; otherwise students will be prompted to download it. The file may include supporting files, for example an HTML page may have embedded images or Flash objects.</p>\n\n<p>Note that students need to have the appropriate software on their computers in order to open the file.</p>\n\n<p>A file may be used</p>\n\n<ul><li>To share presentations given in class</li>\n<li>To include a mini website as a course resource</li>\n<li>To provide draft files of certain software programs (eg Photoshop .psd) so students can edit and submit them for assessment</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/resource/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747862/docs" />More help</a></div>\n', 1402752805),
-(108, '7422ec39477e433fbd2074aa4a3ed716', '<p>The folder module enables a teacher to display a number of related files inside a single folder, reducing scrolling on the course page. A zipped folder may be uploaded and unzipped for display, or an empty folder created and files uploaded into it.</p>\n\n<p>A folder may be used</p>\n\n<ul><li>For a series of files on one topic, for example a set of past examination papers in pdf format or a collection of image files for use in student projects</li>\n<li>To provide a shared uploading space for teachers on the course page (keeping the folder hidden so that only teachers can see it)</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/folder/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747862/docs" />More help</a></div>\n', 1402752805),
-(109, 'e08aa145f36ad8b0c6bd50d715984785', '<p>An IMS content package is a collection of files which are packaged according to an agreed standard so they can be reused in different systems. The IMS content package module enables such content packages to be uploaded as a zip file and added to a course as a resource.</p>\n\n<p>Content is usually displayed over several pages, with navigation between the pages. There are various options for displaying content in a pop-up window, with a navigation menu or buttons etc.</p>\n\n<p>An IMS content package may be used for presenting multimedia content and animations.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/imscp/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747862/docs" />More help</a></div>\n', 1402752806),
-(110, '2cccd46035cb3c650ae79df36f49ece3', '<p>The label module enables text and multimedia to be inserted into the course page in between links to other resources and activities. Labels are very versatile and can help to improve the appearance of a course if used thoughtfully.</p>\n\n<p>Labels may be used</p>\n\n<ul><li>To split up a long list of activities with a subheading or an image</li>\n<li>To display an embedded sound file or video directly on the course page</li>\n<li>To add a short description to a course section</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/label/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747862/docs" />More help</a></div>\n', 1402752806),
-(111, '4956f8c3463ef5868ab39e4cdead1da4', '<p>The page module enables a teacher to create a web page resource using the text editor. A page can display text, images, sound, video, web links and embedded code, such as Google maps.</p>\n\n<p>Advantages of using the page module rather than the file module include the resource being more accessible (for example to users of mobile devices) and easier to update.</p>\n\n<p>For large amounts of content, it''s recommended that a book is used rather than a page.</p>\n\n<p>A page may be used</p>\n\n<ul><li>To present the terms and conditions of a course or a summary of the course syllabus</li>\n<li>To embed several videos or sound files together with some explanatory text</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/page/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747862/docs" />More help</a></div>\n', 1402752806),
-(112, 'e59e4abdee66a86cc7f9c39086c752d5', '<p>The URL module enables a teacher to provide a web link as a course resource. Anything that is freely available online, such as documents or images, can be linked to; the URL doesn’t have to be the home page of a website. The URL of a particular web page may be copied and pasted or a teacher can use the file picker and choose a link from a repository such as Flickr, YouTube or Wikimedia (depending upon which repositories are enabled for the site).</p>\n\n<p>There are a number of display options for the URL, such as embedded or opening in a new window and advanced options for passing information, such as a student''s name, to the URL if required.</p>\n\n<p>Note that URLs can also be added to any other resource or activity type through the text editor.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/url/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402747862/docs" />More help</a></div>\n', 1402752806),
-(113, '491219857a5181c41e13642fc72167b1', '<p>abc</p>', 1402750735),
-(114, '7840132011c0d498b9f9cc0e789581ea', '<div class="no-overflow"><div class="text_to_html"><p>abc</p></div></div>', 1402750669),
-(115, '87438c5455cadd4e1dab18d4e145975e', '<p>abc</p>', 1402750669),
-(116, 'f873a2b767301268045888172a7ccee7', '<div class="no-overflow"><p>Front Page</p></div>', 1402752568),
-(117, 'ae883cb1dd337e1e23ed369b55a02d83', '<p>Online Tutoring That Delivers Results</p>', 1402752736),
-(118, '74411bcd162b03a9f2c983b4c1511f87', '<div class="no-overflow"><div class="text_to_html"><p>Online Tutoring That Delivers Results</p></div></div>', 1402752795),
-(119, '049df479de7f6d89fddcf2acf07395cb', '<p>Online Tutoring That Delivers Results</p>', 1402752795),
-(120, 'f294ea573df134e1fe5f87369850535b', '<div class="no-overflow"><p>&lt;!DOCTYPE html&gt;<br />&lt;html&gt;<br /> &lt;head&gt;<br /> &lt;title&gt;Top Grader&lt;/title&gt;<br /> <br /> &lt;link rel="stylesheet" type="text/css" href="main.css" /&gt;<br /> <br /> &lt;!--&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"&gt;&lt;/script&gt;--&gt;<br /> &lt;script src="js/jquery.js"&gt;&lt;/script&gt;<br /> &lt;script src="js/animations.js"&gt;&lt;/script&gt;<br /> &lt;script src="http://jarallax.com/download/jarallax-min-0.2.js" type="text/javascript"&gt;&lt;/script&gt;<br /> &lt;/head&gt;<br /> &lt;body onload="init()"&gt;<br /> <br /> &lt;div class="content"&gt;<br /> &lt;span class="planet0"&gt;&lt;/span&gt;</p>\r\n<p>&lt;div class="header"&gt;<br /> &lt;h1&gt;Helping students improve grades in USA, Canada, UK, Singapore and Australia&lt;/h1&gt;<br /> &lt;/div&gt;<br /> <br /> &lt;h2 id="head1"&gt;1-on-1 Quality Online Tutoring for Grades K - 12&lt;/h2&gt;<br /> &lt;p id="p1"&gt;<br /> Our experienced, professional tutors will help you with:<br /> <br /> Homework/Assignment &lt;br/&gt;<br /> Test preparation in SCAT/GT/Other&lt;br/&gt;<br /> Advanced Placement(AP) classes&lt;br/&gt;<br /> Projects&lt;br/&gt;<br /> Research Reports&lt;br/&gt;<br /> ...and any other service to help excel in school</p>\r\n<p><br /> &lt;/p&gt;<br /> &lt;h2 id="head2"&gt;Our Results&lt;/h2&gt;<br /> &lt;p id="p2"&gt;<br /> 86% of our students reported a 90+ percentile score on SCAT&lt;br/&gt;<br /> 92% of our students reported improvement in grades&lt;br/&gt;<br /> 94% of the students experienced an improvement in their confidence in solving Math problems&lt;br/&gt;<br /> 95% of the parents said they are completely satisfied with Top Grader online tutoring &lt;br/&gt;<br /> &lt;/p&gt;<br /> &lt;h2 id="head3"&gt;Get Better Tutoring, Get Better Results!&lt;/h2&gt;<br /> &lt;p id="p3"&gt;<br /> &lt;a class="button" href="http://jarallax.com/download"&gt;Sign Up Now!&lt;/a&gt;<br /> &lt;/p&gt;<br /> &lt;/div&gt;<br /> &lt;script type="text/javascript"&gt;<br /> try{ <br /> var pageTracker = _gat._getTracker("UA-26904605-1");<br /> pageTracker._trackPageview();<br /> } catch(err) {} <br /> &lt;/script&gt;<br /> &lt;/body&gt;<br />&lt;/html&gt;</p></div>', 1402752658),
-(121, '74d51ca3e9a2ecf66bf5bc5e5e17b6f6', '<div class="no-overflow"><title>Top Grader</title>\r\n<p><link rel="stylesheet" type="text/css" href="http://localhost/moodle/main.css" /> </p>\r\n<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>-->\r\n<script src="http://localhost/moodle/js/jquery.js" type="text/javascript"></script>\r\n<script src="http://localhost/moodle/js/animations.js" type="text/javascript"></script>\r\n<script src="http://jarallax.com/download/jarallax-min-0.2.js" type="text/javascript"></script>\r\n<div class="content"><span class="planet0"></span>\r\n<div class="header">\r\n<h1>Helping students improve grades in USA, Canada, UK, Singapore and Australia</h1>\r\n</div>\r\n<h2 id="head1">1-on-1 Quality Online Tutoring for Grades K - 12</h2>\r\n<p id="p1">Our experienced, professional tutors will help you with: Homework/Assignment <br /> Test preparation in SCAT/GT/Other<br /> Advanced Placement(AP) classes<br /> Projects<br /> Research Reports<br /> ...and any other service to help excel in school</p>\r\n<h2 id="head2">Our Results</h2>\r\n<p id="p2">86% of our students reported a 90+ percentile score on SCAT<br /> 92% of our students reported improvement in grades<br /> 94% of the students experienced an improvement in their confidence in solving Math problems<br /> 95% of the parents said they are completely satisfied with Top Grader online tutoring </p>\r\n<h2 id="head3">Get Better Tutoring, Get Better Results!</h2>\r\n<p id="p3"><a class="button" href="http://jarallax.com/download">Sign Up Now!</a></p>\r\n</div>\r\n<script type="text/javascript">// <![CDATA[\r\n      try{ \r\n      var pageTracker = _gat._getTracker("UA-26904605-1");\r\n      pageTracker._trackPageview();\r\n      } catch(err) {} \r\n    \r\n// ]]></script></div>', 1402752784);
+(65, '638f82fec3039e50995327ba0027d5d6', '<p>The folder module enables a teacher to display a number of related files inside a single folder, reducing scrolling on the course page. A zipped folder may be uploaded and unzipped for display, or an empty folder created and files uploaded into it.</p>\n\n<p>A folder may be used</p>\n\n<ul><li>For a series of files on one topic, for example a set of past examination papers in pdf format or a collection of image files for use in student projects</li>\n<li>To provide a shared uploading space for teachers on the course page (keeping the folder hidden so that only teachers can see it)</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/folder/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837522),
+(66, 'db67de088519612a111e120c660bf53f', '<p>An IMS content package is a collection of files which are packaged according to an agreed standard so they can be reused in different systems. The IMS content package module enables such content packages to be uploaded as a zip file and added to a course as a resource.</p>\n\n<p>Content is usually displayed over several pages, with navigation between the pages. There are various options for displaying content in a pop-up window, with a navigation menu or buttons etc.</p>\n\n<p>An IMS content package may be used for presenting multimedia content and animations.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/imscp/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837522),
+(67, '211905e2f5bea61b7f22cb54f85050fb', '<p>The label module enables text and multimedia to be inserted into the course page in between links to other resources and activities. Labels are very versatile and can help to improve the appearance of a course if used thoughtfully.</p>\n\n<p>Labels may be used</p>\n\n<ul><li>To split up a long list of activities with a subheading or an image</li>\n<li>To display an embedded sound file or video directly on the course page</li>\n<li>To add a short description to a course section</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/label/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837522),
+(68, '46a48929cf565a8759a9d459e0fcacf5', '<p>The page module enables a teacher to create a web page resource using the text editor. A page can display text, images, sound, video, web links and embedded code, such as Google maps.</p>\n\n<p>Advantages of using the page module rather than the file module include the resource being more accessible (for example to users of mobile devices) and easier to update.</p>\n\n<p>For large amounts of content, it''s recommended that a book is used rather than a page.</p>\n\n<p>A page may be used</p>\n\n<ul><li>To present the terms and conditions of a course or a summary of the course syllabus</li>\n<li>To embed several videos or sound files together with some explanatory text</li>\n</ul><div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/page/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837522),
+(69, '8edc08c5e34ba9d322188d0c71cbe971', '<p>The URL module enables a teacher to provide a web link as a course resource. Anything that is freely available online, such as documents or images, can be linked to; the URL doesn’t have to be the home page of a website. The URL of a particular web page may be copied and pasted or a teacher can use the file picker and choose a link from a repository such as Flickr, YouTube or Wikimedia (depending upon which repositories are enabled for the site).</p>\n\n<p>There are a number of display options for the URL, such as embedded or opening in a new window and advanced options for passing information, such as a student''s name, to the URL if required.</p>\n\n<p>Note that URLs can also be added to any other resource or activity type through the text editor.</p>\n\n<div class="helpdoclink"><a href="http://docs.moodle.org/26/en/mod/url/view" class="helplinkpopup"><img class="iconhelp icon-pre" alt="More help" title="More help" src="http://localhost/moodle/theme/image.php/essential/core/1402833174/docs" />More help</a></div>\n', 1402837522),
+(70, '96eddb13764c09447f455bc5c6849d29', '<div class="no-overflow"><p>we will chat .. </p></div>', 1402839467),
+(71, 'f097e9001fe68403c544a228d9d02e35', '<div class="no-overflow"><p>we will chat .. </p></div>', 1402837425),
+(72, 'd056f97360bfed0e979433cbe4526547', '<div class="no-overflow"><div class="no-overflow"><p>we will chat .. </p></div></div>', 1402839675),
+(73, '18608073217062f85d623d5ab47a876e', '<div class="no-overflow"><p>sdfsdfsd</p></div>', 1402837411),
+(74, '9b54d6e4c7338f337c18a3cf19a8cb7d', '<div class="text_to_html">The default category for questions shared in context ''<a class="autolink" title="Test" href="http://localhost/moodle/mod/chat/view.php?id=7">test</a>_open to join''.</div>', 1402837462),
+(75, 'a2e89532b09517fb89680d0c42ea259d', '<p>sdfsdf</p>', 1402837497),
+(76, 'b30dab05278b37d9dff5095bd4532bd5', '<div class="no-overflow"><p>Take this firts</p></div>', 1402837591),
+(77, 'c5a2cbf8285e8fc2827ca263f052f6f3', 'Training Fall -14<br /><br /><p>FAll 14 classes</p>', 1402837965),
+(78, '48f6855b1b090684e4ddeba58c141c0a', 'Training Fall -14<br /><br /><p>FAll 14 classes</p>', 1402839717),
+(79, 'cc9b550591ede0d522dea3c23f549c1f', '<p>Here you can find various settings to change many of the colours found in this theme.</p>\n', 1402839409),
+(80, '0e0fa23894a2e8682ecab227bdafe469', '<p>This creates a dynamic slideshow of up to 4 slides for you to promote important elements of your site.</p>\n', 1402839410),
+(81, '7b3a87363cbbf607a88753046dd6caf4', '<p>This adds a custom content area inbetween the Slideshow and the Marketing boxes for your own custom content</p>\n', 1402839410),
+(82, '83d4b14a5e07fc4f48aeb2da5b571ca5', '<p>This theme provides the option of enabling three "marketing" or "ad" spots just under the slideshow.  These allow you to easily identify core information to your users and provide direct links.</p>\n', 1402839410),
+(83, '0e8411da845d62d31b63bf90148db815', '<p>Provide direct links to the core social networks that promote your brand.  These will appear in the header of every page.</p>\n', 1402839410),
+(84, '9e9cc76032fafebb9ca1239ce584a55d', '<p>If enabled this will allow you to set icons for each category of course.</p>\n', 1402839410),
+(85, '3b06ec194abfd17125a314380f38e3da', '<p>Have you got a web app on the App Store or Google Play Store?  Provide a link here so your users can grab the apps online</p>\n', 1402839410),
+(86, '6e93c122362712772cf359efffa836fd', '<p>This will display an alert (or multiple) in three different styles to your users on the Moodle frontpage. Please remember to disable these when no longer needed.</p>\n', 1402839410),
+(87, 'f1f2d3b22c26ccc704933f5dfd1ea4e3', '<p>Here you can enable Google Analytics for your moodle site. You will need to sign up for a free account at the Google Analytics site (<a href="http://analytics.google.com" target="_blank">http://analytics.google.com</a>)</p>\n', 1402839410),
+(88, '4351d00a1a0428201e17b7a595a0c95a', '<p>When players are enabled in these settings, files can be embedded using the media filter (if enabled) or using a File or URL resources with the Embed option. When not enabled, these formats are not embedded and users can manually download or follow links to these resources.</p>\n\n<p>Where two players support the same format, enabling both increases compatibility across different devices such as mobile phones. It is possible to increase compatibility further by providing multiple files in different formats for a single audio or video clip.</p>\n', 1402839410),
+(89, '6cb1eaadd8f0ae2d11cec41b5de444f9', 'hi', 1402839620),
+(90, '4e9ec7411fc29dde919bdd8e8f1fc42f', 'hellloo1!!', 1402839620),
+(91, '711c529a07ee710dd4ba9ca69001f31a', 'ok', 1402839620),
+(92, '2fb95c4a9fa54f2cf0f92cbd934419b3', 'quite good', 1402839620),
+(93, '8639d9eb35f9320256e952c3376c237b', 'beep 4', 1402839620),
+(94, 'b992329a540c00cd118a1df9bc91f425', 'To Teacher T: asdas', 1402839562),
+(95, 'e3a389ce8a381ed13f266422b5c2def5', 'we are done', 1402839585),
+(96, 'f6aa0de1ceb9fa1dda2c91de5b3e6e1f', 'are you theere', 1402839599);
 
 -- --------------------------------------------------------
 
@@ -1008,7 +1021,7 @@ CREATE TABLE IF NOT EXISTS `mdl_capabilities` (
   `riskbitmask` bigint(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `mdl_capa_nam_uix` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='this defines all capabilities' AUTO_INCREMENT=501 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='this defines all capabilities' AUTO_INCREMENT=511 ;
 
 --
 -- Dumping data for table `mdl_capabilities`
@@ -1514,7 +1527,17 @@ INSERT INTO `mdl_capabilities` (`id`, `name`, `captype`, `contextlevel`, `compon
 (497, 'booktool/print:print', 'read', 70, 'booktool_print', 0),
 (498, 'quiz/grading:viewstudentnames', 'read', 70, 'quiz_grading', 0),
 (499, 'quiz/grading:viewidnumber', 'read', 70, 'quiz_grading', 0),
-(500, 'quiz/statistics:view', 'read', 70, 'quiz_statistics', 0);
+(500, 'quiz/statistics:view', 'read', 70, 'quiz_statistics', 0),
+(501, 'mod/scheduler:addinstance', 'write', 50, 'mod_scheduler', 4),
+(502, 'mod/scheduler:appoint', 'write', 70, 'mod_scheduler', 0),
+(503, 'mod/scheduler:attend', 'read', 70, 'mod_scheduler', 0),
+(504, 'mod/scheduler:manage', 'write', 70, 'mod_scheduler', 0),
+(505, 'mod/scheduler:manageallappointments', 'write', 70, 'mod_scheduler', 0),
+(506, 'mod/scheduler:canscheduletootherteachers', 'write', 70, 'mod_scheduler', 0),
+(507, 'mod/scheduler:canseeotherteachersbooking', 'write', 70, 'mod_scheduler', 0),
+(508, 'mod/scheduler:disengage', 'write', 70, 'mod_scheduler', 0),
+(509, 'mod/scheduler:seeotherstudentsbooking', 'read', 70, 'mod_scheduler', 0),
+(510, 'mod/scheduler:seeotherstudentsresults', 'read', 70, 'mod_scheduler', 0);
 
 -- --------------------------------------------------------
 
@@ -1535,7 +1558,14 @@ CREATE TABLE IF NOT EXISTS `mdl_chat` (
   `timemodified` bigint(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `mdl_chat_cou_ix` (`course`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Each of these is a chat room' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Each of these is a chat room' AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `mdl_chat`
+--
+
+INSERT INTO `mdl_chat` (`id`, `course`, `name`, `intro`, `introformat`, `keepdays`, `studentlogs`, `chattime`, `schedule`, `timemodified`) VALUES
+(1, 3, 'Test', '<p>we will chat .. </p>', 1, 0, 0, 1402923600, 2, 1402837358);
 
 -- --------------------------------------------------------
 
@@ -1556,7 +1586,27 @@ CREATE TABLE IF NOT EXISTS `mdl_chat_messages` (
   KEY `mdl_chatmess_gro_ix` (`groupid`),
   KEY `mdl_chatmess_timcha_ix` (`timestamp`,`chatid`),
   KEY `mdl_chatmess_cha_ix` (`chatid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Stores all the actual chat messages' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Stores all the actual chat messages' AUTO_INCREMENT=15 ;
+
+--
+-- Dumping data for table `mdl_chat_messages`
+--
+
+INSERT INTO `mdl_chat_messages` (`id`, `chatid`, `userid`, `groupid`, `system`, `message`, `timestamp`) VALUES
+(1, 1, 4, 0, 1, 'enter', 1402839470),
+(2, 1, 3, 0, 1, 'enter', 1402839515),
+(3, 1, 3, 0, 0, 'hi', 1402839520),
+(4, 1, 4, 0, 0, 'hellloo1!!', 1402839535),
+(5, 1, 3, 0, 0, 'ok', 1402839538),
+(6, 1, 4, 0, 0, 'quite good', 1402839542),
+(7, 1, 3, 0, 0, 'beep 4', 1402839551),
+(8, 1, 3, 0, 0, 'To Teacher T: asdas', 1402839561),
+(9, 1, 4, 0, 0, 'we are done', 1402839584),
+(10, 1, 3, 0, 0, 'ok', 1402839593),
+(11, 1, 3, 0, 0, 'are you theere', 1402839598),
+(12, 1, 3, 0, 0, 'ok', 1402839637),
+(13, 1, 4, 0, 0, 'ok', 1402839639),
+(14, 1, 4, 0, 0, 'ok', 1402839655);
 
 -- --------------------------------------------------------
 
@@ -1577,7 +1627,27 @@ CREATE TABLE IF NOT EXISTS `mdl_chat_messages_current` (
   KEY `mdl_chatmesscurr_gro_ix` (`groupid`),
   KEY `mdl_chatmesscurr_timcha_ix` (`timestamp`,`chatid`),
   KEY `mdl_chatmesscurr_cha_ix` (`chatid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Stores current session' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Stores current session' AUTO_INCREMENT=15 ;
+
+--
+-- Dumping data for table `mdl_chat_messages_current`
+--
+
+INSERT INTO `mdl_chat_messages_current` (`id`, `chatid`, `userid`, `groupid`, `system`, `message`, `timestamp`) VALUES
+(1, 1, 4, 0, 1, 'enter', 1402839470),
+(2, 1, 3, 0, 1, 'enter', 1402839515),
+(3, 1, 3, 0, 0, 'hi', 1402839520),
+(4, 1, 4, 0, 0, 'hellloo1!!', 1402839535),
+(5, 1, 3, 0, 0, 'ok', 1402839538),
+(6, 1, 4, 0, 0, 'quite good', 1402839542),
+(7, 1, 3, 0, 0, 'beep 4', 1402839551),
+(8, 1, 3, 0, 0, 'To Teacher T: asdas', 1402839561),
+(9, 1, 4, 0, 0, 'we are done', 1402839584),
+(10, 1, 3, 0, 0, 'ok', 1402839593),
+(11, 1, 3, 0, 0, 'are you theere', 1402839598),
+(12, 1, 3, 0, 0, 'ok', 1402839637),
+(13, 1, 4, 0, 0, 'ok', 1402839639),
+(14, 1, 4, 0, 0, 'ok', 1402839655);
 
 -- --------------------------------------------------------
 
@@ -1603,7 +1673,14 @@ CREATE TABLE IF NOT EXISTS `mdl_chat_users` (
   KEY `mdl_chatuser_las_ix` (`lastping`),
   KEY `mdl_chatuser_gro_ix` (`groupid`),
   KEY `mdl_chatuser_cha_ix` (`chatid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Keeps track of which users are in which chat rooms' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Keeps track of which users are in which chat rooms' AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `mdl_chat_users`
+--
+
+INSERT INTO `mdl_chat_users` (`id`, `chatid`, `userid`, `groupid`, `version`, `ip`, `firstping`, `lastping`, `lastmessageping`, `sid`, `course`, `lang`) VALUES
+(2, 1, 3, 0, 'ajax', '127.0.0.1', 1402839515, 1402839643, 1402839635, 'S0Pqc3JZpYublCkFngzAjB59uXOyVihN', 3, 'en');
 
 -- --------------------------------------------------------
 
@@ -1732,7 +1809,7 @@ CREATE TABLE IF NOT EXISTS `mdl_config` (
   `value` longtext NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `mdl_conf_nam_uix` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Moodle configuration variables' AUTO_INCREMENT=445 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Moodle configuration variables' AUTO_INCREMENT=449 ;
 
 --
 -- Dumping data for table `mdl_config`
@@ -1742,7 +1819,7 @@ INSERT INTO `mdl_config` (`id`, `name`, `value`) VALUES
 (2, 'rolesactive', '1'),
 (3, 'auth', 'email'),
 (4, 'auth_pop3mailbox', 'INBOX'),
-(5, 'enrol_plugins_enabled', 'manual,guest,self,cohort'),
+(5, 'enrol_plugins_enabled', 'guest,self,cohort,manual'),
 (6, 'theme', 'essential'),
 (7, 'filter_multilang_converted', '1'),
 (8, 'siteidentifier', 'CKVgFwGBpQ7BG4YxGq0fQsD8fPYh7IaKlocalhost'),
@@ -1757,8 +1834,8 @@ INSERT INTO `mdl_config` (`id`, `name`, `value`) VALUES
 (17, 'mnet_all_hosts_id', '2'),
 (18, 'siteguest', '1'),
 (19, 'siteadmins', '2'),
-(20, 'themerev', '1402747862'),
-(21, 'jsrev', '1402746413'),
+(20, 'themerev', '1402833174'),
+(21, 'jsrev', '1402833174'),
 (22, 'gdversion', '2'),
 (23, 'licenses', 'unknown,allrightsreserved,public,cc,cc-nd,cc-nc-nd,cc-nc,cc-nc-sa,cc-sa'),
 (24, 'version', '2013111803'),
@@ -1870,7 +1947,7 @@ INSERT INTO `mdl_config` (`id`, `name`, `value`) VALUES
 (130, 'lang', 'en'),
 (131, 'langmenu', '1'),
 (132, 'langlist', ''),
-(133, 'langrev', '1402746413'),
+(133, 'langrev', '1402833174'),
 (134, 'langcache', '1'),
 (135, 'langstringcache', '1'),
 (136, 'locale', ''),
@@ -2080,8 +2157,8 @@ INSERT INTO `mdl_config` (`id`, `name`, `value`) VALUES
 (341, 'profilingimportprefix', '(I)'),
 (342, 'release', '2.6.3 (Build: 20140512)'),
 (343, 'branch', '26'),
-(344, 'localcachedirpurged', '1402746413'),
-(345, 'allversionshash', 'eb7ab4c035bc81c2bd778e15831ab69a0735ff94'),
+(344, 'localcachedirpurged', '1402833174'),
+(345, 'allversionshash', 'fca7223b2e0575ad94768caeaaeca469c9249074'),
 (347, 'notloggedinroleid', '6'),
 (348, 'guestroleid', '6'),
 (349, 'defaultuserroleid', '7'),
@@ -2177,7 +2254,12 @@ INSERT INTO `mdl_config` (`id`, `name`, `value`) VALUES
 (439, 'defaultfrontpageroleid', '8'),
 (440, 'supportname', 'Admin User'),
 (441, 'supportemail', 'md.j.shakir@gmail.com'),
-(442, 'registerauth', '');
+(442, 'registerauth', 'email'),
+(444, 'scheduler_allteachersgrading', '0'),
+(445, 'scheduler_showemailplain', '0'),
+(446, 'scheduler_groupscheduling', '1'),
+(447, 'scheduler_maxstudentsperslot', '9'),
+(448, 'scheduler_maxstudentlistsize', '200');
 
 -- --------------------------------------------------------
 
@@ -2196,7 +2278,7 @@ CREATE TABLE IF NOT EXISTS `mdl_config_log` (
   PRIMARY KEY (`id`),
   KEY `mdl_conflog_tim_ix` (`timemodified`),
   KEY `mdl_conflog_use_ix` (`userid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Changes done in server configuration through admin UI' AUTO_INCREMENT=1060 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Changes done in server configuration through admin UI' AUTO_INCREMENT=1086 ;
 
 --
 -- Dumping data for table `mdl_config_log`
@@ -3262,7 +3344,33 @@ INSERT INTO `mdl_config_log` (`id`, `userid`, `timemodified`, `plugin`, `name`, 
 (1056, 2, 1402747821, 'theme_essential', 'hideonphone', 'hidden-phone', ''),
 (1057, 2, 1402747862, 'theme_essential', 'togglemarketing', '0', '1'),
 (1058, 2, 1402747918, NULL, 'frontpage', '', '6'),
-(1059, 2, 1402747918, NULL, 'frontpageloggedin', '', '6');
+(1059, 2, 1402747918, NULL, 'frontpageloggedin', '', '6'),
+(1060, 2, 1402761143, 'theme_essential', 'usefrontcontent', '1', ''),
+(1061, 2, 1402761144, 'theme_essential', 'frontcontentarea', '<title>Top Grader</title>\r\n<p><link rel="stylesheet" type="text/css" href="http://localhost/moodle/main.css" /> </p>\r\n<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>-->\r\n<script src="http://localhost/moodle/js/jquery.js" type="text/javascript"></script>\r\n<script src="http://localhost/moodle/js/animations.js" type="text/javascript"></script>\r\n<script src="http://jarallax.com/download/jarallax-min-0.2.js" type="text/javascript"></script>\r\n<div class="content"><span class="planet0"></span>\r\n<div class="header">\r\n<h1>Helping students improve grades in USA, Canada, UK, Singapore and Australia</h1>\r\n</div>\r\n<h2 id="head1">1-on-1 Quality Online Tutoring for Grades K - 12</h2>\r\n<p id="p1"></p>\r\n<h2 id="head2">Our Results</h2>\r\n<p id="p2"></p>\r\n<h2 id="head3">Get Better Tutoring, Get Better Results!</h2>\r\n<p id="p3"><a class="button">Sign Up Now!</a></p>\r\n</div>\r\n<script type="text/javascript">// <![CDATA[\r\n      try{ \r\n      var pageTracker = _gat._getTracker("UA-26904605-1");\r\n      pageTracker._trackPageview();\r\n      } catch(err) {} \r\n    \r\n// ]]></script>', ''),
+(1062, 2, 1402761512, 'theme_essential', 'frontcontentarea', '<p><iframe src="http://localhost/moodle/&quot;frontpage.html"></iframe></p>', '<title>Top Grader</title>\r\n<p><link rel="stylesheet" type="text/css" href="http://localhost/moodle/main.css" /> </p>\r\n<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>-->\r\n<script src="http://localhost/moodle/js/jquery.js" type="text/javascript"></script>\r\n<script src="http://localhost/moodle/js/animations.js" type="text/javascript"></script>\r\n<script src="http://jarallax.com/download/jarallax-min-0.2.js" type="text/javascript"></script>\r\n<div class="content"><span class="planet0"></span>\r\n<div class="header">\r\n<h1>Helping students improve grades in USA, Canada, UK, Singapore and Australia</h1>\r\n</div>\r\n<h2 id="head1">1-on-1 Quality Online Tutoring for Grades K - 12</h2>\r\n<p id="p1"></p>\r\n<h2 id="head2">Our Results</h2>\r\n<p id="p2"></p>\r\n<h2 id="head3">Get Better Tutoring, Get Better Results!</h2>\r\n<p id="p3"><a class="button">Sign Up Now!</a></p>\r\n</div>\r\n<script type="text/javascript">// <![CDATA[\r\n      try{ \r\n      var pageTracker = _gat._getTracker("UA-26904605-1");\r\n      pageTracker._trackPageview();\r\n      } catch(err) {} \r\n    \r\n// ]]></script>'),
+(1063, 2, 1402761579, 'theme_essential', 'frontcontentarea', '<p><iframe src="http://localhost/moodle/frontpage.html"></iframe></p>', '<p><iframe src="http://localhost/moodle/&quot;frontpage.html"></iframe></p>'),
+(1064, 2, 1402761813, 'theme_essential', 'frontcontentarea', '<title>Top Grader</title>\r\n<p><link rel="stylesheet" type="text/css" href="http://localhost/moodle/main.css" /> </p>\r\n<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>-->\r\n<script src="http://localhost/moodle/js/jquery.js" type="text/javascript"></script>\r\n<script src="http://localhost/moodle/js/animations.js" type="text/javascript"></script>\r\n<script src="http://jarallax.com/download/jarallax-min-0.2.js" type="text/javascript"></script>\r\n<div class="content"><span class="planet0"></span>\r\n<h2 id="head1">1-on-1 Quality Online Tutoring for Grades K - 12</h2>\r\n<p id="p1"></p>\r\n<h2 id="head2">Our Results</h2>\r\n<p id="p2"></p>\r\n<h2 id="head3">Get Better Tutoring, Get Better Results!</h2>\r\n<p id="p3"><a class="button">Sign Up Now!</a></p>\r\n</div>\r\n<script type="text/javascript">// <![CDATA[\r\n      try{ \r\n      var pageTracker = _gat._getTracker("UA-26904605-1");\r\n      pageTracker._trackPageview();\r\n      } catch(err) {} \r\n    \r\n// ]]></script>', '<p><iframe src="http://localhost/moodle/frontpage.html"></iframe></p>'),
+(1065, 2, 1402763062, 'theme_essential', 'frontcontentarea', '', '<title>Top Grader</title>\r\n<p><link rel="stylesheet" type="text/css" href="http://localhost/moodle/main.css" /> </p>\r\n<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>-->\r\n<script src="http://localhost/moodle/js/jquery.js" type="text/javascript"></script>\r\n<script src="http://localhost/moodle/js/animations.js" type="text/javascript"></script>\r\n<script src="http://jarallax.com/download/jarallax-min-0.2.js" type="text/javascript"></script>\r\n<div class="content"><span class="planet0"></span>\r\n<h2 id="head1">1-on-1 Quality Online Tutoring for Grades K - 12</h2>\r\n<p id="p1"></p>\r\n<h2 id="head2">Our Results</h2>\r\n<p id="p2"></p>\r\n<h2 id="head3">Get Better Tutoring, Get Better Results!</h2>\r\n<p id="p3"><a class="button">Sign Up Now!</a></p>\r\n</div>\r\n<script type="text/javascript">// <![CDATA[\r\n      try{ \r\n      var pageTracker = _gat._getTracker("UA-26904605-1");\r\n      pageTracker._trackPageview();\r\n      } catch(err) {} \r\n    \r\n// ]]></script>'),
+(1066, 2, 1402816442, 'theme_essential', 'logo', '/logo.png', ''),
+(1067, 2, 1402830975, 'theme_essential', 'frontpagemiddleblocks', '1', '0'),
+(1068, 2, 1402831138, 'theme_essential', 'usecategoryicon', '1', ''),
+(1069, 2, 1402831466, 'theme_essential', 'toggleslideshow', '1', '0'),
+(1070, 2, 1402831541, 'theme_essential', 'frontcontentarea', '<p>Hello front page cpontent this issd sdfsjd sd</p>\r\n<p>sd sdvsndvlksdv</p>\r\n<p>sdvnsdklvsd</p>\r\n<p>vsdvknsdklvsd</p>\r\n<p>sdlvsldkvmsdmv</p>', ''),
+(1071, 2, 1402831613, 'theme_essential', 'togglemarketing', '1', '0'),
+(1072, 2, 1402831613, 'theme_essential', 'marketing1', 'Spot 1', ''),
+(1073, 2, 1402831613, 'theme_essential', 'marketing2', 'Spot 2', ''),
+(1074, 2, 1402831613, 'theme_essential', 'marketing3', 'spot 3', ''),
+(1075, 2, 1402831671, 'theme_essential', 'marketingheight', '2', '0'),
+(1076, 2, 1402831671, 'theme_essential', 'marketing1content', '<p>some thing about top-gradder</p>', ''),
+(1077, 2, 1402831671, 'theme_essential', 'marketing2content', '<p>some thing about top-gradder</p>', ''),
+(1078, 2, 1402831672, 'theme_essential', 'marketing3content', '<p>some thing about top-gradder</p>', ''),
+(1079, 2, 1402831904, 'theme_essential', 'usefrontcontent', '', '1'),
+(1080, 2, 1402833195, NULL, 'scheduler_allteachersgrading', '0', NULL),
+(1081, 2, 1402833195, NULL, 'scheduler_showemailplain', '0', NULL),
+(1082, 2, 1402833195, NULL, 'scheduler_groupscheduling', '1', NULL),
+(1083, 2, 1402833195, NULL, 'scheduler_maxstudentsperslot', '9', NULL),
+(1084, 2, 1402833195, NULL, 'scheduler_maxstudentlistsize', '200', NULL),
+(1085, 2, 1402839156, NULL, 'registerauth', 'email', '');
 
 -- --------------------------------------------------------
 
@@ -3277,7 +3385,7 @@ CREATE TABLE IF NOT EXISTS `mdl_config_plugins` (
   `value` longtext NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `mdl_confplug_plunam_uix` (`plugin`,`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Moodle modules and plugins configuration variables' AUTO_INCREMENT=1180 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Moodle modules and plugins configuration variables' AUTO_INCREMENT=1196 ;
 
 --
 -- Dumping data for table `mdl_config_plugins`
@@ -4258,7 +4366,7 @@ INSERT INTO `mdl_config_plugins` (`id`, `plugin`, `name`, `value`) VALUES
 (1041, 'theme_essential', 'version', '2014020300'),
 (1042, 'theme_essential', 'siteicon', 'laptop'),
 (1043, 'theme_essential', 'bootstrapcdn', '0'),
-(1044, 'theme_essential', 'logo', ''),
+(1044, 'theme_essential', 'logo', '/logo.png'),
 (1045, 'theme_essential', 'fontselect', '1'),
 (1046, 'theme_essential', 'headerprofilepic', '1'),
 (1047, 'theme_essential', 'pagewidth', '1200'),
@@ -4298,7 +4406,7 @@ INSERT INTO `mdl_config_plugins` (`id`, `plugin`, `name`, `value`) VALUES
 (1080, 'theme_essential', 'alternativethemename3', 'Alternative Colours 3'),
 (1081, 'theme_essential', 'alternativethemecolor3', '#5dd130'),
 (1082, 'theme_essential', 'alternativethemehovercolor3', '#53c429'),
-(1083, 'theme_essential', 'toggleslideshow', '0'),
+(1083, 'theme_essential', 'toggleslideshow', '1'),
 (1084, 'theme_essential', 'hideonphone', 'hidden-phone'),
 (1085, 'theme_essential', 'slideshowvariant', '1'),
 (1086, 'theme_essential', 'slide1', 'This is Slide 1'),
@@ -4318,27 +4426,27 @@ INSERT INTO `mdl_config_plugins` (`id`, `plugin`, `name`, `value`) VALUES
 (1100, 'theme_essential', 'slide4caption', ''),
 (1101, 'theme_essential', 'slide4url', ''),
 (1102, 'theme_essential', 'usefrontcontent', ''),
-(1103, 'theme_essential', 'frontcontentarea', ''),
+(1103, 'theme_essential', 'frontcontentarea', '<p>Hello front page cpontent this issd sdfsjd sd</p>\r\n<p>sd sdvsndvlksdv</p>\r\n<p>sdvnsdklvsd</p>\r\n<p>vsdvknsdklvsd</p>\r\n<p>sdlvsldkvmsdmv</p>'),
 (1104, 'theme_essential', 'frontpageblocks', '1'),
-(1105, 'theme_essential', 'frontpagemiddleblocks', '0'),
-(1106, 'theme_essential', 'togglemarketing', '0'),
-(1107, 'theme_essential', 'marketingheight', '0'),
-(1108, 'theme_essential', 'marketing1', ''),
+(1105, 'theme_essential', 'frontpagemiddleblocks', '1'),
+(1106, 'theme_essential', 'togglemarketing', '1'),
+(1107, 'theme_essential', 'marketingheight', '2'),
+(1108, 'theme_essential', 'marketing1', 'Spot 1'),
 (1109, 'theme_essential', 'marketing1icon', 'star'),
 (1110, 'theme_essential', 'marketing1image', ''),
-(1111, 'theme_essential', 'marketing1content', ''),
+(1111, 'theme_essential', 'marketing1content', '<p>some thing about top-gradder</p>'),
 (1112, 'theme_essential', 'marketing1buttontext', ''),
 (1113, 'theme_essential', 'marketing1buttonurl', ''),
-(1114, 'theme_essential', 'marketing2', ''),
+(1114, 'theme_essential', 'marketing2', 'Spot 2'),
 (1115, 'theme_essential', 'marketing2icon', 'star'),
 (1116, 'theme_essential', 'marketing2image', ''),
-(1117, 'theme_essential', 'marketing2content', ''),
+(1117, 'theme_essential', 'marketing2content', '<p>some thing about top-gradder</p>'),
 (1118, 'theme_essential', 'marketing2buttontext', ''),
 (1119, 'theme_essential', 'marketing2buttonurl', ''),
-(1120, 'theme_essential', 'marketing3', ''),
+(1120, 'theme_essential', 'marketing3', 'spot 3'),
 (1121, 'theme_essential', 'marketing3icon', 'star'),
 (1122, 'theme_essential', 'marketing3image', ''),
-(1123, 'theme_essential', 'marketing3content', ''),
+(1123, 'theme_essential', 'marketing3content', '<p>some thing about top-gradder</p>'),
 (1124, 'theme_essential', 'marketing3buttontext', ''),
 (1125, 'theme_essential', 'marketing3buttonurl', ''),
 (1126, 'theme_essential', 'website', ''),
@@ -4352,7 +4460,7 @@ INSERT INTO `mdl_config_plugins` (`id`, `plugin`, `name`, `value`) VALUES
 (1134, 'theme_essential', 'youtube', ''),
 (1135, 'theme_essential', 'skype', ''),
 (1136, 'theme_essential', 'vk', ''),
-(1137, 'theme_essential', 'usecategoryicon', ''),
+(1137, 'theme_essential', 'usecategoryicon', '1'),
 (1138, 'theme_essential', 'defaultcategoryicon', 'f07c'),
 (1139, 'theme_essential', 'categoryicon1', 'f07c'),
 (1140, 'theme_essential', 'categoryicon2', 'f07c'),
@@ -4394,7 +4502,23 @@ INSERT INTO `mdl_config_plugins` (`id`, `plugin`, `name`, `value`) VALUES
 (1176, 'theme_essential', 'alert3text_en', ''),
 (1177, 'theme_essential', 'useanalytics', ''),
 (1178, 'theme_essential', 'analyticsid', ''),
-(1179, 'theme_essential', 'analyticsclean', '');
+(1179, 'theme_essential', 'analyticsclean', ''),
+(1180, 'mod_scheduler', 'version', '2013092702'),
+(1181, 'auth/email', 'recaptcha', '1'),
+(1182, 'auth/email', 'field_lock_firstname', 'unlocked'),
+(1183, 'auth/email', 'field_lock_lastname', 'unlocked'),
+(1184, 'auth/email', 'field_lock_email', 'unlocked'),
+(1185, 'auth/email', 'field_lock_city', 'unlocked'),
+(1186, 'auth/email', 'field_lock_country', 'unlocked'),
+(1187, 'auth/email', 'field_lock_lang', 'unlocked'),
+(1188, 'auth/email', 'field_lock_description', 'unlocked'),
+(1189, 'auth/email', 'field_lock_url', 'unlocked'),
+(1190, 'auth/email', 'field_lock_idnumber', 'unlocked'),
+(1191, 'auth/email', 'field_lock_institution', 'unlocked'),
+(1192, 'auth/email', 'field_lock_department', 'unlocked'),
+(1193, 'auth/email', 'field_lock_phone1', 'unlocked'),
+(1194, 'auth/email', 'field_lock_phone2', 'unlocked'),
+(1195, 'auth/email', 'field_lock_address', 'unlocked');
 
 -- --------------------------------------------------------
 
@@ -4412,7 +4536,7 @@ CREATE TABLE IF NOT EXISTS `mdl_context` (
   UNIQUE KEY `mdl_cont_conins_uix` (`contextlevel`,`instanceid`),
   KEY `mdl_cont_ins_ix` (`instanceid`),
   KEY `mdl_cont_pat_ix` (`path`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='one of these must be set' AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='one of these must be set' AUTO_INCREMENT=43 ;
 
 --
 -- Dumping data for table `mdl_context`
@@ -4439,7 +4563,27 @@ INSERT INTO `mdl_context` (`id`, `contextlevel`, `instanceid`, `path`, `depth`) 
 (19, 80, 12, '/1/3/16/19', 4),
 (20, 80, 13, '/1/3/16/20', 4),
 (21, 80, 14, '/1/2/21', 3),
-(22, 70, 2, '/1/3/16/22', 4);
+(22, 70, 2, '/1/3/16/22', 4),
+(23, 80, 15, '/1/2/23', 3),
+(24, 30, 3, '/1/24', 2),
+(25, 80, 16, '/1/2/25', 3),
+(26, 80, 17, '/1/2/26', 3),
+(27, 70, 3, '/1/2/27', 3),
+(28, 80, 18, '/1/2/28', 3),
+(29, 80, 19, '/1/2/29', 3),
+(30, 80, 20, '/1/2/30', 3),
+(31, 50, 3, '/1/3/31', 3),
+(32, 80, 21, '/1/3/31/32', 4),
+(33, 80, 22, '/1/3/31/33', 4),
+(34, 80, 23, '/1/3/31/34', 4),
+(35, 80, 24, '/1/3/31/35', 4),
+(36, 70, 4, '/1/3/31/36', 4),
+(37, 40, 2, '/1/37', 2),
+(38, 70, 5, '/1/2/38', 3),
+(39, 30, 4, '/1/39', 2),
+(40, 70, 6, '/1/3/31/40', 4),
+(41, 70, 7, '/1/3/31/41', 4),
+(42, 70, 8, '/1/3/31/42', 4);
 
 -- --------------------------------------------------------
 
@@ -4496,15 +4640,16 @@ CREATE TABLE IF NOT EXISTS `mdl_course` (
   KEY `mdl_cour_idn_ix` (`idnumber`),
   KEY `mdl_cour_sho_ix` (`shortname`),
   KEY `mdl_cour_sor_ix` (`sortorder`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Central course table' AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Central course table' AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `mdl_course`
 --
 
 INSERT INTO `mdl_course` (`id`, `category`, `sortorder`, `fullname`, `shortname`, `idnumber`, `summary`, `summaryformat`, `format`, `showgrades`, `newsitems`, `startdate`, `marker`, `maxbytes`, `legacyfiles`, `showreports`, `visible`, `visibleold`, `groupmode`, `groupmodeforce`, `defaultgroupingid`, `lang`, `calendartype`, `theme`, `timecreated`, `timemodified`, `requested`, `enablecompletion`, `completionnotify`, `cacherev`) VALUES
-(1, 0, 1, 'Top-Grader', 'TopGrader', '', '<p>Online Tutoring That Delivers Results</p>', 0, 'site', 1, 3, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, '', '', '', 1402744563, 1402750742, 0, 0, 0, 1402750742),
-(2, 1, 10001, 'test course', 'testing', 'admin', '<p>sads</p>', 1, 'weeks', 1, 5, 1402770600, 0, 0, 0, 0, 1, 1, 0, 0, 0, '', '', '', 1402746082, 1402746082, 0, 0, 0, 1402746982);
+(1, 0, 1, 'Top-Grader', 'TopGrader', '', '<p>Online Tutoring That Delivers Results</p>', 0, 'site', 1, 3, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, '', '', '', 1402744563, 1402750742, 0, 0, 0, 1402833333),
+(2, 1, 10002, 'test course', 'testing', 'admin', '<p>sads</p>', 1, 'weeks', 1, 5, 1402770600, 0, 0, 0, 0, 1, 1, 0, 0, 0, '', '', '', 1402746082, 1402746082, 0, 0, 0, 1402833174),
+(3, 1, 10001, 'test_open', 'test_open to join', 'admin1', '<p>testing course summary</p>', 1, 'weeks', 1, 5, 1402857000, 0, 0, 0, 1, 1, 1, 0, 0, 0, '', '', '', 1402832480, 1402832480, 0, 0, 0, 1402837453);
 
 -- --------------------------------------------------------
 
@@ -4529,14 +4674,15 @@ CREATE TABLE IF NOT EXISTS `mdl_course_categories` (
   `theme` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `mdl_courcate_par_ix` (`parent`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Course categories' AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Course categories' AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `mdl_course_categories`
 --
 
 INSERT INTO `mdl_course_categories` (`id`, `name`, `idnumber`, `description`, `descriptionformat`, `parent`, `sortorder`, `coursecount`, `visible`, `visibleold`, `timemodified`, `depth`, `path`, `theme`) VALUES
-(1, 'Miscellaneous', NULL, NULL, 0, 0, 10000, 1, 1, 1, 1402744563, 1, '/1', NULL);
+(1, 'Miscellaneous', NULL, NULL, 0, 0, 10000, 2, 1, 1, 1402744563, 1, '/1', NULL),
+(2, 'New category', 'abc', '<p>new CAtegory</p>', 1, 0, 20000, 0, 1, 1, 1402832677, 1, '/2', NULL);
 
 -- --------------------------------------------------------
 
@@ -4636,7 +4782,7 @@ CREATE TABLE IF NOT EXISTS `mdl_course_format_options` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `mdl_courformopti_couforsec_uix` (`courseid`,`format`,`sectionid`,`name`),
   KEY `mdl_courformopti_cou_ix` (`courseid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Stores format-specific options for the course or course sect' AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Stores format-specific options for the course or course sect' AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `mdl_course_format_options`
@@ -4646,7 +4792,10 @@ INSERT INTO `mdl_course_format_options` (`id`, `courseid`, `format`, `sectionid`
 (1, 1, 'site', 0, 'numsections', '1'),
 (2, 2, 'weeks', 0, 'numsections', '10'),
 (3, 2, 'weeks', 0, 'hiddensections', '0'),
-(4, 2, 'weeks', 0, 'coursedisplay', '0');
+(4, 2, 'weeks', 0, 'coursedisplay', '0'),
+(5, 3, 'weeks', 0, 'numsections', '10'),
+(6, 3, 'weeks', 0, 'hiddensections', '0'),
+(7, 3, 'weeks', 0, 'coursedisplay', '0');
 
 -- --------------------------------------------------------
 
@@ -4684,14 +4833,20 @@ CREATE TABLE IF NOT EXISTS `mdl_course_modules` (
   KEY `mdl_courmodu_ins_ix` (`instance`),
   KEY `mdl_courmodu_idncou_ix` (`idnumber`,`course`),
   KEY `mdl_courmodu_gro_ix` (`groupingid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='course_modules table retrofitted from MySQL' AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='course_modules table retrofitted from MySQL' AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `mdl_course_modules`
 --
 
 INSERT INTO `mdl_course_modules` (`id`, `course`, `module`, `instance`, `section`, `idnumber`, `added`, `score`, `indent`, `visible`, `visibleold`, `groupmode`, `groupingid`, `groupmembersonly`, `completion`, `completiongradeitemnumber`, `completionview`, `completionexpected`, `availablefrom`, `availableuntil`, `showavailability`, `showdescription`) VALUES
-(2, 2, 9, 1, 3, NULL, 1402746980, 0, 0, 1, 1, 0, 0, 0, 0, NULL, 0, 0, 0, 0, 0, 0);
+(2, 2, 9, 1, 3, NULL, 1402746980, 0, 0, 1, 1, 0, 0, 0, 0, NULL, 0, 0, 0, 0, 0, 0),
+(3, 1, 9, 2, 1, NULL, 1402830858, 0, 0, 1, 1, 0, 0, 0, 0, NULL, 0, 0, 0, 0, 0, 0),
+(4, 3, 9, 3, 14, NULL, 1402832529, 0, 0, 1, 1, 1, 0, 0, 0, NULL, 0, 0, 0, 0, 0, 0),
+(5, 1, 23, 1, 2, 'as', 1402833331, 0, 0, 1, 1, 0, 0, 0, 0, NULL, 0, 0, 0, 0, 0, 0),
+(6, 3, 1, 1, 15, '', 1402837321, 0, 0, 1, 1, 1, 0, 0, 0, NULL, 0, 0, 0, 0, 0, 0),
+(7, 3, 4, 1, 16, '', 1402837358, 0, 0, 1, 1, 1, 0, 0, 0, NULL, 0, 0, 0, 0, 0, 1),
+(8, 3, 16, 1, 17, '', 1402837411, 0, 0, 1, 1, 1, 0, 0, 0, NULL, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -4807,15 +4962,15 @@ CREATE TABLE IF NOT EXISTS `mdl_course_sections` (
   `groupingid` bigint(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `mdl_coursect_cousec_uix` (`course`,`section`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='to define the sections for each course' AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='to define the sections for each course' AUTO_INCREMENT=25 ;
 
 --
 -- Dumping data for table `mdl_course_sections`
 --
 
 INSERT INTO `mdl_course_sections` (`id`, `course`, `section`, `name`, `summary`, `summaryformat`, `sequence`, `visible`, `availablefrom`, `availableuntil`, `showavailability`, `groupingid`) VALUES
-(1, 1, 0, NULL, '', 1, '', 1, 0, 0, 0, 0),
-(2, 1, 1, NULL, '', 1, '', 1, 0, 0, 0, 0),
+(1, 1, 0, NULL, '', 1, '3', 1, 0, 0, 0, 0),
+(2, 1, 1, 'Courses', '', 1, '5', 1, 0, 0, 0, 0),
 (3, 2, 0, NULL, '', 1, '2', 1, 0, 0, 0, 0),
 (4, 2, 1, NULL, '', 1, '', 1, 0, 0, 0, 0),
 (5, 2, 2, NULL, '', 1, '', 1, 0, 0, 0, 0),
@@ -4826,7 +4981,18 @@ INSERT INTO `mdl_course_sections` (`id`, `course`, `section`, `name`, `summary`,
 (10, 2, 7, NULL, '', 1, '', 1, 0, 0, 0, 0),
 (11, 2, 8, NULL, '', 1, '', 1, 0, 0, 0, 0),
 (12, 2, 9, NULL, '', 1, '', 1, 0, 0, 0, 0),
-(13, 2, 10, NULL, '', 1, '', 1, 0, 0, 0, 0);
+(13, 2, 10, NULL, '', 1, '', 1, 0, 0, 0, 0),
+(14, 3, 0, NULL, '', 1, '4', 1, 0, 0, 0, 0),
+(15, 3, 1, NULL, '', 1, '6', 1, 0, 0, 0, 0),
+(16, 3, 2, NULL, '', 1, '7', 1, 0, 0, 0, 0),
+(17, 3, 3, NULL, '', 1, '8', 1, 0, 0, 0, 0),
+(18, 3, 4, NULL, '', 1, '', 1, 0, 0, 0, 0),
+(19, 3, 5, NULL, '', 1, '', 1, 0, 0, 0, 0),
+(20, 3, 6, NULL, '', 1, '', 1, 0, 0, 0, 0),
+(21, 3, 7, NULL, '', 1, '', 1, 0, 0, 0, 0),
+(22, 3, 8, NULL, '', 1, '', 1, 0, 0, 0, 0),
+(23, 3, 9, NULL, '', 1, '', 1, 0, 0, 0, 0),
+(24, 3, 10, NULL, '', 1, '', 1, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -5019,7 +5185,7 @@ CREATE TABLE IF NOT EXISTS `mdl_enrol` (
   PRIMARY KEY (`id`),
   KEY `mdl_enro_enr_ix` (`enrol`),
   KEY `mdl_enro_cou_ix` (`courseid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Instances of enrolment plugins used in courses, fields marke' AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Instances of enrolment plugins used in courses, fields marke' AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `mdl_enrol`
@@ -5028,7 +5194,10 @@ CREATE TABLE IF NOT EXISTS `mdl_enrol` (
 INSERT INTO `mdl_enrol` (`id`, `enrol`, `status`, `courseid`, `sortorder`, `name`, `enrolperiod`, `enrolstartdate`, `enrolenddate`, `expirynotify`, `expirythreshold`, `notifyall`, `password`, `cost`, `currency`, `roleid`, `customint1`, `customint2`, `customint3`, `customint4`, `customint5`, `customint6`, `customint7`, `customint8`, `customchar1`, `customchar2`, `customchar3`, `customdec1`, `customdec2`, `customtext1`, `customtext2`, `customtext3`, `customtext4`, `timecreated`, `timemodified`) VALUES
 (1, 'manual', 0, 2, 0, NULL, 0, 0, 0, 0, 86400, 0, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1402746083, 1402746083),
 (2, 'guest', 1, 2, 1, NULL, 0, 0, 0, 0, 0, 0, '', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1402746083, 1402746083),
-(3, 'self', 1, 2, 2, NULL, 0, 0, 0, 0, 86400, 0, NULL, NULL, NULL, 5, 0, 0, 0, 1, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1402746083, 1402746083);
+(3, 'self', 1, 2, 2, NULL, 0, 0, 0, 0, 86400, 0, NULL, NULL, NULL, 5, 0, 0, 0, 1, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1402746083, 1402746083),
+(4, 'manual', 0, 3, 0, NULL, 0, 0, 0, 0, 86400, 0, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1402832481, 1402832481),
+(5, 'guest', 0, 3, 1, NULL, 0, 0, 0, 0, 0, 0, '', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1402832481, 1402832481),
+(6, 'self', 0, 3, 2, NULL, 0, 0, 0, 0, 86400, 0, NULL, NULL, NULL, 5, 0, 0, 0, 1, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1402832481, 1402832481);
 
 -- --------------------------------------------------------
 
@@ -5113,7 +5282,17 @@ CREATE TABLE IF NOT EXISTS `mdl_event` (
   KEY `mdl_even_tim_ix` (`timestart`),
   KEY `mdl_even_tim2_ix` (`timeduration`),
   KEY `mdl_even_grocouvisuse_ix` (`groupid`,`courseid`,`visible`,`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='For everything with a time associated to it' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='For everything with a time associated to it' AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `mdl_event`
+--
+
+INSERT INTO `mdl_event` (`id`, `name`, `description`, `format`, `courseid`, `groupid`, `userid`, `repeatid`, `modulename`, `instance`, `eventtype`, `timestart`, `timeduration`, `visible`, `uuid`, `sequence`, `timemodified`, `subscriptionid`) VALUES
+(1, 'First Assignemnt', '<p>Take this firts</p>', 1, 3, 0, 4, 0, 'assign', 1, 'due', 1403426400, 0, 1, '', 1, 1402837321, NULL),
+(2, 'Test', '<div class="no-overflow"><p>we will chat .. </p></div>', 1, 3, 0, 4, 0, 'chat', 1, 'chattime', 1402923600, 0, 1, '', 1, 1402839466, NULL),
+(3, 'Meeting with your Teacher, Teacher T', 'Training Fall -14<br/><br/><p>FAll 14 classes</p>', 1, 0, 0, 3, 0, '', 1, 'SSstu:2:1', 1402924200, 900, 1, '', 1, 1402837994, NULL),
+(4, 'Meeting with your Student, student Mr', 'Training Fall -14<br/><br/><p>FAll 14 classes</p>', 1, 0, 0, 4, 0, '', 1, 'SSsup:2:1', 1402924200, 900, 1, '', 1, 1402837994, NULL);
 
 -- --------------------------------------------------------
 
@@ -5644,7 +5823,7 @@ CREATE TABLE IF NOT EXISTS `mdl_files` (
   KEY `mdl_file_con2_ix` (`contextid`),
   KEY `mdl_file_use_ix` (`userid`),
   KEY `mdl_file_ref_ix` (`referencefileid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='description of files, content is stored in sha1 file pool' AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='description of files, content is stored in sha1 file pool' AUTO_INCREMENT=21 ;
 
 --
 -- Dumping data for table `mdl_files`
@@ -5657,7 +5836,20 @@ INSERT INTO `mdl_files` (`id`, `contenthash`, `pathnamehash`, `contextid`, `comp
 (4, '33957e31ba9c763a74638b825f0a9154acf475e1', '695a55ff780e61c9e59428aa425430b0d6bde53b', 1, 'assignfeedback_editpdf', 'stamps', 0, '/', 'tick.png', 2, 1187, 'image/png', 0, NULL, NULL, NULL, 1402744946, 1402744946, 0, NULL),
 (5, 'd613d55f37bb76d38d4ffb4b7b83e6c694778c30', '373e63af262a9b8466ba8632551520be793c37ff', 1, 'assignfeedback_editpdf', 'stamps', 0, '/', 'cross.png', 2, 1230, 'image/png', 0, NULL, NULL, NULL, 1402744947, 1402744947, 0, NULL),
 (6, 'b7ec6bd342f62da90bd4d98097bd996684ac4355', '70bd4cc16567d28fd295b46ba28799ebb814b1d5', 5, 'user', 'draft', 21026612, '/', 'Project scope document  Milestones-10 June.docx', 2, 34247, 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 0, 'O:8:"stdClass":1:{s:6:"source";s:48:"Project scope document & Milestones-10 June.docx";}', 'Admin User', 'allrightsreserved', 1402745995, 1402745995, 0, NULL),
-(7, 'da39a3ee5e6b4b0d3255bfef95601890afd80709', '0c45536a96186285d272da97f1761f36de9ea6cc', 5, 'user', 'draft', 21026612, '/', '.', 2, 0, NULL, 0, NULL, NULL, NULL, 1402745995, 1402745995, 0, NULL);
+(7, 'da39a3ee5e6b4b0d3255bfef95601890afd80709', '0c45536a96186285d272da97f1761f36de9ea6cc', 5, 'user', 'draft', 21026612, '/', '.', 2, 0, NULL, 0, NULL, NULL, NULL, 1402745995, 1402745995, 0, NULL),
+(8, '0f326d4ffa96c694bb860b9376eceff715200ad1', 'bc831f142eed8a391acecc86fb185fda7d9df45a', 5, 'user', 'draft', 741882324, '/', 'logo.png', 2, 7806, 'image/png', 0, 'O:8:"stdClass":1:{s:6:"source";s:8:"logo.png";}', 'Admin User', 'allrightsreserved', 1402816423, 1402816423, 0, NULL),
+(9, 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'fc90bfc028069b94b4d6ee462a2de69d4df7542c', 5, 'user', 'draft', 741882324, '/', '.', 2, 0, NULL, 0, NULL, NULL, NULL, 1402816423, 1402816423, 0, NULL),
+(10, 'bfdb50d6331fbb5379f6e16a233ab72e1577bfa7', 'b2e576883f35fe4699cf7c535e18e9d382494318', 1, 'core', 'preview', 0, '/thumb/', '0f326d4ffa96c694bb860b9376eceff715200ad1', NULL, 3431, 'image/png', 0, NULL, NULL, NULL, 1402816424, 1402816424, 0, NULL),
+(11, 'da39a3ee5e6b4b0d3255bfef95601890afd80709', '74c104d54c05b5f8c633a36da516d37e6c5279e4', 1, 'core', 'preview', 0, '/thumb/', '.', NULL, 0, NULL, 0, NULL, NULL, NULL, 1402816424, 1402816424, 0, NULL),
+(12, 'da39a3ee5e6b4b0d3255bfef95601890afd80709', '884555719c50529b9df662a38619d04b5b11e25c', 1, 'core', 'preview', 0, '/', '.', NULL, 0, NULL, 0, NULL, NULL, NULL, 1402816424, 1402816424, 0, NULL),
+(13, '0f326d4ffa96c694bb860b9376eceff715200ad1', 'dcc52a21b0048c621fd5829a58c7a7c3740c2924', 1, 'theme_essential', 'logo', 0, '/', 'logo.png', 2, 7806, 'image/png', 0, 'logo.png', 'Admin User', 'allrightsreserved', 1402816423, 1402816442, 0, NULL),
+(14, 'da39a3ee5e6b4b0d3255bfef95601890afd80709', '6da7d8510df85f7b971331677cec428f2f111a8d', 1, 'theme_essential', 'logo', 0, '/', '.', 2, 0, NULL, 0, NULL, NULL, NULL, 1402816423, 1402816442, 0, NULL),
+(15, '0f326d4ffa96c694bb860b9376eceff715200ad1', '35e23f633ca25eca1418c7540d9e40c8137f0270', 5, 'user', 'draft', 732604980, '/', 'logo.png', 2, 7806, 'image/png', 0, 'O:8:"stdClass":2:{s:6:"source";s:8:"logo.png";s:8:"original";s:216:"YTo2OntzOjk6ImNvbnRleHRpZCI7aToxO3M6OToiY29tcG9uZW50IjtzOjE1OiJ0aGVtZV9lc3NlbnRpYWwiO3M6NjoiaXRlbWlkIjtpOjA7czo4OiJmaWxlYXJlYSI7czo0OiJsb2dvIjtzOjg6ImZpbGVwYXRoIjtzOjE6Ii8iO3M6ODoiZmlsZW5hbWUiO3M6ODoibG9nby5wbmciO30=";}', 'Admin User', 'allrightsreserved', 1402816423, 1402816442, 0, NULL),
+(16, 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'f94433abcf73cbf19987fc89ecdae454df2ac239', 5, 'user', 'draft', 732604980, '/', '.', 2, 0, NULL, 0, NULL, NULL, NULL, 1402830921, 1402830921, 0, NULL),
+(17, '0f326d4ffa96c694bb860b9376eceff715200ad1', 'cb3c2561e4b80179850dc426865857cd07c78c56', 5, 'user', 'draft', 606750488, '/', 'logo.png', 2, 7806, 'image/png', 0, 'O:8:"stdClass":2:{s:6:"source";s:8:"logo.png";s:8:"original";s:216:"YTo2OntzOjk6ImNvbnRleHRpZCI7aToxO3M6OToiY29tcG9uZW50IjtzOjE1OiJ0aGVtZV9lc3NlbnRpYWwiO3M6NjoiaXRlbWlkIjtpOjA7czo4OiJmaWxlYXJlYSI7czo0OiJsb2dvIjtzOjg6ImZpbGVwYXRoIjtzOjE6Ii8iO3M6ODoiZmlsZW5hbWUiO3M6ODoibG9nby5wbmciO30=";}', 'Admin User', 'allrightsreserved', 1402816423, 1402816442, 0, NULL),
+(18, 'da39a3ee5e6b4b0d3255bfef95601890afd80709', '84c2d8c5624e3645ba74dfbfc78168fc9d050c7b', 5, 'user', 'draft', 606750488, '/', '.', 2, 0, NULL, 0, NULL, NULL, NULL, 1402831402, 1402831402, 0, NULL),
+(19, 'a212baa193dde250536b9c027999987f04f22c38', '4dd5bd48ef949f610263f02cb30dee4636c83ae0', 5, 'user', 'draft', 760498047, '/', 'scedhuler.zip', 2, 80546, 'application/zip', 0, 'O:8:"stdClass":1:{s:6:"source";s:37:"mod_scheduler_moodle26_2013092702.zip";}', 'Admin User', 'allrightsreserved', 1402833147, 1402833147, 0, NULL),
+(20, 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'e956b3aa095335982af278c7b2032db88d1e6d90', 5, 'user', 'draft', 760498047, '/', '.', 2, 0, NULL, 0, NULL, NULL, NULL, 1402833147, 1402833147, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -5771,14 +5963,16 @@ CREATE TABLE IF NOT EXISTS `mdl_forum` (
   `displaywordcount` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `mdl_foru_cou_ix` (`course`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Forums contain and structure discussion' AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Forums contain and structure discussion' AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `mdl_forum`
 --
 
 INSERT INTO `mdl_forum` (`id`, `course`, `type`, `name`, `intro`, `introformat`, `assessed`, `assesstimestart`, `assesstimefinish`, `scale`, `maxbytes`, `maxattachments`, `forcesubscribe`, `trackingtype`, `rsstype`, `rssarticles`, `timemodified`, `warnafter`, `blockafter`, `blockperiod`, `completiondiscussions`, `completionreplies`, `completionposts`, `displaywordcount`) VALUES
-(1, 2, 'news', 'News forum', 'General news and announcements', 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1402746980, 0, 0, 0, 0, 0, 0, 0);
+(1, 2, 'news', 'News forum', 'General news and announcements', 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1402746980, 0, 0, 0, 0, 0, 0, 0),
+(2, 1, 'news', 'Site news', 'General news and announcements', 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1402830858, 0, 0, 0, 0, 0, 0, 0),
+(3, 3, 'news', 'News forum', 'General news and announcements', 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1402832529, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -5819,7 +6013,14 @@ CREATE TABLE IF NOT EXISTS `mdl_forum_discussions` (
   PRIMARY KEY (`id`),
   KEY `mdl_forudisc_use_ix` (`userid`),
   KEY `mdl_forudisc_for_ix` (`forum`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Forums are composed of discussions' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Forums are composed of discussions' AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `mdl_forum_discussions`
+--
+
+INSERT INTO `mdl_forum_discussions` (`id`, `course`, `forum`, `name`, `firstpost`, `userid`, `groupid`, `assessed`, `timemodified`, `usermodified`, `timestart`, `timeend`) VALUES
+(1, 1, 2, 'Great New..', 1, 2, -1, 1, 1402831862, 2, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -5848,7 +6049,14 @@ CREATE TABLE IF NOT EXISTS `mdl_forum_posts` (
   KEY `mdl_forupost_mai_ix` (`mailed`),
   KEY `mdl_forupost_dis_ix` (`discussion`),
   KEY `mdl_forupost_par_ix` (`parent`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='All posts are stored in this table' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='All posts are stored in this table' AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `mdl_forum_posts`
+--
+
+INSERT INTO `mdl_forum_posts` (`id`, `discussion`, `parent`, `userid`, `created`, `modified`, `mailed`, `subject`, `message`, `messageformat`, `messagetrust`, `attachment`, `totalscore`, `mailnow`) VALUES
+(1, 1, 0, 2, 1402831862, 1402831862, 0, 'Great New..', '<p>New Offer.. Get free courses !!!! click here</p>', 1, 0, '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -5901,7 +6109,14 @@ CREATE TABLE IF NOT EXISTS `mdl_forum_subscriptions` (
   PRIMARY KEY (`id`),
   KEY `mdl_forusubs_use_ix` (`userid`),
   KEY `mdl_forusubs_for_ix` (`forum`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Keeps track of who is subscribed to what forum' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Keeps track of who is subscribed to what forum' AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `mdl_forum_subscriptions`
+--
+
+INSERT INTO `mdl_forum_subscriptions` (`id`, `userid`, `forum`) VALUES
+(1, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -6086,7 +6301,15 @@ CREATE TABLE IF NOT EXISTS `mdl_grade_categories` (
   PRIMARY KEY (`id`),
   KEY `mdl_gradcate_cou_ix` (`courseid`),
   KEY `mdl_gradcate_par_ix` (`parent`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='This table keeps information about categories, used for grou' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='This table keeps information about categories, used for grou' AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `mdl_grade_categories`
+--
+
+INSERT INTO `mdl_grade_categories` (`id`, `courseid`, `parent`, `depth`, `path`, `fullname`, `aggregation`, `keephigh`, `droplow`, `aggregateonlygraded`, `aggregateoutcomes`, `aggregatesubcats`, `timecreated`, `timemodified`, `hidden`) VALUES
+(1, 1, NULL, 1, '/1/', '?', 11, 0, 0, 1, 0, 0, 1402833331, 1402833331, 0),
+(2, 3, NULL, 1, '/2/', '?', 11, 0, 0, 1, 0, 0, 1402837296, 1402837297, 0);
 
 -- --------------------------------------------------------
 
@@ -6119,7 +6342,17 @@ CREATE TABLE IF NOT EXISTS `mdl_grade_categories_history` (
   KEY `mdl_gradcatehist_cou_ix` (`courseid`),
   KEY `mdl_gradcatehist_par_ix` (`parent`),
   KEY `mdl_gradcatehist_log_ix` (`loggeduser`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='History of grade_categories' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='History of grade_categories' AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `mdl_grade_categories_history`
+--
+
+INSERT INTO `mdl_grade_categories_history` (`id`, `action`, `oldid`, `source`, `timemodified`, `loggeduser`, `courseid`, `parent`, `depth`, `path`, `fullname`, `aggregation`, `keephigh`, `droplow`, `aggregateonlygraded`, `aggregateoutcomes`, `aggregatesubcats`, `hidden`) VALUES
+(1, 1, 1, 'system', 1402833331, 2, 1, NULL, 0, NULL, '?', 11, 0, 0, 1, 0, 0, 0),
+(2, 2, 1, 'system', 1402833331, 2, 1, NULL, 1, '/1/', '?', 11, 0, 0, 1, 0, 0, 0),
+(3, 1, 2, 'system', 1402837296, 4, 3, NULL, 0, NULL, '?', 11, 0, 0, 1, 0, 0, 0),
+(4, 2, 2, 'system', 1402837297, 4, 3, NULL, 1, '/2/', '?', 11, 0, 0, 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -6281,7 +6514,17 @@ CREATE TABLE IF NOT EXISTS `mdl_grade_items` (
   KEY `mdl_graditem_cat_ix` (`categoryid`),
   KEY `mdl_graditem_sca_ix` (`scaleid`),
   KEY `mdl_graditem_out_ix` (`outcomeid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='This table keeps information about gradeable items (ie colum' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='This table keeps information about gradeable items (ie colum' AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `mdl_grade_items`
+--
+
+INSERT INTO `mdl_grade_items` (`id`, `courseid`, `categoryid`, `itemname`, `itemtype`, `itemmodule`, `iteminstance`, `itemnumber`, `iteminfo`, `idnumber`, `calculation`, `gradetype`, `grademax`, `grademin`, `scaleid`, `outcomeid`, `gradepass`, `multfactor`, `plusfactor`, `aggregationcoef`, `sortorder`, `display`, `decimals`, `hidden`, `locked`, `locktime`, `needsupdate`, `timecreated`, `timemodified`) VALUES
+(1, 1, NULL, NULL, 'course', NULL, 1, NULL, NULL, NULL, NULL, 1, '100.00000', '0.00000', NULL, NULL, '0.00000', '1.00000', '0.00000', '0.00000', 1, 0, NULL, 0, 0, 0, 0, 1402833331, 1402833331),
+(2, 3, NULL, NULL, 'course', NULL, 2, NULL, NULL, NULL, NULL, 1, '100.00000', '0.00000', NULL, NULL, '0.00000', '1.00000', '0.00000', '0.00000', 1, 0, NULL, 0, 0, 0, 0, 1402837297, 1402837297),
+(3, 3, 2, 'First Assignemnt', 'mod', 'assign', 1, 0, NULL, '', NULL, 1, '100.00000', '0.00000', NULL, NULL, '0.00000', '1.00000', '0.00000', '0.00000', 2, 0, NULL, 0, 0, 0, 0, 1402837321, 1402837321),
+(4, 3, 2, 'sffsdfsf', 'mod', 'quiz', 1, 0, NULL, '', NULL, 1, '10.00000', '0.00000', NULL, NULL, '0.00000', '1.00000', '0.00000', '0.00000', 3, 0, NULL, 0, 0, 0, 0, 1402837411, 1402837411);
 
 -- --------------------------------------------------------
 
@@ -6330,7 +6573,18 @@ CREATE TABLE IF NOT EXISTS `mdl_grade_items_history` (
   KEY `mdl_graditemhist_sca_ix` (`scaleid`),
   KEY `mdl_graditemhist_out_ix` (`outcomeid`),
   KEY `mdl_graditemhist_log_ix` (`loggeduser`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='History of grade_items' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='History of grade_items' AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `mdl_grade_items_history`
+--
+
+INSERT INTO `mdl_grade_items_history` (`id`, `action`, `oldid`, `source`, `timemodified`, `loggeduser`, `courseid`, `categoryid`, `itemname`, `itemtype`, `itemmodule`, `iteminstance`, `itemnumber`, `iteminfo`, `idnumber`, `calculation`, `gradetype`, `grademax`, `grademin`, `scaleid`, `outcomeid`, `gradepass`, `multfactor`, `plusfactor`, `aggregationcoef`, `sortorder`, `hidden`, `locked`, `locktime`, `needsupdate`, `display`, `decimals`) VALUES
+(1, 1, 1, 'system', 1402833331, 2, 1, NULL, NULL, 'course', NULL, 1, NULL, NULL, NULL, NULL, 1, '100.00000', '0.00000', NULL, NULL, '0.00000', '1.00000', '0.00000', '0.00000', 1, 0, 0, 0, 1, 0, NULL),
+(2, 1, 2, 'system', 1402837297, 4, 3, NULL, NULL, 'course', NULL, 2, NULL, NULL, NULL, NULL, 1, '100.00000', '0.00000', NULL, NULL, '0.00000', '1.00000', '0.00000', '0.00000', 1, 0, 0, 0, 1, 0, NULL),
+(3, 1, 3, NULL, 1402837321, 4, 3, 2, 'First Assignemnt', 'mod', 'assign', 1, 0, NULL, '6', NULL, 1, '100.00000', '0.00000', NULL, NULL, '0.00000', '1.00000', '0.00000', '0.00000', 2, 0, 0, 0, 1, 0, NULL),
+(4, 2, 3, NULL, 1402837321, 4, 3, 2, 'First Assignemnt', 'mod', 'assign', 1, 0, NULL, '', NULL, 1, '100.00000', '0.00000', NULL, NULL, '0.00000', '1.00000', '0.00000', '0.00000', 2, 0, 0, 0, 1, 0, NULL),
+(5, 1, 4, NULL, 1402837411, 4, 3, 2, 'sffsdfsf', 'mod', 'quiz', 1, 0, NULL, '', NULL, 1, '10.00000', '0.00000', NULL, NULL, '0.00000', '1.00000', '0.00000', '0.00000', 3, 0, 0, 0, 1, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -6552,7 +6806,14 @@ CREATE TABLE IF NOT EXISTS `mdl_grading_areas` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `mdl_gradarea_concomare_uix` (`contextid`,`component`,`areaname`),
   KEY `mdl_gradarea_con_ix` (`contextid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Identifies gradable areas where advanced grading can happen.' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Identifies gradable areas where advanced grading can happen.' AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `mdl_grading_areas`
+--
+
+INSERT INTO `mdl_grading_areas` (`id`, `contextid`, `component`, `areaname`, `activemethod`) VALUES
+(1, 40, 'mod_assign', 'submissions', NULL);
 
 -- --------------------------------------------------------
 
@@ -6967,7 +7228,7 @@ CREATE TABLE IF NOT EXISTS `mdl_log` (
   KEY `mdl_log_act_ix` (`action`),
   KEY `mdl_log_usecou_ix` (`userid`,`course`),
   KEY `mdl_log_cmi_ix` (`cmid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Every action is logged as far as possible' AUTO_INCREMENT=110 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Every action is logged as far as possible' AUTO_INCREMENT=516 ;
 
 --
 -- Dumping data for table `mdl_log`
@@ -7082,7 +7343,413 @@ INSERT INTO `mdl_log` (`id`, `time`, `userid`, `ip`, `course`, `module`, `cmid`,
 (106, 1402752803, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
 (107, 1402752804, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
 (108, 1402752805, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
-(109, 1402752813, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2');
+(109, 1402752813, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(110, 1402760915, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(111, 1402760915, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(112, 1402761150, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(113, 1402761180, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(114, 1402761213, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(115, 1402761243, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(116, 1402761244, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(117, 1402761271, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(118, 1402761333, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(119, 1402761522, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(120, 1402761585, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(121, 1402761664, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(122, 1402761686, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(123, 1402816358, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(124, 1402816359, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(125, 1402816456, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(126, 1402817571, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(127, 1402817571, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(128, 1402817598, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(129, 1402817753, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(130, 1402817848, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(131, 1402817916, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(132, 1402818062, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(133, 1402818065, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(134, 1402818194, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(135, 1402818195, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(136, 1402818199, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(137, 1402818557, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(138, 1402818557, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(139, 1402818561, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(140, 1402818814, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(141, 1402818815, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(142, 1402818938, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(143, 1402819673, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(144, 1402819674, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(145, 1402819679, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(146, 1402819883, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(147, 1402819883, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(148, 1402819886, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(149, 1402820030, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(150, 1402820031, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(151, 1402820034, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(152, 1402823948, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(153, 1402823948, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(154, 1402823952, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(155, 1402824647, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(156, 1402824647, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(157, 1402824654, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(158, 1402824659, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(159, 1402830325, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(160, 1402830326, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(161, 1402830333, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(162, 1402830342, 1, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=1&course=1', '1'),
+(163, 1402830342, 1, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(164, 1402830356, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(165, 1402830371, 1, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=1&course=1', '1'),
+(166, 1402830374, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(167, 1402830375, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(168, 1402830384, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(169, 1402830385, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(170, 1402830396, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(171, 1402830397, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(172, 1402830431, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(173, 1402830431, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(174, 1402830454, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(175, 1402830461, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(176, 1402830462, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(177, 1402830490, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(178, 1402830502, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(179, 1402830502, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(180, 1402830515, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(181, 1402830523, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(182, 1402830523, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(183, 1402830532, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(184, 1402830544, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(185, 1402830646, 2, '127.0.0.1', 1, 'user', 0, 'add', '/view.php?id=3', 'student Mr'),
+(186, 1402830655, 2, '127.0.0.1', 1, 'user', 0, 'update', 'view.php?id=3', ''),
+(187, 1402830664, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(188, 1402830709, 0, '127.0.0.1', 1, 'login', 0, 'error', 'index.php', 'shakir'),
+(189, 1402830713, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(190, 1402830713, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(191, 1402830737, 2, '127.0.0.1', 1, 'user', 0, 'update', 'view.php?id=3', ''),
+(192, 1402830758, 2, '127.0.0.1', 1, 'user', 0, 'update', 'view.php?id=3', ''),
+(193, 1402830762, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(194, 1402830774, 3, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=3&course=1', '3'),
+(195, 1402830774, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(196, 1402830788, 3, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=3&course=1', '3'),
+(197, 1402830797, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(198, 1402830797, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(199, 1402830807, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(200, 1402830808, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(201, 1402830834, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(202, 1402830838, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(203, 1402830838, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(204, 1402830847, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(205, 1402830847, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(206, 1402830857, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(207, 1402830858, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(208, 1402830880, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(209, 1402830898, 2, '127.0.0.1', 1, 'course', 0, 'editsection', 'editsection.php?id=2', '1'),
+(210, 1402830898, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(211, 1402830981, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(212, 1402831008, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(213, 1402831051, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(214, 1402831052, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(215, 1402831094, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(216, 1402831110, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(217, 1402831110, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(218, 1402831150, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(219, 1402831150, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(220, 1402831186, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(221, 1402831186, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(222, 1402831265, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(223, 1402831278, 3, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=3&course=1', '3'),
+(224, 1402831278, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(225, 1402831307, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(226, 1402831314, 3, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=3&course=1', '3'),
+(227, 1402831323, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(228, 1402831323, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(229, 1402831473, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(230, 1402831479, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(231, 1402831479, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(232, 1402831547, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(233, 1402831567, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(234, 1402831620, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(235, 1402831622, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(236, 1402831678, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(237, 1402831786, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(238, 1402831790, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(239, 1402831790, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(240, 1402831862, 2, '127.0.0.1', 1, 'forum', 3, 'add discussion', 'discuss.php?d=1', '1'),
+(241, 1402831866, 2, '127.0.0.1', 1, 'forum', 3, 'view forum', 'view.php?id=3', '2'),
+(242, 1402831872, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(243, 1402831910, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(244, 1402831937, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(245, 1402831943, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(246, 1402831970, 3, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=3&course=1', '3'),
+(247, 1402831970, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(248, 1402831972, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(249, 1402831972, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(250, 1402831987, 3, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=3&course=1', '3'),
+(251, 1402832058, 3, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=3&course=1', '3'),
+(252, 1402832058, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(253, 1402832073, 3, '127.0.0.1', 1, 'message', 0, 'write', 'index.php?user=3&id=2&history=1#m1', '3'),
+(254, 1402832077, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(255, 1402832405, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(256, 1402832412, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(257, 1402832481, 2, '127.0.0.1', 1, 'course', 0, 'new', 'view.php?id=3', 'test_open (ID 3)'),
+(258, 1402832514, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(259, 1402832519, 2, '127.0.0.1', 2, 'course', 0, 'view', 'view.php?id=2', '2'),
+(260, 1402832529, 2, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(261, 1402832613, 2, '127.0.0.1', 1, 'admin', 0, 'tool capability', 'tool/capability/index.php', '0'),
+(262, 1402832627, 2, '127.0.0.1', 1, 'admin', 0, 'tool capability', 'tool/capability/index.php', '1'),
+(263, 1402832677, 2, '127.0.0.1', 1, 'category', 0, 'add', 'editcategory.php?id=2', '2'),
+(264, 1402832844, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(265, 1402832850, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(266, 1402832856, 3, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(267, 1402832862, 3, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(268, 1402832874, 3, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(269, 1402832883, 3, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(270, 1402833224, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(271, 1402833242, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(272, 1402833252, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(273, 1402833253, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(274, 1402833266, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(275, 1402833331, 2, '127.0.0.1', 1, 'course', 0, 'add mod', '../mod/scheduler/view.php?id=5', 'scheduler 1'),
+(276, 1402833331, 2, '127.0.0.1', 1, 'scheduler', 5, 'add', 'view.php?id=5', '1'),
+(277, 1402833332, 2, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(278, 1402833337, 2, '127.0.0.1', 1, 'scheduler', 5, 'addsession', 'view.php?id=5', '1'),
+(279, 1402833386, 2, '127.0.0.1', 1, 'scheduler', 5, 'addsession', 'view.php?id=5', '1'),
+(280, 1402833392, 2, '127.0.0.1', 1, 'scheduler', 5, 'datelist', 'view.php?id=5', '1'),
+(281, 1402833396, 2, '127.0.0.1', 1, 'scheduler', 5, 'addsession', 'view.php?id=5', '1'),
+(282, 1402833399, 2, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(283, 1402833415, 2, '127.0.0.1', 1, 'scheduler', 5, 'datelist', 'view.php?id=5', '1'),
+(284, 1402833418, 2, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(285, 1402833421, 2, '127.0.0.1', 1, 'scheduler', 5, 'addslot', 'view.php?id=5', '1'),
+(286, 1402833459, 2, '127.0.0.1', 1, 'scheduler', 5, 'addslot', 'view.php?id=5', '1'),
+(287, 1402833465, 2, '127.0.0.1', 1, 'scheduler', 5, 'addslot', 'view.php?id=5', '1'),
+(288, 1402833466, 2, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(289, 1402833473, 2, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(290, 1402833476, 2, '127.0.0.1', 1, 'scheduler', 5, 'datelist', 'view.php?id=5', '1'),
+(291, 1402833480, 2, '127.0.0.1', 1, 'scheduler', 5, 'datelist', 'view.php?id=5', '1'),
+(292, 1402833485, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(293, 1402833547, 2, '127.0.0.1', 1, 'user', 0, 'add', '/view.php?id=4', 'Teacher T'),
+(294, 1402833599, 2, '127.0.0.1', 1, 'admin', 0, 'tool capability', 'tool/capability/index.php', '0'),
+(295, 1402833644, 2, '127.0.0.1', 0, 'role', 0, 'assign', 'admin/roles/assign.php?contextid=1&roleid=1', 'Manager'),
+(296, 1402833673, 2, '127.0.0.1', 0, 'role', 0, 'assign', 'admin/roles/assign.php?contextid=1&roleid=2', 'Course creator'),
+(297, 1402833756, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(298, 1402833759, 3, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=3&course=1', '3'),
+(299, 1402833774, 4, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=4&course=1', '4'),
+(300, 1402833775, 4, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(301, 1402833783, 4, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(302, 1402833795, 4, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(303, 1402833872, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(304, 1402833881, 2, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(305, 1402833915, 4, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=4&course=1', '4'),
+(306, 1402833922, 3, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=3&course=1', '3'),
+(307, 1402833923, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(308, 1402833925, 3, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(309, 1402833934, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(310, 1402833940, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(311, 1402834012, 2, '127.0.0.1', 1, 'user', 0, 'view all', 'index.php?id=1', ''),
+(312, 1402834476, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(313, 1402834504, 3, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(314, 1402834515, 3, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(315, 1402834525, 3, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(316, 1402834544, 3, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=3&course=1', '3'),
+(317, 1402834564, 4, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=4&course=1', '4'),
+(318, 1402834565, 4, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(319, 1402834685, 4, '127.0.0.1', 1, 'role', 0, 'override', 'admin/roles/override.php?contextid=24&roleid=5', 'Student'),
+(320, 1402834699, 4, '127.0.0.1', 1, 'role', 0, 'override', 'admin/roles/override.php?contextid=24&roleid=5', 'Student'),
+(321, 1402835651, 2, '127.0.0.1', 0, 'role', 0, 'assign', 'admin/roles/assign.php?contextid=1&roleid=1', 'Manager'),
+(322, 1402835681, 2, '127.0.0.1', 1, 'role', 0, 'edit allow assign', 'admin/roles/allow.php?mode=assign', ''),
+(323, 1402835870, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(324, 1402835881, 1, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=1&course=1', '1'),
+(325, 1402835882, 1, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(326, 1402835891, 1, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(327, 1402835898, 1, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(328, 1402835904, 1, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(329, 1402835907, 1, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(330, 1402835912, 1, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(331, 1402835924, 1, '127.0.0.1', 1, 'login', 0, 'error', 'index.php', 'avas'),
+(332, 1402835933, 1, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(333, 1402836050, 1, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(334, 1402836062, 1, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(335, 1402836062, 1, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(336, 1402836080, 4, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=4&course=1', '4'),
+(337, 1402836096, 1, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(338, 1402836215, 1, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(339, 1402836776, 0, '127.0.0.1', 1, 'login', 0, 'error', 'index.php', 'admin'),
+(340, 1402836785, 0, '127.0.0.1', 1, 'library', 0, 'mailer', 'http://localhost/moodle/login/forgot_password.php', 'ERROR: Could not instantiate mail function.'),
+(341, 1402836801, 1, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(342, 1402837097, 1, '127.0.0.1', 1, 'login', 0, 'error', 'index.php', 'admin'),
+(343, 1402837108, 3, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=3&course=1', '3'),
+(344, 1402837113, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(345, 1402837119, 3, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=3&course=1', '3'),
+(346, 1402837163, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(347, 1402837164, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(348, 1402837194, 2, '127.0.0.1', 1, 'role', 0, 'assign', 'admin/roles/assign.php?contextid=2&roleid=3', 'Teacher'),
+(349, 1402837205, 2, '127.0.0.1', 1, 'role', 0, 'assign', 'admin/roles/assign.php?contextid=2&roleid=5', 'Student'),
+(350, 1402837211, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(351, 1402837239, 3, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=3&course=1', '3'),
+(352, 1402837240, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(353, 1402837242, 3, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(354, 1402837248, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(355, 1402837252, 3, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(356, 1402837261, 3, '127.0.0.1', 3, 'forum', 4, 'view forum', 'view.php?id=4', '3'),
+(357, 1402837263, 3, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=3&course=1', '3'),
+(358, 1402837277, 4, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=4&course=1', '4'),
+(359, 1402837277, 4, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(360, 1402837284, 4, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(361, 1402837287, 4, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(362, 1402837287, 4, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(363, 1402837321, 4, '127.0.0.1', 3, 'calendar', 0, 'add', 'event.php?action=edit&id=1', 'First Assignemnt'),
+(364, 1402837321, 4, '127.0.0.1', 3, 'course', 0, 'add mod', '../mod/assign/view.php?id=6', 'assign 1'),
+(365, 1402837321, 4, '127.0.0.1', 3, 'assign', 6, 'add', 'view.php?id=6', '1'),
+(366, 1402837321, 4, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(367, 1402837358, 4, '127.0.0.1', 3, 'calendar', 0, 'add', 'event.php?action=edit&id=2', 'Test'),
+(368, 1402837358, 4, '127.0.0.1', 3, 'course', 0, 'add mod', '../mod/chat/view.php?id=7', 'chat 1'),
+(369, 1402837358, 4, '127.0.0.1', 3, 'chat', 7, 'add', 'view.php?id=7', '1'),
+(370, 1402837358, 4, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(371, 1402837371, 4, '127.0.0.1', 3, 'user', 0, 'view all', 'index.php?id=3', ''),
+(372, 1402837378, 4, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(373, 1402837411, 4, '127.0.0.1', 3, 'course', 0, 'add mod', '../mod/quiz/view.php?id=8', 'quiz 1'),
+(374, 1402837411, 4, '127.0.0.1', 3, 'quiz', 8, 'add', 'view.php?id=8', '1'),
+(375, 1402837411, 4, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(376, 1402837424, 4, '127.0.0.1', 3, 'course', 0, 'update mod', '../mod/quiz/view.php?id=8', 'quiz 1'),
+(377, 1402837424, 4, '127.0.0.1', 3, 'quiz', 8, 'update', 'view.php?id=8', '1'),
+(378, 1402837425, 4, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(379, 1402837430, 4, '127.0.0.1', 3, 'course', 0, 'update mod', '../mod/quiz/view.php?id=8', 'quiz 1'),
+(380, 1402837433, 4, '127.0.0.1', 3, 'course', 0, 'update mod', '../mod/quiz/view.php?id=8', 'quiz 1'),
+(381, 1402837440, 4, '127.0.0.1', 3, 'course', 0, 'update mod', '../mod/quiz/view.php?id=8', 'quiz 1'),
+(382, 1402837442, 4, '127.0.0.1', 3, 'course', 0, 'update mod', '../mod/quiz/view.php?id=8', 'quiz 1'),
+(383, 1402837447, 4, '127.0.0.1', 3, 'course', 0, 'update mod', '../mod/chat/view.php?id=7', 'chat 1'),
+(384, 1402837452, 4, '127.0.0.1', 3, 'course', 0, 'update mod', '../mod/assign/view.php?id=6', 'assign 1'),
+(385, 1402837453, 4, '127.0.0.1', 3, 'course', 0, 'update mod', '../mod/forum/view.php?id=4', 'forum 3'),
+(386, 1402837457, 4, '127.0.0.1', 3, 'quiz', 8, 'view', 'view.php?id=8', '1'),
+(387, 1402837461, 4, '127.0.0.1', 3, 'quiz', 8, 'editquestions', 'view.php?id=8', '1'),
+(388, 1402837496, 4, '127.0.0.1', 3, 'quiz', 8, 'editquestions', 'view.php?id=8', '1'),
+(389, 1402837497, 4, '127.0.0.1', 3, 'quiz', 8, 'editquestions', 'view.php?id=8', '1'),
+(390, 1402837501, 4, '127.0.0.1', 3, 'quiz', 8, 'editquestions', 'view.php?id=8', '1'),
+(391, 1402837501, 4, '127.0.0.1', 3, 'quiz', 8, 'editquestions', 'view.php?id=8', '1'),
+(392, 1402837508, 4, '127.0.0.1', 3, 'quiz', 8, 'editquestions', 'view.php?id=8', '1'),
+(393, 1402837513, 4, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(394, 1402837520, 4, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(395, 1402837526, 4, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(396, 1402837528, 4, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(397, 1402837530, 4, '127.0.0.1', 1, 'scheduler', 5, 'addsession', 'view.php?id=5', '1'),
+(398, 1402837548, 4, '127.0.0.1', 1, 'scheduler', 5, 'addsession', 'view.php?id=5', '1'),
+(399, 1402837564, 4, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=4&course=1', '4'),
+(400, 1402837571, 3, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=3&course=1', '3'),
+(401, 1402837571, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(402, 1402837574, 3, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(403, 1402837580, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(404, 1402837584, 3, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(405, 1402837591, 3, '127.0.0.1', 3, 'assign', 6, 'view', 'view.php?id=6', 'View own submission status page.'),
+(406, 1402837594, 3, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(407, 1402837601, 3, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(408, 1402837610, 3, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=3&course=1', '3'),
+(409, 1402837616, 3, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=3&course=1', '3'),
+(410, 1402837616, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(411, 1402837618, 3, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=3&course=1', '3'),
+(412, 1402837626, 4, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=4&course=1', '4'),
+(413, 1402837627, 4, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(414, 1402837639, 4, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(415, 1402837642, 4, '127.0.0.1', 3, 'user', 0, 'view all', 'index.php?id=3', ''),
+(416, 1402837661, 4, '127.0.0.1', 3, 'notes', 0, 'view', 'index.php?course=3&user=0', 'view notes'),
+(417, 1402837692, 4, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(418, 1402837693, 4, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=4&course=1', '4'),
+(419, 1402837700, 3, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=3&course=1', '3'),
+(420, 1402837700, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(421, 1402837707, 3, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(422, 1402837717, 3, '127.0.0.1', 3, 'role', 0, 'assign', 'admin/roles/assign.php?contextid=31&roleid=5', 'Student'),
+(423, 1402837717, 3, '127.0.0.1', 3, 'course', 0, 'enrol', '../enrol/users.php?id=3', '3'),
+(424, 1402837718, 3, '127.0.0.1', 1, 'library', 0, 'mailer', 'http://localhost/moodle/enrol/index.php?id=3', 'ERROR: Could not instantiate mail function.'),
+(425, 1402837718, 3, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(426, 1402837730, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(427, 1402837739, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(428, 1402837740, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(429, 1402837745, 3, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(430, 1402837752, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(431, 1402837757, 3, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(432, 1402837766, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(433, 1402837846, 3, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(434, 1402837850, 3, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=3&course=1', '3'),
+(435, 1402837866, 4, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=4&course=1', '4'),
+(436, 1402837866, 4, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(437, 1402837871, 4, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(438, 1402837882, 4, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(439, 1402837884, 4, '127.0.0.1', 1, 'scheduler', 5, 'datelist', 'view.php?id=5', '1'),
+(440, 1402837887, 4, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(441, 1402837889, 4, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(442, 1402837891, 4, '127.0.0.1', 1, 'scheduler', 5, 'addsession', 'view.php?id=5', '1'),
+(443, 1402837896, 4, '127.0.0.1', 1, 'scheduler', 5, 'addslot', 'view.php?id=5', '1'),
+(444, 1402837906, 4, '127.0.0.1', 1, 'scheduler', 5, 'addslot', 'view.php?id=5', '1'),
+(445, 1402837907, 4, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(446, 1402837915, 4, '127.0.0.1', 1, 'scheduler', 5, 'unreuse', 'view.php?id=5', '1'),
+(447, 1402837919, 4, '127.0.0.1', 1, 'scheduler', 5, 'reuse', 'view.php?id=5', '1'),
+(448, 1402837921, 4, '127.0.0.1', 1, 'scheduler', 5, 'updateslot', 'view.php?id=5', '1'),
+(449, 1402837927, 4, '127.0.0.1', 1, 'scheduler', 5, 'updateslot', 'view.php?id=5', '1'),
+(450, 1402837928, 4, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(451, 1402837931, 4, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(452, 1402837936, 4, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=4&course=1', '4'),
+(453, 1402837942, 3, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=3&course=1', '3'),
+(454, 1402837943, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(455, 1402837947, 3, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(456, 1402837953, 3, '127.0.0.1', 1, 'scheduler', 5, 'savechoice', 'view.php?id=5', '1'),
+(457, 1402837955, 3, '127.0.0.1', 1, 'library', 0, 'mailer', 'http://localhost/moodle/mod/scheduler/view.php?id=5', 'ERROR: Could not instantiate mail function.'),
+(458, 1402837961, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(459, 1402837972, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(460, 1402837974, 3, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=3&course=1', '3'),
+(461, 1402837981, 4, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=4&course=1', '4'),
+(462, 1402837981, 4, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(463, 1402837986, 4, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(464, 1402837990, 4, '127.0.0.1', 1, 'scheduler', 5, 'saveseen', 'view.php?id=5', '1'),
+(465, 1402837994, 4, '127.0.0.1', 1, 'scheduler', 5, 'saveseen', 'view.php?id=5', '1'),
+(466, 1402838008, 4, '127.0.0.1', 1, 'scheduler', 5, 'downloads', 'view.php?id=5', '1'),
+(467, 1402838011, 4, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(468, 1402838030, 4, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(469, 1402838645, 4, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=4&course=1', '4'),
+(470, 1402838819, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(471, 1402838820, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(472, 1402838905, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(473, 1402838943, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(474, 1402838944, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(475, 1402839162, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(476, 1402839205, 0, '127.0.0.1', 1, 'login', 0, 'error', 'index.php', 'admin'),
+(477, 1402839213, 2, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=2&course=1', '2'),
+(478, 1402839222, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(479, 1402839228, 2, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(480, 1402839238, 2, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(481, 1402839241, 2, '127.0.0.1', 1, 'scheduler', 5, 'view', 'view.php?id=5', '1'),
+(482, 1402839246, 2, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(483, 1402839298, 2, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=2&course=1', '2'),
+(484, 1402839409, 4, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=4&course=1', '4'),
+(485, 1402839415, 4, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(486, 1402839444, 4, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(487, 1402839449, 4, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(488, 1402839458, 4, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(489, 1402839466, 4, '127.0.0.1', 3, 'calendar', 0, 'edit', 'event.php?action=edit&id=2', 'Test'),
+(490, 1402839467, 4, '127.0.0.1', 3, 'chat', 7, 'view', 'view.php?id=7', '1'),
+(491, 1402839504, 3, '127.0.0.1', 1, 'user', 0, 'login', 'view.php?id=3&course=1', '3'),
+(492, 1402839505, 3, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(493, 1402839510, 3, '127.0.0.1', 3, 'chat', 7, 'view', 'view.php?id=7', '1'),
+(494, 1402839520, 3, '127.0.0.1', 3, 'chat', 7, 'talk', 'view.php?id=7', '1'),
+(495, 1402839535, 4, '127.0.0.1', 3, 'chat', 7, 'talk', 'view.php?id=7', '1'),
+(496, 1402839538, 3, '127.0.0.1', 3, 'chat', 7, 'talk', 'view.php?id=7', '1'),
+(497, 1402839542, 4, '127.0.0.1', 3, 'chat', 7, 'talk', 'view.php?id=7', '1'),
+(498, 1402839551, 3, '127.0.0.1', 3, 'chat', 7, 'talk', 'view.php?id=7', '1'),
+(499, 1402839561, 3, '127.0.0.1', 3, 'chat', 7, 'talk', 'view.php?id=7', '1'),
+(500, 1402839584, 4, '127.0.0.1', 3, 'chat', 7, 'talk', 'view.php?id=7', '1'),
+(501, 1402839593, 3, '127.0.0.1', 3, 'chat', 7, 'talk', 'view.php?id=7', '1'),
+(502, 1402839599, 3, '127.0.0.1', 3, 'chat', 7, 'talk', 'view.php?id=7', '1'),
+(503, 1402839617, 3, '127.0.0.1', 3, 'chat', 7, 'report', 'report.php?id=7', '1'),
+(504, 1402839620, 3, '127.0.0.1', 3, 'chat', 7, 'report', 'report.php?id=7', '1'),
+(505, 1402839622, 3, '127.0.0.1', 3, 'chat', 7, 'report', 'report.php?id=7', '1'),
+(506, 1402839637, 3, '127.0.0.1', 3, 'chat', 7, 'talk', 'view.php?id=7', '1'),
+(507, 1402839640, 4, '127.0.0.1', 3, 'chat', 7, 'talk', 'view.php?id=7', '1'),
+(508, 1402839656, 4, '127.0.0.1', 3, 'chat', 7, 'talk', 'view.php?id=7', '1'),
+(509, 1402839670, 4, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(510, 1402839675, 4, '127.0.0.1', 3, 'course', 0, 'view', 'view.php?id=3', '3'),
+(511, 1402839708, 4, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(512, 1402839753, 4, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(513, 1402839793, 4, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(514, 1402839797, 4, '127.0.0.1', 1, 'course', 0, 'view', 'view.php?id=1', '1'),
+(515, 1402839806, 4, '127.0.0.1', 1, 'user', 0, 'logout', 'view.php?id=4&course=1', '4');
 
 -- --------------------------------------------------------
 
@@ -7429,7 +8096,7 @@ CREATE TABLE IF NOT EXISTS `mdl_message` (
   PRIMARY KEY (`id`),
   KEY `mdl_mess_use_ix` (`useridfrom`),
   KEY `mdl_mess_use2_ix` (`useridto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Stores all unread messages' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Stores all unread messages' AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -7536,7 +8203,14 @@ CREATE TABLE IF NOT EXISTS `mdl_message_read` (
   PRIMARY KEY (`id`),
   KEY `mdl_messread_use_ix` (`useridfrom`),
   KEY `mdl_messread_use2_ix` (`useridto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Stores all messages that have been read' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Stores all messages that have been read' AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `mdl_message_read`
+--
+
+INSERT INTO `mdl_message_read` (`id`, `useridfrom`, `useridto`, `subject`, `fullmessage`, `fullmessageformat`, `fullmessagehtml`, `smallmessage`, `notification`, `contexturl`, `contexturlname`, `timecreated`, `timeread`) VALUES
+(1, 3, 2, 'New message from student Mr', 'hello\n\n---------------------------------------------------------------------\nThis is a copy of a message sent to you at "TopGrader". Go to http://localhost/moodle/message/index.php?user=2&id=3 to reply.', 0, '', 'hello', 0, NULL, NULL, 1402832073, 1402832088);
 
 -- --------------------------------------------------------
 
@@ -7550,7 +8224,7 @@ CREATE TABLE IF NOT EXISTS `mdl_message_working` (
   `processorid` bigint(10) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `mdl_messwork_unr_ix` (`unreadmessageid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Lists all the messages and processors that need to be proces' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Lists all the messages and processors that need to be proces' AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -7920,7 +8594,7 @@ CREATE TABLE IF NOT EXISTS `mdl_modules` (
   `visible` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `mdl_modu_nam_ix` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='modules available in the site' AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='modules available in the site' AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `mdl_modules`
@@ -7948,7 +8622,8 @@ INSERT INTO `mdl_modules` (`id`, `name`, `cron`, `lastcron`, `search`, `visible`
 (19, 'survey', 0, 0, '', 1),
 (20, 'url', 0, 0, '', 1),
 (21, 'wiki', 0, 0, '', 1),
-(22, 'workshop', 60, 0, '', 1);
+(22, 'workshop', 60, 0, '', 1),
+(23, 'scheduler', 60, 0, '', 1);
 
 -- --------------------------------------------------------
 
@@ -7964,7 +8639,7 @@ CREATE TABLE IF NOT EXISTS `mdl_my_pages` (
   `sortorder` mediumint(6) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `mdl_mypage_usepri_ix` (`userid`,`private`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Extra user pages for the My Moodle system' AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Extra user pages for the My Moodle system' AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `mdl_my_pages`
@@ -7972,7 +8647,8 @@ CREATE TABLE IF NOT EXISTS `mdl_my_pages` (
 
 INSERT INTO `mdl_my_pages` (`id`, `userid`, `name`, `private`, `sortorder`) VALUES
 (1, NULL, '__default', 0, 0),
-(2, NULL, '__default', 1, 0);
+(2, NULL, '__default', 1, 0),
+(3, 2, '__default', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -8197,7 +8873,14 @@ CREATE TABLE IF NOT EXISTS `mdl_qtype_match_options` (
   `shownumcorrect` tinyint(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `mdl_qtypmatcopti_que_uix` (`questionid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Defines the question-type specific options for matching ques' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Defines the question-type specific options for matching ques' AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `mdl_qtype_match_options`
+--
+
+INSERT INTO `mdl_qtype_match_options` (`id`, `questionid`, `shuffleanswers`, `correctfeedback`, `correctfeedbackformat`, `partiallycorrectfeedback`, `partiallycorrectfeedbackformat`, `incorrectfeedback`, `incorrectfeedbackformat`, `shownumcorrect`) VALUES
+(1, 1, 1, '<p>Your answer is correct.</p>', 1, '<p>Your answer is partially correct.</p>', 1, '<p>Your answer is incorrect.</p>', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -8213,7 +8896,16 @@ CREATE TABLE IF NOT EXISTS `mdl_qtype_match_subquestions` (
   `answertext` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   KEY `mdl_qtypmatcsubq_que_ix` (`questionid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='The subquestions that make up a matching question' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='The subquestions that make up a matching question' AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `mdl_qtype_match_subquestions`
+--
+
+INSERT INTO `mdl_qtype_match_subquestions` (`id`, `questionid`, `questiontext`, `questiontextformat`, `answertext`) VALUES
+(1, 1, '<p>sadfsdf</p>', 1, 'sdfsdf'),
+(2, 1, '<p>sdfsadfasdfs</p>', 1, 'sdfsdf'),
+(3, 1, '<p>sadfsdf</p>', 1, 'sdfsdf');
 
 -- --------------------------------------------------------
 
@@ -8306,7 +8998,14 @@ CREATE TABLE IF NOT EXISTS `mdl_question` (
   KEY `mdl_ques_par_ix` (`parent`),
   KEY `mdl_ques_cre_ix` (`createdby`),
   KEY `mdl_ques_mod_ix` (`modifiedby`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='The questions themselves' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='The questions themselves' AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `mdl_question`
+--
+
+INSERT INTO `mdl_question` (`id`, `category`, `parent`, `name`, `questiontext`, `questiontextformat`, `generalfeedback`, `generalfeedbackformat`, `defaultmark`, `penalty`, `qtype`, `length`, `stamp`, `version`, `hidden`, `timecreated`, `timemodified`, `createdby`, `modifiedby`) VALUES
+(1, 2, 0, 'asdvsdv', '<p>sdfsdf</p>', 1, '<p>sdfsdf</p>', 1, '1.0000000', '0.3333333', 'match', 1, 'localhost+140615130456+k3FBix', 'localhost+140615130456+aAnTdR', 0, 1402837496, 1402837496, 4, 4);
 
 -- --------------------------------------------------------
 
@@ -8450,7 +9149,17 @@ CREATE TABLE IF NOT EXISTS `mdl_question_categories` (
   PRIMARY KEY (`id`),
   KEY `mdl_quescate_con_ix` (`contextid`),
   KEY `mdl_quescate_par_ix` (`parent`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Categories are for grouping questions' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Categories are for grouping questions' AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `mdl_question_categories`
+--
+
+INSERT INTO `mdl_question_categories` (`id`, `name`, `contextid`, `info`, `infoformat`, `stamp`, `parent`, `sortorder`) VALUES
+(1, 'Default for sffsdfsf', 42, 'The default category for questions shared in context ''sffsdfsf''.', 0, 'localhost+140615130421+0NcMRy', 0, 999),
+(2, 'Default for test_open to join', 31, 'The default category for questions shared in context ''test_open to join''.', 0, 'localhost+140615130421+rcLU15', 0, 999),
+(3, 'Default for Miscellaneous', 3, 'The default category for questions shared in context ''Miscellaneous''.', 0, 'localhost+140615130421+mr60ep', 0, 999),
+(4, 'Default for System', 1, 'The default category for questions shared in context ''System''.', 0, 'localhost+140615130421+ADvnMN', 0, 999);
 
 -- --------------------------------------------------------
 
@@ -8751,7 +9460,14 @@ CREATE TABLE IF NOT EXISTS `mdl_quiz` (
   `showblocks` smallint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `mdl_quiz_cou_ix` (`course`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='The settings for each quiz.' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='The settings for each quiz.' AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `mdl_quiz`
+--
+
+INSERT INTO `mdl_quiz` (`id`, `course`, `name`, `intro`, `introformat`, `timeopen`, `timeclose`, `timelimit`, `overduehandling`, `graceperiod`, `preferredbehaviour`, `attempts`, `attemptonlast`, `grademethod`, `decimalpoints`, `questiondecimalpoints`, `reviewattempt`, `reviewcorrectness`, `reviewmarks`, `reviewspecificfeedback`, `reviewgeneralfeedback`, `reviewrightanswer`, `reviewoverallfeedback`, `questionsperpage`, `navmethod`, `shufflequestions`, `shuffleanswers`, `questions`, `sumgrades`, `grade`, `timecreated`, `timemodified`, `password`, `subnet`, `browsersecurity`, `delay1`, `delay2`, `showuserpicture`, `showblocks`) VALUES
+(1, 3, 'sffsdfsf', '<p>sdfsdfsd</p>', 1, 0, 0, 0, 'autoabandon', 0, 'deferredfeedback', 0, 0, 1, 2, -1, 69904, 4368, 4368, 4368, 4368, 4368, 4368, 1, 'free', 0, 1, '1,0', '1.00000', '10.00000', 0, 1402837424, '', '', '-', 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -8798,7 +9514,14 @@ CREATE TABLE IF NOT EXISTS `mdl_quiz_feedback` (
   `maxgrade` decimal(10,5) NOT NULL DEFAULT '0.00000',
   PRIMARY KEY (`id`),
   KEY `mdl_quizfeed_qui_ix` (`quizid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Feedback given to students based on which grade band their o' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Feedback given to students based on which grade band their o' AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `mdl_quiz_feedback`
+--
+
+INSERT INTO `mdl_quiz_feedback` (`id`, `quizid`, `feedbacktext`, `feedbacktextformat`, `mingrade`, `maxgrade`) VALUES
+(2, 1, '', 1, '0.00000', '11.00000');
 
 -- --------------------------------------------------------
 
@@ -8870,7 +9593,14 @@ CREATE TABLE IF NOT EXISTS `mdl_quiz_question_instances` (
   PRIMARY KEY (`id`),
   KEY `mdl_quizquesinst_qui_ix` (`quiz`),
   KEY `mdl_quizquesinst_que_ix` (`question`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Stores the maximum possible grade (weight) for each question' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Stores the maximum possible grade (weight) for each question' AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `mdl_quiz_question_instances`
+--
+
+INSERT INTO `mdl_quiz_question_instances` (`id`, `quiz`, `question`, `grade`) VALUES
+(1, 1, 1, '1.0000000');
 
 -- --------------------------------------------------------
 
@@ -9063,7 +9793,7 @@ CREATE TABLE IF NOT EXISTS `mdl_resource` (
   `timemodified` bigint(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `mdl_reso_cou_ix` (`course`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Each record is one resource and its config data' AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Each record is one resource and its config data' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -9139,7 +9869,7 @@ CREATE TABLE IF NOT EXISTS `mdl_role_allow_assign` (
   UNIQUE KEY `mdl_rolealloassi_rolall_uix` (`roleid`,`allowassign`),
   KEY `mdl_rolealloassi_rol_ix` (`roleid`),
   KEY `mdl_rolealloassi_all_ix` (`allowassign`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='this defines what role can assign what role' AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='this defines what role can assign what role' AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `mdl_role_allow_assign`
@@ -9151,8 +9881,11 @@ INSERT INTO `mdl_role_allow_assign` (`id`, `roleid`, `allowassign`) VALUES
 (3, 1, 3),
 (4, 1, 4),
 (5, 1, 5),
-(6, 3, 4),
-(7, 3, 5);
+(6, 1, 6),
+(7, 1, 7),
+(8, 1, 8),
+(9, 3, 4),
+(10, 3, 5);
 
 -- --------------------------------------------------------
 
@@ -9242,7 +9975,19 @@ CREATE TABLE IF NOT EXISTS `mdl_role_assignments` (
   KEY `mdl_roleassi_rol_ix` (`roleid`),
   KEY `mdl_roleassi_con_ix` (`contextid`),
   KEY `mdl_roleassi_use_ix` (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='assigning roles in different context' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='assigning roles in different context' AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `mdl_role_assignments`
+--
+
+INSERT INTO `mdl_role_assignments` (`id`, `roleid`, `contextid`, `userid`, `timemodified`, `modifierid`, `component`, `itemid`, `sortorder`) VALUES
+(1, 1, 1, 4, 1402833643, 2, '', 0, 0),
+(2, 2, 1, 4, 1402833673, 2, '', 0, 0),
+(3, 1, 1, 2, 1402835651, 2, '', 0, 0),
+(4, 3, 2, 4, 1402837194, 2, '', 0, 0),
+(5, 5, 2, 3, 1402837205, 2, '', 0, 0),
+(6, 5, 31, 3, 1402837717, 3, '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -9264,7 +10009,7 @@ CREATE TABLE IF NOT EXISTS `mdl_role_capabilities` (
   KEY `mdl_rolecapa_con_ix` (`contextid`),
   KEY `mdl_rolecapa_mod_ix` (`modifierid`),
   KEY `mdl_rolecapa_cap_ix` (`capability`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='permission has to be signed, overriding a capability for a p' AUTO_INCREMENT=1120 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='permission has to be signed, overriding a capability for a p' AUTO_INCREMENT=1177 ;
 
 --
 -- Dumping data for table `mdl_role_capabilities`
@@ -10390,7 +11135,64 @@ INSERT INTO `mdl_role_capabilities` (`id`, `contextid`, `roleid`, `capability`, 
 (1116, 1, 1, 'quiz/grading:viewidnumber', 1, 1402744957, 0),
 (1117, 1, 4, 'quiz/statistics:view', 1, 1402744959, 0),
 (1118, 1, 3, 'quiz/statistics:view', 1, 1402744959, 0),
-(1119, 1, 1, 'quiz/statistics:view', 1, 1402744959, 0);
+(1119, 1, 1, 'quiz/statistics:view', 1, 1402744959, 0),
+(1120, 1, 3, 'mod/scheduler:addinstance', 1, 1402833169, 2),
+(1121, 1, 1, 'mod/scheduler:addinstance', 1, 1402833169, 2),
+(1122, 1, 5, 'mod/scheduler:appoint', 1, 1402833169, 2),
+(1123, 1, 4, 'mod/scheduler:appoint', -1, 1402833169, 2),
+(1124, 1, 3, 'mod/scheduler:appoint', -1, 1402833169, 2),
+(1125, 1, 2, 'mod/scheduler:appoint', -1, 1402833170, 2),
+(1126, 1, 1, 'mod/scheduler:appoint', -1, 1402833170, 2),
+(1127, 1, 5, 'mod/scheduler:attend', -1, 1402833170, 2),
+(1128, 1, 4, 'mod/scheduler:attend', 1, 1402833170, 2),
+(1129, 1, 3, 'mod/scheduler:attend', 1, 1402833170, 2),
+(1130, 1, 2, 'mod/scheduler:attend', -1, 1402833170, 2),
+(1131, 1, 1, 'mod/scheduler:attend', -1, 1402833170, 2),
+(1132, 1, 5, 'mod/scheduler:manage', -1000, 1402833170, 2),
+(1133, 1, 4, 'mod/scheduler:manage', 1, 1402833170, 2),
+(1134, 1, 3, 'mod/scheduler:manage', 1, 1402833170, 2),
+(1135, 1, 2, 'mod/scheduler:manage', 1, 1402833170, 2),
+(1136, 1, 1, 'mod/scheduler:manage', 1, 1402833170, 2),
+(1137, 1, 5, 'mod/scheduler:manageallappointments', -1000, 1402833171, 2),
+(1138, 1, 4, 'mod/scheduler:manageallappointments', -1, 1402833171, 2),
+(1139, 1, 3, 'mod/scheduler:manageallappointments', 1, 1402833171, 2),
+(1140, 1, 2, 'mod/scheduler:manageallappointments', 1, 1402833171, 2),
+(1141, 1, 1, 'mod/scheduler:manageallappointments', 1, 1402833171, 2),
+(1142, 1, 5, 'mod/scheduler:canscheduletootherteachers', -1000, 1402833171, 2),
+(1143, 1, 4, 'mod/scheduler:canscheduletootherteachers', -1, 1402833171, 2),
+(1144, 1, 3, 'mod/scheduler:canscheduletootherteachers', 1, 1402833171, 2),
+(1145, 1, 2, 'mod/scheduler:canscheduletootherteachers', 1, 1402833171, 2),
+(1146, 1, 1, 'mod/scheduler:canscheduletootherteachers', 1, 1402833171, 2),
+(1147, 1, 5, 'mod/scheduler:canseeotherteachersbooking', -1000, 1402833171, 2),
+(1148, 1, 4, 'mod/scheduler:canseeotherteachersbooking', -1, 1402833171, 2),
+(1149, 1, 3, 'mod/scheduler:canseeotherteachersbooking', 1, 1402833171, 2),
+(1150, 1, 2, 'mod/scheduler:canseeotherteachersbooking', 1, 1402833171, 2),
+(1151, 1, 1, 'mod/scheduler:canseeotherteachersbooking', 1, 1402833171, 2),
+(1152, 1, 5, 'mod/scheduler:disengage', 1, 1402833172, 2),
+(1153, 1, 4, 'mod/scheduler:disengage', 1, 1402833172, 2),
+(1154, 1, 3, 'mod/scheduler:disengage', 1, 1402833172, 2),
+(1155, 1, 2, 'mod/scheduler:disengage', 1, 1402833172, 2),
+(1156, 1, 1, 'mod/scheduler:disengage', 1, 1402833172, 2),
+(1157, 1, 5, 'mod/scheduler:seeotherstudentsbooking', 1, 1402833172, 2),
+(1158, 1, 4, 'mod/scheduler:seeotherstudentsbooking', 1, 1402833172, 2),
+(1159, 1, 3, 'mod/scheduler:seeotherstudentsbooking', 1, 1402833172, 2),
+(1160, 1, 2, 'mod/scheduler:seeotherstudentsbooking', 1, 1402833172, 2),
+(1161, 1, 1, 'mod/scheduler:seeotherstudentsbooking', 1, 1402833172, 2),
+(1162, 1, 5, 'mod/scheduler:seeotherstudentsresults', -1, 1402833172, 2),
+(1163, 1, 4, 'mod/scheduler:seeotherstudentsresults', 1, 1402833172, 2),
+(1164, 1, 3, 'mod/scheduler:seeotherstudentsresults', 1, 1402833172, 2),
+(1165, 1, 2, 'mod/scheduler:seeotherstudentsresults', 1, 1402833172, 2),
+(1166, 1, 1, 'mod/scheduler:seeotherstudentsresults', 1, 1402833172, 2),
+(1167, 24, 5, 'moodle/badges:manageownbadges', 1, 1402834684, 4),
+(1168, 24, 5, 'moodle/badges:viewotherbadges', 1, 1402834684, 4),
+(1169, 24, 5, 'moodle/user:editmessageprofile', 1, 1402834684, 4),
+(1170, 24, 5, 'moodle/user:editprofile', 1, 1402834685, 4),
+(1171, 24, 5, 'moodle/user:manageblocks', 1, 1402834685, 4),
+(1172, 24, 5, 'moodle/user:readuserblogs', 1, 1402834685, 4),
+(1173, 24, 5, 'moodle/user:readuserposts', 1, 1402834685, 4),
+(1174, 24, 5, 'moodle/user:viewalldetails', 1, 1402834685, 4),
+(1175, 24, 5, 'moodle/user:viewuseractivitiesreport', 1, 1402834685, 4),
+(1176, 24, 5, 'moodle/grade:viewall', 1, 1402834685, 4);
 
 -- --------------------------------------------------------
 
@@ -10477,7 +11279,14 @@ CREATE TABLE IF NOT EXISTS `mdl_scale` (
   `timemodified` bigint(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `mdl_scal_cou_ix` (`courseid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Defines grading scales' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Defines grading scales' AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `mdl_scale`
+--
+
+INSERT INTO `mdl_scale` (`id`, `courseid`, `userid`, `name`, `scale`, `description`, `descriptionformat`, `timemodified`) VALUES
+(1, 0, 0, 'Separate and Connected ways of knowing', 'Mostly separate knowing,Separate and connected,Mostly connected knowing', 'The scale based on the theory of separate and connected knowing. This theory describes two different ways that we can evaluate and learn about the things we see and hear.<ul><li><strong>Separate knowers</strong> remain as objective as possible without including feelings and emotions. In a discussion with other people, they like to defend their own ideas, using logic to find holes in opponent''s ideas.</li><li><strong>Connected knowers</strong> are more sensitive to other people. They are skilled at empathy and tends to listen and ask questions until they feel they can connect and "understand things from their point of view". They learn by trying to share the experiences that led to the knowledge they find in other people.</li></ul>', 0, 1402833276);
 
 -- --------------------------------------------------------
 
@@ -10503,6 +11312,94 @@ CREATE TABLE IF NOT EXISTS `mdl_scale_history` (
   KEY `mdl_scalhist_cou_ix` (`courseid`),
   KEY `mdl_scalhist_log_ix` (`loggeduser`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='History table' AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mdl_scheduler`
+--
+
+CREATE TABLE IF NOT EXISTS `mdl_scheduler` (
+  `id` bigint(10) NOT NULL AUTO_INCREMENT,
+  `course` bigint(10) NOT NULL DEFAULT '0',
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `intro` longtext NOT NULL,
+  `introformat` smallint(4) NOT NULL DEFAULT '0',
+  `schedulermode` varchar(10) DEFAULT NULL,
+  `reuseguardtime` bigint(10) DEFAULT NULL,
+  `defaultslotduration` smallint(4) DEFAULT '15',
+  `allownotifications` smallint(4) NOT NULL DEFAULT '0',
+  `staffrolename` varchar(40) NOT NULL DEFAULT '',
+  `teacher` bigint(10) NOT NULL DEFAULT '0',
+  `scale` bigint(10) NOT NULL DEFAULT '0',
+  `gradingstrategy` tinyint(2) NOT NULL DEFAULT '0',
+  `timemodified` bigint(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Scheduler instances' AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `mdl_scheduler`
+--
+
+INSERT INTO `mdl_scheduler` (`id`, `course`, `name`, `intro`, `introformat`, `schedulermode`, `reuseguardtime`, `defaultslotduration`, `allownotifications`, `staffrolename`, `teacher`, `scale`, `gradingstrategy`, `timemodified`) VALUES
+(1, 1, 'Training Fall -14', '<p>FAll 14 classes</p>', 1, 'oneonly', 24, 15, 1, '', 0, 0, 0, 1402833331);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mdl_scheduler_appointment`
+--
+
+CREATE TABLE IF NOT EXISTS `mdl_scheduler_appointment` (
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
+  `slotid` bigint(11) NOT NULL,
+  `studentid` bigint(11) NOT NULL,
+  `attended` smallint(4) NOT NULL,
+  `grade` smallint(4) DEFAULT NULL,
+  `appointmentnote` longtext,
+  `appointmentnoteformat` smallint(4) NOT NULL DEFAULT '0',
+  `timecreated` bigint(11) DEFAULT NULL,
+  `timemodified` bigint(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Scheduler appointments' AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `mdl_scheduler_appointment`
+--
+
+INSERT INTO `mdl_scheduler_appointment` (`id`, `slotid`, `studentid`, `attended`, `grade`, `appointmentnote`, `appointmentnoteformat`, `timecreated`, `timemodified`) VALUES
+(1, 2, 3, 0, NULL, NULL, 0, 1402837954, 1402837994);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mdl_scheduler_slots`
+--
+
+CREATE TABLE IF NOT EXISTS `mdl_scheduler_slots` (
+  `id` bigint(10) NOT NULL AUTO_INCREMENT,
+  `schedulerid` bigint(10) NOT NULL DEFAULT '0',
+  `starttime` bigint(10) NOT NULL DEFAULT '0',
+  `duration` bigint(10) NOT NULL DEFAULT '0',
+  `teacherid` bigint(11) DEFAULT '0',
+  `appointmentlocation` varchar(50) NOT NULL DEFAULT '',
+  `reuse` mediumint(5) DEFAULT '0',
+  `timemodified` bigint(10) NOT NULL DEFAULT '0',
+  `notes` longtext,
+  `notesformat` smallint(4) NOT NULL DEFAULT '0',
+  `exclusivity` smallint(4) NOT NULL DEFAULT '1',
+  `appointmentnote` longtext,
+  `emaildate` bigint(11) DEFAULT '0',
+  `hideuntil` bigint(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Scheduler slots' AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `mdl_scheduler_slots`
+--
+
+INSERT INTO `mdl_scheduler_slots` (`id`, `schedulerid`, `starttime`, `duration`, `teacherid`, `appointmentlocation`, `reuse`, `timemodified`, `notes`, `notesformat`, `exclusivity`, `appointmentnote`, `emaildate`, `hideuntil`) VALUES
+(2, 1, 1402924200, 15, 4, '', 1, 1402837906, '', 1, 1, NULL, 0, 1402783200);
 
 -- --------------------------------------------------------
 
@@ -10771,14 +11668,17 @@ CREATE TABLE IF NOT EXISTS `mdl_sessions` (
   KEY `mdl_sess_tim_ix` (`timecreated`),
   KEY `mdl_sess_tim2_ix` (`timemodified`),
   KEY `mdl_sess_use_ix` (`userid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Database based session storage - now recommended' AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Database based session storage - now recommended' AUTO_INCREMENT=110 ;
 
 --
 -- Dumping data for table `mdl_sessions`
 --
 
 INSERT INTO `mdl_sessions` (`id`, `state`, `sid`, `userid`, `sessdata`, `timecreated`, `timemodified`, `firstip`, `lastip`) VALUES
-(18, 0, 'oh5bg83pctjkvqqjtoesl8lcu2', 0, NULL, 1402752813, 1402752813, '127.0.0.1', '127.0.0.1');
+(76, 0, 'a4qhrnv60d10on1go3elo7e2j6', 0, NULL, 1402836080, 1402836084, '127.0.0.1', '127.0.0.1'),
+(107, 0, 'kq7b9k8na68ilfofehqebaue32', 3, NULL, 1402839504, 1402839643, '127.0.0.1', '127.0.0.1'),
+(108, 0, '9hns4kblgrfca9tilbuqp9rag5', 0, NULL, 1402839806, 1402839806, '127.0.0.1', '127.0.0.1'),
+(109, 0, 'j379gmr8q1snvkvss7psquuhq1', 0, NULL, 1402841692, 1402841692, '127.0.0.1', '127.0.0.1');
 
 -- --------------------------------------------------------
 
@@ -11208,7 +12108,7 @@ CREATE TABLE IF NOT EXISTS `mdl_upgrade_log` (
   KEY `mdl_upgrlog_tim_ix` (`timemodified`),
   KEY `mdl_upgrlog_typtim_ix` (`type`,`timemodified`),
   KEY `mdl_upgrlog_use_ix` (`userid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Upgrade logging' AUTO_INCREMENT=972 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Upgrade logging' AUTO_INCREMENT=975 ;
 
 --
 -- Dumping data for table `mdl_upgrade_log`
@@ -12187,7 +13087,10 @@ INSERT INTO `mdl_upgrade_log` (`id`, `type`, `plugin`, `version`, `targetversion
 (968, 0, 'theme_aardvark', '2014051300', '2014051300', 'Plugin installed', NULL, '', 2, 1402745861),
 (969, 0, 'theme_essential', NULL, '2014020300', 'Starting plugin installation', NULL, '', 2, 1402746412),
 (970, 0, 'theme_essential', '2014020300', '2014020300', 'Upgrade savepoint reached', NULL, '', 2, 1402746413),
-(971, 0, 'theme_essential', '2014020300', '2014020300', 'Plugin installed', NULL, '', 2, 1402746413);
+(971, 0, 'theme_essential', '2014020300', '2014020300', 'Plugin installed', NULL, '', 2, 1402746413),
+(972, 0, 'mod_scheduler', NULL, '2013092702', 'Starting plugin installation', NULL, '', 2, 1402833167),
+(973, 0, 'mod_scheduler', '2013092702', '2013092702', 'Upgrade savepoint reached', NULL, '', 2, 1402833169),
+(974, 0, 'mod_scheduler', '2013092702', '2013092702', 'Plugin installed', NULL, '', 2, 1402833173);
 
 -- --------------------------------------------------------
 
@@ -12286,7 +13189,7 @@ CREATE TABLE IF NOT EXISTS `mdl_user` (
   KEY `mdl_user_las3_ix` (`lastnamephonetic`),
   KEY `mdl_user_mid_ix` (`middlename`),
   KEY `mdl_user_alt_ix` (`alternatename`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='One record for each person' AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='One record for each person' AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `mdl_user`
@@ -12294,7 +13197,9 @@ CREATE TABLE IF NOT EXISTS `mdl_user` (
 
 INSERT INTO `mdl_user` (`id`, `auth`, `confirmed`, `policyagreed`, `deleted`, `suspended`, `mnethostid`, `username`, `password`, `idnumber`, `firstname`, `lastname`, `email`, `emailstop`, `icq`, `skype`, `yahoo`, `aim`, `msn`, `phone1`, `phone2`, `institution`, `department`, `address`, `city`, `country`, `lang`, `calendartype`, `theme`, `timezone`, `firstaccess`, `lastaccess`, `lastlogin`, `currentlogin`, `lastip`, `secret`, `picture`, `url`, `description`, `descriptionformat`, `mailformat`, `maildigest`, `maildisplay`, `autosubscribe`, `trackforums`, `timecreated`, `timemodified`, `trustbitmask`, `imagealt`, `lastnamephonetic`, `firstnamephonetic`, `middlename`, `alternatename`) VALUES
 (1, 'manual', 1, 0, 0, 0, 1, 'guest', '$2y$10$Y3t0nMsczXI1HcvD6.ivMer6aY84wrQ4TFQeJ15vcHYrehI1strqO', '', 'Guest user', ' ', 'root@localhost', 0, '', '', '', '', '', '', '', '', '', '', '', '', 'en', 'gregorian', '', '99', 0, 0, 0, 0, '', '', 0, '', 'This user is a special user that allows read-only access to some courses.', 1, 1, 0, 2, 1, 0, 0, 1402744564, 0, NULL, NULL, NULL, NULL, NULL),
-(2, 'manual', 1, 0, 0, 0, 1, 'admin', '$2y$10$pAM3ObxRyykHwgkCMHJJUOZp3hCxyQkI.I0F/lG/oq8swJpTjSpO2', '', 'Admin', 'User', 'md.j.shakir@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', 'en', 'gregorian', '', '5.5', 1402745106, 1402752795, 1402752737, 1402752795, '127.0.0.1', '', 0, '', '', 1, 1, 0, 0, 1, 0, 0, 1402745182, 0, NULL, '', '', '', '');
+(2, 'manual', 1, 0, 0, 0, 1, 'admin', '$2y$10$b3o8mSX8/XrVPopiyp.p9.De1qWWt4jOmnlgk4pFv8ZEwqh4IgXom', '', 'Admin', 'User', 'md.j.shakir@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', 'en', 'gregorian', '', '5.5', 1402745106, 1402839213, 1402838943, 1402839213, '127.0.0.1', '', 0, '', '', 1, 1, 0, 0, 1, 0, 0, 1402745182, 0, NULL, '', '', '', ''),
+(3, 'manual', 1, 0, 0, 0, 1, 'student', '$2y$10$b3o8mSX8/XrVPopiyp.p9.De1qWWt4jOmnlgk4pFv8ZEwqh4IgXom', '', 'student', 'Mr', 'test@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', 'en', 'gregorian', '', '99', 1402830774, 1402839627, 1402837942, 1402839504, '127.0.0.1', '', 0, '', '', 1, 1, 0, 2, 1, 0, 1402830646, 1402830758, 0, '', '', '', '', ''),
+(4, 'manual', 1, 0, 0, 0, 1, 'teacher', '$2y$10$b3o8mSX8/XrVPopiyp.p9.De1qWWt4jOmnlgk4pFv8ZEwqh4IgXom', '', 'Teacher', 'T', 'test1@gmail.com', 0, '', '', '', '', '', '', '', '', '', '', '', '', 'en', 'gregorian', '', '99', 1402833774, 1402839793, 1402837981, 1402839409, '127.0.0.1', '', 0, '', '', 1, 1, 0, 2, 1, 0, 1402833547, 1402833547, 0, '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -12341,7 +13246,14 @@ CREATE TABLE IF NOT EXISTS `mdl_user_enrolments` (
   KEY `mdl_userenro_enr_ix` (`enrolid`),
   KEY `mdl_userenro_use_ix` (`userid`),
   KEY `mdl_userenro_mod_ix` (`modifierid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Users participating in courses (aka enrolled users) - everyb' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Users participating in courses (aka enrolled users) - everyb' AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `mdl_user_enrolments`
+--
+
+INSERT INTO `mdl_user_enrolments` (`id`, `status`, `enrolid`, `userid`, `timestart`, `timeend`, `modifierid`, `timecreated`, `timemodified`) VALUES
+(1, 0, 6, 3, 1402837717, 0, 3, 1402837717, 1402837717);
 
 -- --------------------------------------------------------
 
@@ -12354,7 +13266,14 @@ CREATE TABLE IF NOT EXISTS `mdl_user_info_category` (
   `name` varchar(255) NOT NULL DEFAULT '',
   `sortorder` bigint(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Customisable fields categories' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Customisable fields categories' AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `mdl_user_info_category`
+--
+
+INSERT INTO `mdl_user_info_category` (`id`, `name`, `sortorder`) VALUES
+(1, 'Other fields', 1);
 
 -- --------------------------------------------------------
 
@@ -12417,14 +13336,17 @@ CREATE TABLE IF NOT EXISTS `mdl_user_lastaccess` (
   UNIQUE KEY `mdl_userlast_usecou_uix` (`userid`,`courseid`),
   KEY `mdl_userlast_use_ix` (`userid`),
   KEY `mdl_userlast_cou_ix` (`courseid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='To keep track of course page access times, used in online pa' AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='To keep track of course page access times, used in online pa' AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `mdl_user_lastaccess`
 --
 
 INSERT INTO `mdl_user_lastaccess` (`id`, `userid`, `courseid`, `timeaccess`) VALUES
-(1, 2, 2, 1402746979);
+(1, 2, 2, 1402832519),
+(2, 2, 3, 1402832481),
+(3, 3, 3, 1402839633),
+(4, 4, 3, 1402839634);
 
 -- --------------------------------------------------------
 
@@ -12440,7 +13362,14 @@ CREATE TABLE IF NOT EXISTS `mdl_user_password_resets` (
   `token` varchar(32) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   KEY `mdl_userpassrese_use_ix` (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='table tracking password reset confirmation tokens' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='table tracking password reset confirmation tokens' AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `mdl_user_password_resets`
+--
+
+INSERT INTO `mdl_user_password_resets` (`id`, `userid`, `timerequested`, `timererequested`, `token`) VALUES
+(1, 2, 1402836783, 0, 'UB4nOVqOzhAv0TIEtIlEk9wj3jHSMf38');
 
 -- --------------------------------------------------------
 
@@ -12455,7 +13384,7 @@ CREATE TABLE IF NOT EXISTS `mdl_user_preferences` (
   `value` varchar(1333) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `mdl_userpref_usenam_uix` (`userid`,`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Allows modules to store arbitrary user preferences' AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Allows modules to store arbitrary user preferences' AUTO_INCREMENT=27 ;
 
 --
 -- Dumping data for table `mdl_user_preferences`
@@ -12465,9 +13394,29 @@ INSERT INTO `mdl_user_preferences` (`id`, `userid`, `name`, `value`) VALUES
 (1, 2, 'htmleditor', 'tinymce'),
 (2, 2, 'email_bounce_count', '1'),
 (3, 2, 'email_send_count', '1'),
-(4, 2, 'filepicker_recentrepository', '8'),
+(4, 2, 'filepicker_recentrepository', '4'),
 (5, 2, 'filepicker_recentlicense', 'allrightsreserved'),
-(6, 2, 'block3hidden', '0');
+(6, 2, 'block3hidden', '0'),
+(7, 2, 'block4hidden', '1'),
+(8, 2, 'block5hidden', '0'),
+(9, 3, 'auth_forcepasswordchange', '0'),
+(10, 3, 'htmleditor', ''),
+(11, 3, 'email_bounce_count', '1'),
+(12, 3, 'email_send_count', '1'),
+(13, 3, 'block15hidden', '0'),
+(14, 4, 'auth_forcepasswordchange', '0'),
+(15, 4, 'htmleditor', ''),
+(16, 4, 'email_bounce_count', '1'),
+(17, 4, 'email_send_count', '1'),
+(18, 2, 'userselector_preserveselected', '0'),
+(19, 2, 'userselector_autoselectunique', '0'),
+(20, 2, 'userselector_searchanywhere', '0'),
+(21, 2, 'userselector_optionscollapsed', '0'),
+(22, 4, 'userselector_preserveselected', '0'),
+(23, 4, 'userselector_autoselectunique', '0'),
+(24, 4, 'userselector_searchanywhere', '0'),
+(25, 4, 'quiz_qbanktool_open', '1'),
+(26, 4, 'block15hidden', '0');
 
 -- --------------------------------------------------------
 
