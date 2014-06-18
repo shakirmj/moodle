@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Horizontal Lines - GeoGebra Dynamic worksheet</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="GeoGebra" />
+<style type="text/css"><!--body { font-family:Arial,Helvetica,sans-serif; margin-left:40px }--></style>
+</head>
+<body>
+<table border="0" width="884">
+<tr><td>
+<h2>Horizontal Lines</h2>
+<p>
+You are able to move the blue line by clicking on and moving point J. Please follow the instructions  answer the questions below.&nbsp;<br/>
+</p>
+
+
+<applet name="ggbApplet" code="geogebra.GeoGebraApplet" archive="geogebra.jar"
+	codebase="http://www.geogebra.org/webstart/3.2/unsigned/"
+	width="884" height="510" MAYSCRIPT>
+	<param name="ggbBase64" value="UEsDBBQACAAIAHBZuTwAAAAAAAAAAAAAAAAMAAAAZ2VvZ2VicmEueG1s3VndUts4FL5un0LjnenQWTD+SwjTpAxQ2sJQ2hno7nbvZEdJtNiWsWSScNfe7VPs1b5Yn2TPkezYJIRNOkzpFGaQfSSdn+/86Ah39yZJTK5ZLrlIe5ZrOxZhaST6PB32rEINtjrW3sun3SETQxbmlAxEnlDVs3zbs5Be8JdPn3TlSIwJjfWS3zgb96wBjSWziMxyRvtyxJi6RafFhMec5tP34V8sUrJnqbxAuuFxnGaFqmhR0j/lsnrdRnkDkSpCJL9hoLOHtO62VqXLiijmfU5TFKdVg0WEjHlfjXpWpxNYZMT4cATsWk7HcIuEyPvnU6lYQiZ/slyAeY5rt/1Wx3c6bX9np9OyyNTMeJ5vO37HC/xW4Ph+ywMjIxqDIjCx03Zg147ju/Dr7MCm5XNaNLs+Z0oB2JLQCZvBMMx5f4YVvhzLAxHXpEzwVB3STBW5dpRbks7VFKWBE3O0cT8dxqykgZ7RiEWXoZicG9x8w/pimuktWp9weChikZMcNrTA6GE5hmbUa1DR2ap2oBfhEOpBL0G+syXurqfX6DE0o14V89RoV9ruVoa7TiWJS4IEMAhDrIInpiGLe5ZFipSr0+pF8eiyBgDXnxVJCKHdjJwZS/fBWKLOpA8R+keZQPj8yTzryJyLye4ly1MWm8hLwfmFKCS5pnGTaZ9FPAFnG3oJGEV/fgQFDbXPhjmr7DKJY+DUs04zuOfI3e1KB1RBgthIQQEAexXa+lbk/AZUozE5BR9JzFc1EuDLfTViKSXvKIx5PAVbqYINZ+KaIS7EdTaJ5zhtC0WPRX6pU/+CTRShISzqWZ9EQWgOLg9BIyVIAlQC3EgYF4xgSJBwSgCw6BJCm4BSNO3jKnzTQU5ObPIhZlQyqEZxDJUHt/PaDElgjxyDOjhxVTBpqOBUMbafPPvFdV5Y5q1nbbj2c/L7iEcjYmJDzmkT5UJKEL5H9hUZj6gqtVi6EMhcamZ7WpT+s+GBmHeVrTnrEwkxgSoK4m4aviXHlCZMG61dx1NAWBIx0HNGtMLVNMsYzW/J8Jsyav7epr+pGQalIMS/kiTvFSWbsvYAJ3jpCzIFJ6YCsgP9KAqlNyzykBWXppIBKPmxxImVjpJkkIvEEDBMaqdtkoReApUMgQK6SjRIG4GL2VVBdeBqeYCfdgSX9l0wtPCProGof16KthuqtUC1D6U15T4QFNigbwX9ya2Y1eJoLCpjJij6XIkM99F0Wm5ChMc5V+wOpSvGCKmEnRmEBm7WTMdcjZYbapPDeWswd8pcmTeeDilP561Fw1DPSCQhuq4SMRYz/wsy4KC/YScydhvrQtaycBL7gyKmZGNKvn75skWmX798fr69MTFvE3wD5xiXQumJ4gI7j0YUNS0d1XUIhZlQhUU8N9KkrYsZKJ/gDIZzz/qAeuv6w7GLINTpWdN98IyphyCnop6YUlhux+YhZgnD/NJHogZgdjKcWLNGR+ieZe7kqEs3TC8coo4++RxscLIRhSe7LM8xnYKDmgVb83s/GEimyAQ6EWgikE9j8p3ol8Xcrc4FOCs0aNDDZMgdT7eMMXPOqfKEJxlI0/2CaSPq80GiJNRJy8LxZnZ+Pema1gL7KC3UL081A9YCbGmRsJxHM2CoBg52FtUJVPFdG8zANBs7GsydBpjuimB2tIHOnViWZ2yZMglPS0QSChsDfKKhFHGh2HkEx256KiKNeaV62WK29CbcUuHp+/gw4BNWN3B1ZDeNrRsiSLDoEiIeGo2gduCdztYtx0rObvrsds68z+F4H4qUxnjezyXPCVjuLsuh8P4cQotmXg2tlY1cHhqN0G3GhtNIM88JVk602v/Osnxwy3zY8ma8VjGBXaVmjTQNJE8yaGq4ut8Td1WvcAH1g3Uq18H/VK4liH5r6VpA9GGq05a/YnlyHwLgw3UAPvwpAP6u+L5aB99XPwW+7e+J79E6+B79FPhuPRDAx4M5dCn5+ve/RJ8CeA4eLYD9eh2wXz9SH7nlBQad9n2dZA3nGT3T6/V4Y8aVusGV0PQqNA8W0HyzDppvHgtNt/0DoelXaB4uoPl2HTTfPhqauwbNzo+AZlCh+WoBzeN10Dx+tEx3vk9sskmWQ+uLhbs06QLKNVB71rOrQqgXR427PF4sCDF08isJLbK9gJ9ikxo+4LWAX3l7uhfAB7sJ6I8MEu6yg/pzhv7POf7L3/T01f37zosh0V2V42lwA2+9W/O5voZ6D3Z3Xo7K/Xfnhbi5+37srnw/9lrV/djfrS7Iu07jhmxW/2AX5IVSUfoHCsY/dWtw4S5UjAvv/pJxO+S9byoZDxfx6IH5LxFL0yCYTwOpaK50f6pD37O99q0f7eytwA785k/QbNaaHthufprQX/jKj5Av/wNQSwcInEfqrPgGAAC2HAAAUEsBAhQAFAAIAAgAcFm5PJxH6qz4BgAAthwAAAwAAAAAAAAAAAAAAAAAAAAAAGdlb2dlYnJhLnhtbFBLBQYAAAAAAQABADoAAAAyBwAAAAA="/>
+	<param name="image" value="http://www.geogebra.org/webstart/loading.gif"  />
+	<param name="boxborder" value="false"  />
+	<param name="centerimage" value="true"  />
+	<param name="java_arguments" value="-Xmx512m" />
+	<param name="cache_archive" value="geogebra.jar, geogebra_main.jar, geogebra_gui.jar, geogebra_cas.jar, geogebra_export.jar, geogebra_properties.jar" />
+	<param name="cache_version" value="3.2.40.0, 3.2.40.0, 3.2.40.0, 3.2.40.0, 3.2.40.0, 3.2.40.0" />
+	<param name="framePossible" value="false" />
+	<param name="showResetIcon" value="false" />
+	<param name="showAnimationButton" value="true" />
+	<param name="enableRightClick" value="false" />
+	<param name="errorDialogsActive" value="true" />
+	<param name="enableLabelDrags" value="false" />
+	<param name="showMenuBar" value="false" />
+	<param name="showToolBar" value="false" />
+	<param name="showToolBarHelp" value="false" />
+	<param name="showAlgebraInput" value="false" />
+Sorry, the GeoGebra Applet could not be started. Please make sure that Java 1.4.2 (or later) is installed and active in your browser (<a href="http://java.sun.com/getjava">Click here to install Java now</a>)
+</applet>
+
+<p>
+(1.) Which axis is the blue line crossing? At what point is the blue line crossing this axis?<br/>
+<br/>
+(2.) Move the red slider to 1, what is the name and coordinates of the point that appears?<br/>
+<br/>
+(3.) Move the slider to 2,3, and 4, what are the names and coordinates of the points that appear? What do you notice about the coordinates of these points?<br/>
+<br/>
+(4.) Using the answers from the above questions, make a guess as to what the equation of this line is. Move the slider to 5 to check your answer.<br/>
+<br/>
+(5.) Put the slider at 4. Use point J to move the line along the axis. Stop at any point and write the equation of the point you stopped at along with the equation of this line. Check your answer by moving the slider to 5 again.<br/>
+<br/>
+(5.) Use any combination of two points to find the slope of this line using the slope formula (y &#8322;- y&#8321;)/(x &#8322;- x&#8321;). Make a conclusion about the equation of horizontal lines and their slopes.</p>
+<p><span style="font-size:small">Athena Matherly, November 10, 2006, Created with <a href="http://www.geogebra.org/" target="_blank" >GeoGebra</a></span></p></td></tr>
+</table></body>
+</html>

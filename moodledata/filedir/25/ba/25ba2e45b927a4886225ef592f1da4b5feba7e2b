@@ -1,0 +1,268 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Lines and Slopes 1</title>
+<meta name="generator" content="GeoGebra">
+<link rel="stylesheet" type="text/css" href="geogebraPage_700r.css">
+<style type="text/css">
+<!--body { font-family:Helvetica,sans-serif; margin-left:0px }
+.white_b {
+	color: #ddddFF;
+	font-weight: bold;
+}
+.red_b {
+	color: #FF0000;
+	font-weight: bold;
+}
+.dkred_b {
+	color: #990000;
+	font-weight: bold;
+}
+
+.blue_b {
+	color: #0000FF;
+	font-weight: bold;
+}
+.purple_b {
+	color: #660066;
+	font-weight: bold;
+}
+.green_b {
+	color: #006600;
+	font-weight: bold;
+}
+
+.navy_b {color: #000099;
+	font-weight: bold;
+}
+
+/* color & cursor changer for button to math247 */
+.navCellOff
+{
+color:#000066; 
+background-color:#99CCFF;
+border-left-color:#0000FF; border-top-color:#0000FF; border-right-color:#000066; border-bottom-color:#000066;
+CURSOR: default;
+}
+.navCellOn
+{ 
+background-color:#000066; 
+color:#99CCFF; 
+border-right-color:#0000FF; border-bottom-color:#0000FF; border-left-color:#000066; border-top-color:#000066;
+CURSOR: pointer; CURSOR: hand;
+}
+
+/* cursor changer for all other buttons */
+.navCurOff
+{
+CURSOR: default;
+}
+.navCurOn
+{ 
+CURSOR: pointer;  CURSOR: hand;
+}
+
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript">
+function gensetInt(objName) {
+  // generates random plus and minus sign
+  var sgn = 2*Math.floor(Math.random()*2)-1;
+  // generates random integer between 1 and 10 - use floor to get 0-9 and or change 10 to get different range!
+  var int1 = Math.ceil(Math.random()*10);
+  // uses x as factor to decide step
+  var z=sgn*int1
+  document.ggbApplet.evalCommand(objName + " = " + z );
+}
+</script>
+
+<script type="text/javascript">
+function gensetInt0(objName) {
+  // generates random plus and minus sign
+  var sgn = 2*Math.floor(Math.random()*2)-1;
+  // generates random integer between 1 and 10 - use floor to get 0-9 and or change 10 to get different range!
+  var int1 = Math.floor(Math.random()*10);
+  // uses x as factor to decide step
+  var z=sgn*int1
+  document.ggbApplet.evalCommand(objName + " = " + z );
+}
+</script>
+
+<script type="text/javascript">
+function getCoords(objName) {
+  var applet = document.ggbApplet;
+  var x = applet.getXcoord(objName);    
+  var y = applet.getYcoord(objName);    
+
+  document.coordForm.getXfield.value = x;
+  document.coordForm.getYfield.value = y;
+}
+</script>
+
+<script type="text/javascript">
+function setScalar(objName, x) {
+  // build string like "num = 3" from input parameters
+  // and let the applet evaluate this string
+  document.ggbApplet.evalCommand(objName + " = " + x );
+}
+</script>
+
+<script type="text/javascript">
+function Existing(objName) {
+// tests that the object exists
+   var applet = document.ggbApplet;
+   applet.evalCommand("okE"+objName+"=1");
+   if (!applet.exists(objName)) {
+  applet.evalCommand("okE"+objName+"=0");
+  alert('Point '+objName+' does not exist.\nPlease select it.');}
+}
+</script>
+
+<script type="text/javascript">
+function PointLine(objName) {
+// tests that the point "objName" is on the line with a=za and b=zb
+   var applet = document.ggbApplet;
+   applet.evalCommand("okPL"+objName+"=1");
+ // multiplied and divided by 10 to see if that solves problem...
+   var z = applet.getValue('za')*applet.getXcoord(objName)+applet.getValue('zb')-applet.getYcoord(objName);
+if (z != 0) {
+  applet.deleteObject(objName);
+  applet.evalCommand("okPL"+objName+"=0");
+  alert('Point '+objName+' is not on the line.\nPlease reselect it.');}
+}
+
+</script>
+<script type="text/javascript">
+function Allok4() {
+// tests that all 4 previous tests are passed
+   var applet = document.ggbApplet;
+   var oo = applet.getValue('okEA')+applet.getValue('okEB')+applet.getValue('okPLA')+applet.getValue('okPLB');
+if (oo==4) {
+  alert('All is OK! Please proceed to next step. :)');}
+} 
+</script>
+<script type="text/javascript">
+function CheckAnswer(objName1,objName2) {
+// first checks that the points have been checked and then checks the Answer
+   var applet = document.ggbApplet;
+   var x = applet.getValue(objName1);
+   var y = applet.getValue(objName2);
+ if (x == y) {
+  // different alerts
+   var num_quotes = 5
+   var quotes = new Array(num_quotes)
+     quotes[0] = "Wowsers! This is correct."
+     quotes[1] = "Coolest beans! This is correct."
+     quotes[2] = "Great work! This is correct."
+     quotes[3] = "Zamboozo! This is correct."
+     quotes[4] = "Awesome! This is correct."
+  var n = Math.floor(Math.random() * num_quotes)
+  alert( quotes[n] );
+  
+  } else if (x != 0){
+  var num_quotes2 = 5
+  var quotes2 = new Array(num_quotes2)
+     quotes2[0] = "Sorry! This is not correct."
+     quotes2[1] = "Lizard lips! This is not correct."
+     quotes2[2] = "Turtle toes! This is not correct."
+     quotes2[3] = "Frog feet! This is not correct."
+     quotes2[4] = "Eel eyes! This is not correct."
+  var n = Math.floor(Math.random() * num_quotes2)
+  alert( quotes2[n] );
+  } 
+}
+</script>
+
+<script type="text/javascript">
+function SamePoint(objName1, objName2) {
+// tests that the point "objName1" and "objName2" are not the same point.
+   var applet = document.ggbApplet;
+   var zx = applet.getXcoord(objName1)-applet.getXcoord(objName2);
+   var zy = applet.getXcoord(objName1)-applet.getXcoord(objName2);
+if ((zx == 0) && (zy == 0)) {
+  alert('You must select different points A and B.');}
+}
+</script>
+<div id="Top">
+  <form>
+    <table width=1000px>
+      <tr>
+        <td><span class="white_b">&nbsp;&nbsp;Lines and Slopes 1</span> </td>
+        <td width=680px>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+          <input style="font-size:11px; width:155px; color:#0000FF; font-weight:bold; font-family:Comic Sans MS, Arial;" value="Next Activity" onClick="location.href='slope2.html'" type="button" class="navCurOff" onMouseOut="this.className='navCurOff';" onMouseOver="this.className='navCurOn';">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		  <input style="font-size:11px; width:50px;  color:#660066; font-weight:bold; font-family:Comic Sans MS, Arial;" value="Menu" onClick="location.href='slopes_index.html'" type="button" class="navCurOff" onMouseOut="this.className='navCurOff';" onMouseOver="this.className='navCurOn';">
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input style="font-size:11px; width:190px;  border-left-color:#0000FF; border-top-color:#0000FF; border-right-color:#000066; border-bottom-color:#000066; font-weight:bold; font-family:Comic Sans MS, Arial;" value="Back to GeoGebra at Math247" class="navCellOff" onMouseOut="this.className='navCellOff';" onMouseOver="this.className='navCellOn';" onClick="location.href='http://math247.pbwiki.com/Algebra+with+GeoGebra'" type="button" >
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+<div id="left-content">
+ <form style="margin-top:0px; margin-bottom:0px">
+  <p style="margin-top:6px; margin-bottom:0px; font-size:.8em; color:#000099">1. Generate a line </p>
+  <p style="margin-left:15px; margin-top:4px; margin-bottom:0px; text-indent:-10px; font-size:.9em; color:#0000ff">&bull; Click on <b class="green_b">New Line</b>. &nbsp;&nbsp;&nbsp;
+   <input name="button" type="button" class="navCurOff" style="font-size:11px; color:#006600; font-weight:bold; font-family:Comic Sans MS, Arial" onClick="gensetInt('za');gensetInt0('zb');document.ggbApplet.deleteObject('A');document.ggbApplet.deleteObject('B');" onMouseOver="this.className='navCurOn';" onMouseOut="this.className='navCurOff';" value="New Line">
+  </p>
+  <p style="margin-left:15px; margin-top:4px; margin-bottom:0px; text-indent:-10px; font-size:.8em; color:#000000">&bull; Click on the Move Drawing Pad icon <img src="move_dp_s.jpg" alt="MoveDP"> if you don't see the line properly <img src="smiley08.gif" alt="Smiley" width="10" height="10">!  Then click anywhere by the line and drag it into a position you want.</p>
+  </form>
+  <hr>
+  <form style="margin-top:0px; margin-bottom:0px">
+    <p style="margin-top:8px; margin-bottom:0px; font-size:.8em; color:#000099">2. Choose 2 points on the line. Look for 2 points on the grid. Move the Drawing Pad again if necessary. </p>
+    <p style="margin-left:15px; margin-top:4px; margin-bottom:0px; text-indent:-10px; font-size:.8em; color:#000000">&bull; Click on the Point icon. <img src="point.jpg" alt="Point" width="23" height="23" align="absmiddle"></p>
+    <p style="margin-left:15px; margin-top:4px; margin-bottom:0px; text-indent:-10px; font-size:.8em; color:#660000">&bull;  Click on the line to get point A on the line.</p>
+    <p style="margin-left:15px; margin-top:4px; margin-bottom:0px; text-indent:-10px; font-size:.8em; color:#660000">&bull; Click on the line again to get point B on the line. </p>
+    <p style="margin-left:15px; margin-top:4px; margin-bottom:0px; text-indent:-10px; font-size:.9em; color:#0000ff">&bull; Click on <span class="red_b">Check Points</span>.     &nbsp;&nbsp;&nbsp;
+      <input style="font-size:11px; color:#FF0000; font-weight:bold; font-family:Comic Sans MS, Arial" type="button" value="Check Points" onClick="Existing('A'); PointLine('A');Existing('B');PointLine('B');Allok4();" class="navCurOff" onMouseOut="this.className='navCurOff';" onMouseOver="this.className='navCurOn';">
+    </p>
+  </form>
+  <hr>
+  <p style="margin-top:8px; margin-bottom:0px; font-size:.8em; color:#000099">3. Find the coordinates of A and B. </p>
+    <p style="margin-left:15px; margin-top:4px; margin-bottom:0px; text-indent:-10px; font-size:.8em; color:#660066">&bull; Write these down.</p>
+  <p style="margin-top:8px; margin-bottom:0px; font-size:.8em; color:#000099">4. Find the slope of the line. </p>
+  <p style="margin-left:15px; margin-top:4px; margin-bottom:0px; text-indent:-10px; font-size:.8em; color:#660066">&bull; Find the change in the y-values: &Delta;y = y(B)-y(A). </p>
+<p style="margin-left:15px; margin-top:4px; margin-bottom:0px; text-indent:-10px; font-size:.8em; color:#660066">&bull; Find the change in the x-values: &Delta;x = x(B)-x(A). </p>
+  <p style="margin-left:15px; margin-top:4px; margin-bottom:0px; text-indent:-10px; font-size:.9em; color:#660066">&bull; Finally, find the slope: &Delta;y / &Delta;x.  <br><font color="#000000">It should be a whole number.</font></p>
+  <hr>
+  <p style="margin-top:8px; margin-bottom:0px; font-size:.8em; color:#000099">5. Check your answer! </p>
+<p style="margin-left:15px; margin-top:4px; margin-bottom:0px; text-indent:-10px; font-size:.8em; color:#0000ff">&bull; Type the <span class="purple_b">slope of the line</span> in the box below. </p>
+<p style="margin-left:15px; margin-top:4px; margin-bottom:0px; text-indent:-10px; font-size:.8em; color:#0000ff">&bull; Then click on<span class="green_b"> Check Answer</span>.</p>
+  <form style="margin-top:0px; margin-bottom:0px; font-size:11px; color:#660066; font-weight:bold; font-family:Comic Sans MS, Arial">
+    &nbsp;&nbsp;Slope of the line is:&nbsp;
+    <input style="font-size:11px; color:#660066; font-weight:bold; font-family:Comic Sans MS, Arial;" type="text" name="setXfield" size="6" value="1">
+    <input name="button" type="button" class="navCurOff" style="font-size:11px; color:#006600; font-weight:bold; font-family:Comic Sans MS, Arial" onClick="setScalar('za_1',setXfield.value);CheckAnswer('za_1','za');" onMouseOver="this.className='navCurOn';" onMouseOut="this.className='navCurOff';" value="Check Slope">
+  </form>
+  <hr>
+    <p style="<strong></strong>margin-top:4px; margin-bottom:0px">&bull; Click on Reset <img src="reset.jpg" alt="Reset"> in top right corner to start over.</p>
+</div>
+<div id="right-content">
+  <table border="0" width="690">
+    <tbody>
+      <tr>
+        <td><applet name="ggbApplet" code="geogebra.GeoGebraApplet" codebase="./" archive="geogebra.jar" height="550" width="690">
+            <param name="filename" value="slope1.ggb">
+            <param name="framePossible" value="false">
+            <param name="showAlgebraInput" value="false">
+            <param name="showAlgebraWindow" value="false">
+            <param name="language" value="en">
+            <param name="country" value="US">
+            <param name="showMenuBar" value="false">
+            <param name="showToolBar" value="true">
+            <param name="showResetIcon" value="true">
+            Sorry, the GeoGebra Applet could not be started. Please make sure that Java 1.4.2 (or later) is installed and activated. (<a href="http://java.sun.com/getjava">click here to install Java now</a>)
+          </applet>
+          <p></p></td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="margin-top:0px; margin-bottom:0px; font-size:70%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:emath@emathforall.com?subject=ggb_slopes">LFS</a> , Created with <a href="http://www.geogebra.at/" target="_blank">GeoGebra</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  </p>
+</div>
+</body>
+</html>
+
