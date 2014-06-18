@@ -432,7 +432,7 @@ Venn Diagrams and
 Integrated Reasoning
 
 </p>
-							<p>You can choose from our 4-Hour, 8-Hour, or 12-Hour K-12 tutoring plans for help in homework, assignments, test preparation, or to master a particular topic.</p>
+							<p><a href="" class="button black">Try Now</a></p>
 						</div>
 					</li>
 
