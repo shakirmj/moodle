@@ -1,3 +1,705 @@
+<?php if (!isloggedin()): ?>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]> <html dir="ltr" lang="en-US"class="no-js iem7"> <![endif]-->
+<!--[if lt IE 7 ]> <html dir="ltr" lang="en-US" class="no-js ie6 oldie"> <![endif]-->
+<!--[if IE 7 ]>    <html dir="ltr" lang="en-US" class="no-js ie7 oldie"> <![endif]-->
+<!--[if IE 8 ]>    <html dir="ltr" lang="en-US" class="no-js ie8 oldie"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html dir="ltr" lang="en-US" class="no-js"><!--<![endif]-->
+<head>
+    	<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>Top-Grader</title>
+        <!-- Google Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+        <!-- MetaTags -->
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <!-- Set your favicon -->
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/jquery.sidr.light.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/photostack.css">
+        <link rel="stylesheet" href="css/jquery.bxslider.css">
+        <link rel="stylesheet" href="css/drawingSVG.css">
+        <link rel="stylesheet" href="css/prettyPhoto.css">
+        <link rel="stylesheet" href="css/foundation-icons.css">
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/responsive.css">
+
+        <!-- Header Scripts -->
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+        </head>
+		<body>
+        <!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <!-- Preloader -->
+        <div class="preloader-section">
+            <img src="img/preloader.gif" alt="Site Preloader">
+        </div>
+
+        <a id="simple-menu" href="#sidr">
+            <i class="fi-list"></i>
+            Top-Grader
+        </a>
+
+        <div id="sidr">
+          <button>
+          <i class="fi-x"></i>CLose Menu</button>
+          <ul>
+            <li><a href="#">Home</a></li>
+                    <li><a href="#our-company">K-12</a></li>
+                    <li><a href="#amazing-team">Test Prep</a></li>
+                    <li><a href="#tutors">Our Tutors</a></li>
+                    <li><a href="#results">Our Results</a></li>
+                    <li><a href="#section-six">Pricing</a></li>
+          </ul>
+        </div>
+
+
+        <!-- Image Top Container -->
+        <section id="top-image" class="homepage-two">
+            <div class="overlay-mask"></div>
+
+            <div id="section-four" class="homepage-two">
+                <div class="our-services row">
+
+                    <div class="text-container text-one">
+                        <h4>Delivers Real <br> <span>Results</span></h4>
+
+                        <p>Start getting results with online tutoring today!<br> 1-on-1 interactive online tutoring for K - 12 <br> Homework Help in Math & Science<br> Test Prep - SCAT/SAT/ACT/GRE/GMAT/Other </p>
+                    </div>
+
+                    <div class="large-12 columns holder-logo">
+
+
+                    </div>
+
+                    <div class="large-12 columns">
+                        <figure>
+                            <div class="drawings mac">
+                                <img class="illustration" src="img/services.png" alt="Mockup Illustration" />
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="97.5%" height="100%" viewBox="0 0 1199 593" enable-background="new 0 0 1199 593" xml:space="preserve" class="line-drawing drawing-two">
+
+                                </svg>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="text-container text-two large-5">
+                        <h4><span>Get Better Tutoring<br></span> Get Better Results</h4>
+
+                        <p>Not Sure? Take a 30 minutes free trial session <br> <a href="#" class="try-now-button">Try Now</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <img src="img/contact2.png" alt="Featured Icon" width="25" height="25">1800 626 9803</p>
+					<div class="form-section large-8">
+						<form action="<?php echo $CFG->httpswwwroot; ?>/login/index.php" method="post" id="login" <?php echo $autocomplete; ?>>
+                    <div class="row">
+                        <div class="large-12 columns">
+                            <div class="input-wrap">
+                                <label for="name">
+                                    <img src="img/label1.png" height="20" width="16" alt="Featured Icon">
+                                </label>
+                                <input type="text" name="username" id="username" placeholder="USER NAME:">
+                            </div>
+                        </div>
+                        <div class="large-12 columns">
+                            <div class="input-wrap">
+                                <label for="email">
+                                    <img src="img/key.png" alt="Featured Icon" width="20" height="20">
+                                </label>
+                                <input type="password" name="password" id="password" placeholder="PASSWORD:">
+                            </div>
+                        </div>
+                        <div class="large-6  columns submit-wrap">
+                        <input type="submit" id="loginbtn" value="<?php print_string("login") ?>" />
+
+                        </div>
+                        <div class="large-6  columns submit-wrap">
+                            <input type="submit" value="Sign Up">
+                        </div>
+                    </div>
+                </form>
+				</div>
+                        <div class="large-4 columns">
+
+
+
+                		</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Header Menu -->
+            <header id="top-header">
+                <div class="row">
+                    <div class="large-12 columns">
+                        <div class="logo-holder">
+                            <img src="img/logo.png">
+                        </div>
+
+                        <div class="skew-wrapper"></div>
+                        <ul id="nav-menu">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#our-company">K-12</a></li>
+                            <li><a href="#amazing-team">Test Prep</a></li>
+                            <li><a href="#tutors">Our Tutors</a></li>
+                            <li><a href="#results">Our Results</a></li>
+                            <li><a href="#section-six">Pricing</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+
+            <!-- Social Icons -->
+            <ul id="socials">
+                <li><a target="_blank" title="Follow me on Facebook" href="https://www.facebook.com/"><i class="fi-social-facebook"></i></a></li>
+                <li><a target="_blank" title="Follow me on Twitter" href="https://twitter.com/"><i class="fi-social-twitter"></i></a></li>
+            </ul>
+
+        </section>
+
+        <section id="our-company">
+            <div class="row waypoint-element">
+                <div class="large-12 columns homepage-two-subtitle">
+                    <h4>K-12 <span>Tutoring</span></h4>
+                    <p>K-12 is a designation for the sum of primary and secondary education. It is used in the United States, Canada, Turkey, the Philippines, and Australia.
+                    You can choose from our 4-Hour, 8-Hour, or 12-Hour K-12 tutoring plans for help in homework, assignments, test preparation, or to master a particular topic.</p>
+                    <p><a href="#" class="try-now-button">Try Now</a><a href="#" class="try-now-button">Buy Now</a></p>
+                </div>
+            </div>
+
+            <div class="row company-facts waypoint-element">
+                <div class="large-4 medium-6 columns">
+                    <img src="img/company1.png" height="71" width="126" alt="Featured Image">
+                    <h6><span>Math</span></h6>
+                    <p>Homework is a fact of life. When it comes to Math, hands on practice is the only way to learn. You cannot become good at Math just by reading a book. You have to do your homework and practice solving the problems on your own. This is where we can help you. We work with you step by step and help you solve problems. We do not do it for you but do it with you and coach you as you progress, teaching you key concepts and helping you internalize them. Not only that, we identify your weaker spots and give you practice problems that you can solve independently at your own leisure.</p>
+                </div>
+                <div class="large-4 medium-6 columns">
+                    <img src="img/company2.png" alt="Featured Image" width="126" height="71">
+                    <h6><span>Science</span></h6>
+                    <p>Science is everywhere, in the glass of water we drink as well as the air we breathe. The facts that make science so interesting are not always easy to comprehend as they involve learning theorems and understanding the logic behind formulas and equations. The tutors at Top Grader are professional, master degree holders in Physics, Chemistry, Biology, and other scientific fields. They can help you with your homework, assignments, and learning in every science topic.</p>
+                </div>
+                <div class="large-4 medium-6 columns">
+                    <img src="img/company3.png" alt="Featured Image" width="126" height="71">
+                    <h6><span>English</span></h6>
+                    <p>It is no secret that English is the most widely used language across the world and mastering it is only going to benefit you whether it is your personal or professional sphere of life. At Top Grader, our tutors know what it takes to improve your English language skills. All our tutors possess a Master degree in English and are well-versed in teaching English Grammar, Literature, Reading, Writing, etc.</p>
+                </div>
+
+            </div>
+        </section>
+
+
+
+		<!-- Team Section -->
+        <section id="amazing-team">
+            <div class="row waypoint-element">
+                <div class="columns large-12 intro-text">
+                    <h2>Test Prep</h2>
+                    <p>Designed to increase student's performance on standardized tests.</p>
+                </div>
+            </div>
+
+            <div class="row members-section waypoint-element">
+                <div class="large-6 columns member" style="background-image: url(img/team-2-1.jpg)">
+                    <div class="skew-container"></div>
+                    <div class="row">
+                        <div class="large-offset-6 columns"></div>
+                        <div class="large-6 columns member-info">
+                            <h5>SCAT</h5>
+                            <p><strong>8 out of 10</strong> students enrolled with us &nbsp &nbsp&nbsphave scored a <strong>90+</strong> percentile on the SCAT. SCAT is a standardized test designed by CTY (Center for Talented Youth)  of John Hopkins University to help academically gifted children take off to the next level in academics.</p>
+                            <ul class="social-links">
+                                <li><a href="#" target="_blank" title="Try for Free">
+                                    Try
+                                </a></li>
+                                <li><a href="#" target="_blank" title="Buy Now">
+                                    Buy
+                                </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="large-6 columns member" style="background-image: url(img/team-2-1.jpg)">
+                    <div class="skew-container"></div>
+                    <div class="row">
+                        <div class="large-offset-6 columns"></div>
+                        <div class="large-6 columns member-info">
+                            <h5>SAT</h5>
+                            <p>&nbsp&nbsp&nbsp&nbspThe SAT is a standardized test required by many US colleges and universities as part of their admission requirements for undergraduate courses. The score a student gets on the SAT is often used to predict a student's performance in undergraduate studies in college.</p>
+                            <ul class="social-links">
+                                <li><a href="#" target="_blank" title="Try for Free">
+                                    Try
+                                </a></li>
+                                <li><a href="#" target="_blank" title="Buy Now">
+                                    Buy
+                                </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row members-section waypoint-element">
+                <div class="large-6 columns member" style="background-image: url(img/team-2-1.jpg)">
+                    <div class="skew-container"></div>
+                    <div class="row">
+                        <div class="large-6 columns member-info">
+                            <h5>&nbspACT</h5>
+                            <p>Top Grader is home to senior tutors who are adept at ACT test preparation.  Our ACT tutors hold a Master in Math, English, and Science subjects so you can be assured that you will be prepared well for your test. In addition to learning key concepts, you will learn the tips and tricks to solve Math problems faster and answer reading questions accurately.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                            <ul class="social-links">
+                                <li><a href="#" target="_blank" title="Try for Free">
+                                    Try
+                                </a></li>
+                                <li><a href="#" target="_blank" title="Buy Now">
+                                    Buy
+                                </a></li>
+                            </ul>
+                        </div>
+                        <div class="large-offset-6 columns"></div>
+                    </div>
+                </div>
+                <div class="large-6 columns member" style="background-image: url(img/team-2-1.jpg)">
+                    <div class="skew-container"></div>
+                    <div class="row">
+                        <div class="large-6 columns member-info">
+                            <h5>&nbspGRE</h5>
+                            <p>The GRE tutors at Top Grader have had Math and English Language as their favourite subject in their undergraduate and Master courses. They are well-versed with the GRE test structure, topics tested, and the strategies that can improve a student's scores on the test. It also requires stamina and focus that can be attained only through a "lot" of practice.</p>
+
+                            <ul class="social-links">
+                                <li><a href="#" target="_blank" title="Try for Free">
+                                    Try
+                                </a></li>
+                                <li><a href="#" target="_blank" title="Buy Now">
+                                    Buy
+                                </a></li>
+                            </ul>
+                        </div>
+                        <div class="large-offset-6 columns"></div>
+                    </div>
+                </div>
+			</div>
+			<div class="row members-section">
+                <div class="large-6 columns member" style="background-image: url(img/team-2-1.jpg)">
+                    <div class="skew-container"></div>
+                    <div class="row">
+                    	<div class="large-offset-6 columns"></div>
+                        <div class="large-6 columns member-info">
+                            <h5>GMAT</h5>
+                            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Like GRE, our GMAT tutors are &nbsp&nbsp&nbsp&nbsp&nbsp&nbspexperts in Math and Critical &nbsp&nbsp&nbsp&nbspReasoning. Some of the GMAT tutors are senior professionals with several years of experience teaching Math Reasoning at top test preparation coaching institutes for business schools.  You will be able to ace the GMAT by learning new strategies and skills to crack the toughest of problems on the exam!</p>
+
+                            <ul class="social-links">
+                                <li><a href="#" target="_blank" title="Try for Free">
+                                    Try
+                                </a></li>
+                                <li><a href="#" target="_blank" title="Buy Now">
+                                    Buy
+                                </a></li>
+                            </ul>
+                        </div>
+                	</div>
+                </div>
+				<div class="large-6 columns member" style="background-image: url(img/team-2-1.jpg)">
+                    <div class="skew-container"></div>
+                    <div class="row">
+                    	<div class="large-offset-6 columns"></div>
+                        <div class="large-6 columns member-info">
+                            <h5>Others</h5>
+                            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTop Grader also helps students &nbsp&nbsp&nbsp&nbsp&nbsp&nbspprepare for other well know &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspstandardized tests such as the NJ ASK, FCAT, ISAT, STAR, TAKS, &nbsp&nbsp&nbsp&nbsp&nbspTERRANOVA, HSPT, etc. You can &nbsp&nbsp&nbsp&nbspchoose from our monthly 4-Hour, 8-Hour, and 12-Hour plans. Each test prep plan comes with a diagnostic test to assess your strengths and areas of improvement followed by a customized course that includes lessons, worksheets, practice tests, and full length tests.</p>
+
+                            <ul class="social-links">
+                                <li><a href="#" target="_blank" title="Try for Free">
+                                    Try
+                                </a></li>
+                                <li><a href="#" target="_blank" title="Buy Now">
+                                    Buy
+                                </a></li>
+                            </ul>
+                        </div>
+
+                	</div>
+                </div>
+			</div>
+        </section>
+
+		<section id="results">
+        <!-- Parallax -->
+        <div class="parallax parallax-counters">
+            <div class="parallax-overlay"></div>
+
+            <div class="row">
+                <div class="large-12 columns">
+                    <h4>Our Results</h4>
+                    <p</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="large-3 columns medium-6 count-holder">
+                    <div class="counter counter-one"></div><div>%</div>
+                    <p>90+ percentile score in SCAT</p>
+                </div>
+                <div class="large-3 columns medium-6 count-holder">
+                    <div class="counter counter-two"></div><div>%</div>
+                    <p>Improved Grades</p>
+                </div>
+                <div class="large-3 columns medium-6 count-holder">
+                    <div class="counter counter-three"></div><div>%</div>
+                    <p>Improved Problem Solving Skills</p>
+                </div>
+                <div class="large-3 columns medium-6 count-holder">
+                    <div class="counter counter-four"></div><div>%</div>
+                    <p>Satisifed Parents</p>
+                </div>
+            </div>
+
+        </div>
+	</section>
+
+
+        <section id="tutors">
+            <div class="row">
+                <div class="large-6 columns">
+                    <h4>Our <span>Tutors</span> <br></h4>
+                    <p><strong>Handpicked  <span>Qualified Tutors</span></strong><br>All our tutors hold at least a Master Degree except for elementary school Math and Science tutors for which we have Graduates in Math or Engineering subjects. All our tutors go through a exhaustive qualification process that includes testing on subject knowledge, tutoring experience, training session and certification process. We also do a detailed background and reference check on our tutors.</p>
+                    <p><strong>Know the <span>state and school district curriculum</span></strong><br> Our tutors have experience teaching students in different states and school districts. The worksheets and study material used by our tutors is aligned to the student's curriculum that is followed in his/her school. In addition, our tutors have a full resource library they can access any time.</p>
+                    <a href="#">Read More</a>
+                    <br>
+                </div>
+                <div class="large-6 columns">
+                    <div class="img-mockups waypoint-mockups">
+                        <img src="img/mockup3.png" height="470" width="297" alt="Featured Mockup">
+                        <img src="img/mockup-small.png" height="404" width="296" alt="Featured Mockup">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+		<section id="section-six">
+            <div class="row waypoint-element">
+                <div class="columns large-12 intro-text">
+                    <h2>Choose your tutoring plan!</h2>
+                    <p><strong>Money Back Guarantee</strong> If you are not satisfied with our tutoring service you can choose to opt out before the start of your third tutoring session. We will refund the entire amount, no questions asked!</p>
+                    <h3>K-12</h3>
+                </div>
+            </div>
+
+            <div class="member-area row waypoint-element">
+                <div class="large-3 small-6 flip-container columns">
+                    <div class="flipper">
+                        <div class="front">
+                            <div class="border"></div>
+
+                            <h5>1 hour</h5>
+                            <p>$14.99 <span>/per class</span></p>
+                            <a href="#">Select Plan</a>
+                        </div>
+                        <div class="back">
+                            <div class="border"></div>
+                            <h5>1 hour</h5>
+                            <a href="#">Select Plan</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="large-3 small-6 flip-container columns">
+                    <div class="flipper">
+                        <div class="front">
+                            <div class="border"></div>
+
+                            <h5>4 hours Per month</h5>
+                            <strong style="text-decoration:line-through;"><p><span>$59 99/month</span></p></strong>
+                            <p>$49 <span>99/month</span></p>
+                            <a href="#">Select Plan</a>
+                        </div>
+                        <div class="back">
+                            <div class="border"></div>
+                            <h5>4 hours Per month</h5>
+                            <a href="#">Select Plan</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="large-3 small-6 flip-container columns">
+                    <div class="flipper">
+                        <div class="front">
+                            <div class="border"></div>
+
+                            <h5>8 Hours Per month</h5>
+                            <strong style="text-decoration:line-through;"><p><span>$119 99/month</span></p></strong>
+                            <p>$99 <span>99/month</span></p>
+                            <a href="#">Select Plan</a>
+                        </div>
+                        <div class="back">
+                            <div class="border"></div>
+                            <h5>8 Hours Per month</h5>
+                            <a href="#">Select Plan</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="large-3 small-6 flip-container columns">
+                    <div class="flipper">
+                        <div class="front">
+                            <div class="border"></div>
+
+                            <h5>12 Hours Per month</h5>
+                            <strong style="text-decoration:line-through;"><p><span>$179 99/month</span></p></strong>
+                            <p>$139 <span>99/month</span></p>
+                            <a href="#">Select Plan</a>
+                        </div>
+                        <div class="back">
+                            <div class="border"></div>
+                            <h5>12 Hours Per month</h5>
+                            <a href="#">Select Plan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row waypoint-element">
+                <div class="columns large-12 intro-text" style="padding-top:1px;">
+                    <h3>Test Prep</h3>
+                </div>
+            </div>
+            <div class="member-area row waypoint-element">
+                <div class="large-3 small-6 flip-container columns">
+                    <div class="flipper">
+                        <div class="front">
+                            <div class="border"></div>
+
+                            <h5>1 Hour Per class</h5>
+                            <p>$18.99 <span>/per class</span></p>
+                            <a href="#">Select Plan</a>
+                        </div>
+                        <div class="back">
+                            <div class="border"></div>
+                            <h5>1 Hour Per class</h5>
+                            <a href="#">Select Plan</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="large-3 small-6 flip-container columns">
+                    <div class="flipper">
+                        <div class="front">
+                            <div class="border"></div>
+
+                            <h5>4 hours Per month</h5>
+                            <strong style="text-decoration:line-through;"><p><span>$75 99/month</span></p></strong>
+                            <p>$65 <span>99/month</span></p>
+                            <a href="#">Select Plan</a>
+                        </div>
+                        <div class="back">
+                            <div class="border"></div>
+                            <h5>4 hours Per month</h5>
+                            <a href="#">Select Plan</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="large-3 small-6 flip-container columns">
+                    <div class="flipper">
+                        <div class="front">
+                            <div class="border"></div>
+
+                            <h5>8 Hours Per month</h5>
+                            <strong style="text-decoration:line-through;"><p><span>$151 99/month</span></p></strong>
+                            <p>$131 <span>99/month</span></p>
+                            <a href="#">Select Plan</a>
+                        </div>
+                        <div class="back">
+                            <div class="border"></div>
+                            <h5>8 Hours Per month</h5>
+                            <a href="#">Select Plan</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="large-3 small-6 flip-container columns">
+                    <div class="flipper">
+                        <div class="front">
+                            <div class="border"></div>
+
+                            <h5>12 Hours Per month</h5>
+                            <strong style="text-decoration:line-through;"><p><span>$227 99/month</span></p></strong>
+                            <p>$187 <span>99/month</span></p>
+                            <a href="#">Select Plan</a>
+                        </div>
+                        <div class="back">
+                            <div class="border"></div>
+                            <h5>12 Hours Per month</h5>
+                            <a href="#">Select Plan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        	<div id="contact-section" class="parallax parallax-contact parallax-testimonials">
+            <div class="parallax-overlay"></div>
+            <div class="large-12 columns">
+                    <h4>Testimonials</h4>
+                </div>
+			<div class="row waypoint-element">
+
+                <div class="large-9 columns large-centered small-centered">
+                    <ul class="testimonials-slider">
+                        <li>
+                            <div class="border-1"></div>
+                            <div class="border-2"></div>
+                            <h5>Jacqueline, MI</h5>
+                            <span>97th percentile on SCAT!</span>
+                            <p>My daughter scored a 97th percentile on the SCAT Math. She has qualified for the Math summer camp at CTY! Thanks Top Grader team for all the help. Your tutors are great, and your structured SCAT curriculum is the best my daughter could get!</p>
+                        </li>
+                        <li>
+                            <div class="border-1"></div>
+                            <div class="border-2"></div>
+                            <h5>Lisa and Nick (David's parents), Canada</h5>
+                            <span>Math Tutoring/Homework Help</span>
+                            <p>I wanted you to know that for the first time in years, David got a "A" on a math test this week - his first quiz of the school year! I wanted to thank you guys for your help in getting him to this level.</p>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <div class="row">
+                <div class="large-12 columns">
+                    <h4>Contact Us Today</h4>
+                    <p>After a humble start in Singapore, Top Grader has made its name as a pioneer in quality online tutoring in UK, Australia, USA, and Canada. Top Grader came into existence to make quality, one-on-one online tutoring accessible to students at affordable prices. The senior management of top-grader comprises of people who have had more than a decade of international experience in the education, training and development industry. Our directors and partners are graduates from some of the top business schools of the world where they have worked as mentors, teachers, and academic counselors themselves.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-4 columns">
+                    <div class="icon-holder">
+                        <img src="img/contact1.png" height="36" width="52" alt="Featured Icon">
+                    </div>
+                    <p>
+                        <a href="mailto:info@top-grader.com?subject=Mail from Our Site">info@top-grader.com</a>
+                    </p>
+                </div>
+                <div class="large-4 columns">
+                    <div class="icon-holder">
+                        <img src="img/contact2.png" alt="Featured Icon" width="50" height="50">
+                    </div>
+                    <p>1800 626 9803</p>
+                </div>
+                <div class="large-4 columns">
+                    <div class="icon-holder">
+                        <img src="img/contact3.png" alt="Featured Icon" width="50" height="50">
+                    </div>
+                    <p>Lucknow, India</p>
+                </div>
+            </div>
+			<!-- Form Section -->
+        <div class="row form-section">
+            <div class="large-10 columns large-centered small-centered">
+                <form action="#">
+                    <div class="row">
+                        <div class="large-6 columns">
+                            <div class="input-wrap">
+                                <label for="name">
+                                    <img src="img/label1.png" height="20" width="16" alt="Featured Icon">
+                                </label>
+                                <input type="text" name="name" id="name" placeholder="NAME:">
+                            </div>
+                        </div>
+                        <div class="large-6 columns">
+                            <div class="input-wrap">
+                                <label for="email">
+                                    <img src="img/label2.png" alt="Featured Icon" width="20" height="14">
+                                </label>
+                                <input type="email" name="email" id="email" placeholder="EMAIL:">
+                            </div>
+                        </div>
+                        <div class="large-6 columns">
+                            <div class="input-wrap">
+                                <label for="subject">
+                                    <img src="img/label3.png" alt="Featured Icon" width="20" height="20">
+                                </label>
+                                <input type="text" name="subject" id="subject" placeholder="SUBJECT:">
+                            </div>
+                        </div>
+                        <div class="large-6 columns">
+                            <div class="input-wrap">
+                                <label for="message">
+                                    <img src="img/label4.png" alt="Featured Icon" width="20" height="16">
+                                </label>
+                                <input type="text" name="message" id="message" placeholder="MESSAGE:">
+                            </div>
+                        </div>
+                        <div class="large-12 columns submit-wrap">
+                            <input type="submit" value="Send Message">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        </div>
+
+        <footer>
+        	<a href="#" class="go-top"></a>
+        </footer>
+
+        <!-- Essential Scripts -->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/foundation/js/foundation.min.js"></script>
+        <script src="js/min/app.min.js" type="text/javascript"></script>
+        <script src="js/min/retina-1.1.0.min.js" type="text/javascript"></script>
+
+        <!-- Page Specific Scripts -->
+        <script src="js/min/jquery.sidr.min.js" type="text/javascript"></script>
+        <script src="js/min/waypoints.min.js" type="text/javascript"></script>
+        <script src="js/min/masonry.min.js" type="text/javascript"></script>
+        <script src="js/min/smoothScroll.min.js" type="text/javascript"></script>
+        <script src="js/min/jquery.parallax-1.1.3.min.js" type="text/javascript"></script>
+        <script src="js/min/tweetable.jquery.min.js" type="text/javascript"></script>
+        <script src="js/min/classie.min.js" type="text/javascript"></script>
+        <script src="js/min/jquery.timeago.min.js" type="text/javascript"></script>
+        <script src="js/min/svganimations.min.js" type="text/javascript"></script>
+        <script src="js/min/jquery.bxslider.min.js" type="text/javascript"></script>
+        <script src="js/min/jquery.prettyPhoto.min.js" type="text/javascript"></script>
+        <script src="js/min/imagesLoaded.min.js" type="text/javascript"></script>
+        <script src="js/min/counter.min.js" type="text/javascript"></script>
+        <script src="js/min/main-second.min.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            // Init Counters
+            jQuery(function($) {
+
+
+                $(window).load(function() {
+
+
+                    // Init Bx for Testimonials
+                    $('.testimonials-slider').bxSlider({
+                        adaptiveHeight : true,
+                        pager : false,
+                        hideControlOnEnd : true,
+                        infiniteLoop : false
+                    });
+                });
+
+            });
+        </script>
+
+    </body>
+    <?php
+	            echo $OUTPUT->course_content_header();
+	            echo $OUTPUT->main_content();
+	            echo $OUTPUT->course_content_footer();
+	            ?>
+    <?php else: ?>
+
+
+
+
 <?php
 // This file is part of Moodle - http://moodle.org/
 //
@@ -145,621 +847,224 @@ echo $OUTPUT->doctype() ?>
     <!-- iOS Homescreen Icons -->
     <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
 
-    <?php if (!isloggedin()): ?>
-	    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    </head>
+	<body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
 
-		<!-- mobile meta tag -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-		<title>Top-Grader</title>
-
-		<!-- main style -->
-		<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-
-		<!-- color scheme -->
-		<link rel="stylesheet" type="text/css" href="color-schemes/orange/orange.css" media="screen" />
-
-		<!--miscellaneous-->
-		<link rel="stylesheet" type="text/css" href="css/custom-styles.css" media="screen" />
-		<link rel="stylesheet" href="template-changer.css" type="text/css" />
-
-		<!-- revolution slider settings -->
-		<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
-
-		<!-- responsive stylesheet -->
-		<link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen" />
-
-		<!-- Google Web Fonts -->
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
-
-		<!-- jQuery -->
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-		<!-- jQuery Scripts -->
-		<script type="text/javascript" src="js/scripts-top.js"></script>
-
-		<script type="text/javascript" src="js/template-changer.js"></script>
-	<?php endif ?>
-</head>
-
-<body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
-
-	<!-- preloader-->
-	<div class="whitebg">
-		<div id="spinner"></div>
-	</div>
+		<!-- preloader-->
+		<div class="whitebg">
+			<div id="spinner"></div>
+		</div>
 
 
-<?php echo $OUTPUT->standard_top_of_body_html() ?>
+	<?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
+	<?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
 
-<header role="banner" class="navbar" id="header">
+	<header role="banner" class="navbar" id="header">
 
-    <nav role="navigation" class="navbar-inner" id="mainnav">
-        <div class="container-fluid">
+	    <nav role="navigation" class="navbar-inner" id="mainnav">
+	        <div class="container-fluid">
 
-			<?php if (isloggedin()): ?>
-	            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
-	            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-	                <span class="icon-bar"></span>
-	                <span class="icon-bar"></span>
-	                <span class="icon-bar"></span>
-	            </a>
-            <?php endif ?>
+				<?php if (isloggedin()): ?>
+		            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
+		            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		            </a>
+	            <?php endif ?>
 
-            <div class="nav-collapse collapse">
-                <?php echo $OUTPUT->custom_menu(); ?>
-                <?php if (!isloggedin()): ?>
-                <ul class="nav">
-                <li class="brand current"><a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a></li>
-                <li class="brand"><a href="#quote"><span>ABOUT</span></a></li>
+	            <div class="nav-collapse collapse">
+	                <?php echo $OUTPUT->custom_menu(); ?>
 
+	                <ul class="nav pull-right">
+	                    <li class="external"><?php echo $OUTPUT->page_heading_menu(); ?></li>
+	                    <li class="navbar-text external"><?php echo $OUTPUT->login_info() ?></li>
+	                </ul>
+	            </div>
+	        </div>
+	    </nav>
+	    <div class="clear"></div>
 
-						<li class="brand"><a href="#services"><span>K-12</span></a></li>
-						<li class="brand"><a href="#projectbg"><span>Test Prep</span></a></li>
-						<li class="brand"><a href="#contact"><span>CONTACT</span></a></li>
-                </ul>
-                <?php endif ?>
-                <ul class="nav pull-right">
-                    <li class="external"><?php echo $OUTPUT->page_heading_menu(); ?></li>
-                    <li class="navbar-text external"><?php echo $OUTPUT->login_info() ?></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="clear"></div>
+	</header>
 
-</header>
-<?php if (isloggedin()): ?>
-	<!-- Start Main Regions -->
-	<div id="page" class="container-fluid">
+		<!-- Start Main Regions -->
+		<div id="page" class="container-fluid">
 
-	<!-- Start Alerts -->
+		<!-- Start Alerts -->
 
-	<!-- Alert #1 -->
-	<?php if ($hasalert1) { ?>
-		<div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert1type ?>">
-		<a class="close" data-dismiss="alert" href="#">Ã—</a>
+		<!-- Alert #1 -->
+		<?php if ($hasalert1) { ?>
+			<div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert1type ?>">
+			<a class="close" data-dismiss="alert" href="#">Ã—</a>
+			<?php
+			if ($PAGE->theme->settings->alert1type == 'info') {
+				$alert1icon = $alertinfo;
+		    } else if ($PAGE->theme->settings->alert1type == 'error') {
+		    	$alert1icon = $alertwarning;
+		   	} else {
+		   		$alert1icon = $alertsuccess;
+		   	}
+		    $alert1title = 'alert1title_'.current_language();
+		    $alert1text = 'alert1text_'.current_language();
+		   	echo $alert1icon.'<span class="title">'.$PAGE->theme->settings->$alert1title.'</span>'.$PAGE->theme->settings->$alert1text; ?>
+		</div>
+		<?php } ?>
+
+		<!-- Alert #2 -->
+		<?php if ($hasalert2) { ?>
+			<div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert2type ?>">
+			<a class="close" data-dismiss="alert" href="#">Ã—</a>
+			<?php
+			if ($PAGE->theme->settings->alert2type == 'info') {
+				$alert2icon = $alertinfo;
+		    } else if ($PAGE->theme->settings->alert2type == 'error') {
+		    	$alert2icon = $alertwarning;
+		   	} else {
+		   		$alert2icon = $alertsuccess;
+		   	}
+		    $alert2title = 'alert2title_'.current_language();
+		    $alert2text = 'alert2text_'.current_language();
+		   	echo $alert2icon.'<span class="title">'.$PAGE->theme->settings->$alert2title.'</span>'.$PAGE->theme->settings->$alert2text; ?>
+		</div>
+		<?php } ?>
+
+		<!-- Alert #3 -->
+		<?php if ($hasalert3) { ?>
+			<div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert3type ?>">
+			<a class="close" data-dismiss="alert" href="#">Ã—</a>
+			<?php
+			if ($PAGE->theme->settings->alert3type == 'info') {
+				$alert3icon = $alertinfo;
+		    } else if ($PAGE->theme->settings->alert3type == 'error') {
+		    	$alert3icon = $alertwarning;
+		   	} else {
+		   		$alert3icon = $alertsuccess;
+		   	}
+		    $alert3title = 'alert3title_'.current_language();
+		    $alert3text = 'alert3text_'.current_language();
+		   	echo $alert3icon.'<span class="title">'.$PAGE->theme->settings->$alert3title.'</span>'.$PAGE->theme->settings->$alert3text; ?>
+		</div>
+		<?php } ?>
+		<!-- End Alerts -->
+
+		<!-- Start Slideshow -->
 		<?php
-		if ($PAGE->theme->settings->alert1type == 'info') {
-			$alert1icon = $alertinfo;
-	    } else if ($PAGE->theme->settings->alert1type == 'error') {
-	    	$alert1icon = $alertwarning;
-	   	} else {
-	   		$alert1icon = $alertsuccess;
-	   	}
-	    $alert1title = 'alert1title_'.current_language();
-	    $alert1text = 'alert1text_'.current_language();
-	   	echo $alert1icon.'<span class="title">'.$PAGE->theme->settings->$alert1title.'</span>'.$PAGE->theme->settings->$alert1text; ?>
-	</div>
-	<?php } ?>
-
-	<!-- Alert #2 -->
-	<?php if ($hasalert2) { ?>
-		<div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert2type ?>">
-		<a class="close" data-dismiss="alert" href="#">Ã—</a>
-		<?php
-		if ($PAGE->theme->settings->alert2type == 'info') {
-			$alert2icon = $alertinfo;
-	    } else if ($PAGE->theme->settings->alert2type == 'error') {
-	    	$alert2icon = $alertwarning;
-	   	} else {
-	   		$alert2icon = $alertsuccess;
-	   	}
-	    $alert2title = 'alert2title_'.current_language();
-	    $alert2text = 'alert2text_'.current_language();
-	   	echo $alert2icon.'<span class="title">'.$PAGE->theme->settings->$alert2title.'</span>'.$PAGE->theme->settings->$alert2text; ?>
-	</div>
-	<?php } ?>
-
-	<!-- Alert #3 -->
-	<?php if ($hasalert3) { ?>
-		<div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert3type ?>">
-		<a class="close" data-dismiss="alert" href="#">Ã—</a>
-		<?php
-		if ($PAGE->theme->settings->alert3type == 'info') {
-			$alert3icon = $alertinfo;
-	    } else if ($PAGE->theme->settings->alert3type == 'error') {
-	    	$alert3icon = $alertwarning;
-	   	} else {
-	   		$alert3icon = $alertsuccess;
-	   	}
-	    $alert3title = 'alert3title_'.current_language();
-	    $alert3text = 'alert3text_'.current_language();
-	   	echo $alert3icon.'<span class="title">'.$PAGE->theme->settings->$alert3title.'</span>'.$PAGE->theme->settings->$alert3text; ?>
-	</div>
-	<?php } ?>
-	<!-- End Alerts -->
-
-	<!-- Start Slideshow -->
-	<?php
-		if($PAGE->theme->settings->toggleslideshow==1) {
-			require_once(dirname(__FILE__).'/includes/slideshow_'. ($PAGE->theme->settings->slideshowvariant) .'.php');
-		} else if($PAGE->theme->settings->toggleslideshow==2 && !isloggedin()) {
-			require_once(dirname(__FILE__).'/includes/slideshow_'. ($PAGE->theme->settings->slideshowvariant) .'.php');
-		} else if($PAGE->theme->settings->toggleslideshow==3 && isloggedin()) {
-			require_once(dirname(__FILE__).'/includes/slideshow_'. ($PAGE->theme->settings->slideshowvariant) .'.php');
-		}
-	?>
-	<!-- End Slideshow -->
-
-	<!-- Start Marketing Spots -->
-	<?php
-		if($PAGE->theme->settings->togglemarketing==1) {
-			require_once(dirname(__FILE__).'/includes/marketingspots.php');
-		} else if($PAGE->theme->settings->togglemarketing==2 && !isloggedin()) {
-			require_once(dirname(__FILE__).'/includes/marketingspots.php');
-		} else if($PAGE->theme->settings->togglemarketing==3 && isloggedin()) {
-			require_once(dirname(__FILE__).'/includes/marketingspots.php');
-		}
-	?>
-	<!-- End Marketing Spots -->
-
-	<!-- Start Middle Blocks -->
-	<?php
-		if($PAGE->theme->settings->frontpagemiddleblocks==1) {
-			require_once(dirname(__FILE__).'/includes/middleblocks.php');
-		} else if($PAGE->theme->settings->frontpagemiddleblocks==2 && !isloggedin()) {
-			require_once(dirname(__FILE__).'/includes/middleblocks.php');
-		} else if($PAGE->theme->settings->frontpagemiddleblocks==3 && isloggedin()) {
-			require_once(dirname(__FILE__).'/includes/middleblocks.php');
-		}
-	?>
-	<!-- End Middle Blocks -->
-
-	<!-- Start Frontpage Content -->
-	<?php if($PAGE->theme->settings->usefrontcontent ==1) {
-		echo $PAGE->theme->settings->frontcontentarea;
+			if($PAGE->theme->settings->toggleslideshow==1) {
+				require_once(dirname(__FILE__).'/includes/slideshow_'. ($PAGE->theme->settings->slideshowvariant) .'.php');
+			} else if($PAGE->theme->settings->toggleslideshow==2 && !isloggedin()) {
+				require_once(dirname(__FILE__).'/includes/slideshow_'. ($PAGE->theme->settings->slideshowvariant) .'.php');
+			} else if($PAGE->theme->settings->toggleslideshow==3 && isloggedin()) {
+				require_once(dirname(__FILE__).'/includes/slideshow_'. ($PAGE->theme->settings->slideshowvariant) .'.php');
+			}
 		?>
-		<div class="bor" style="margin-top: 10px;"></div>
-	<?php }?>
-	<!-- End Frontpage Content -->
+		<!-- End Slideshow -->
 
-<?php else: ?>
+		<!-- Start Marketing Spots -->
+		<?php
+			if($PAGE->theme->settings->togglemarketing==1) {
+				require_once(dirname(__FILE__).'/includes/marketingspots.php');
+			} else if($PAGE->theme->settings->togglemarketing==2 && !isloggedin()) {
+				require_once(dirname(__FILE__).'/includes/marketingspots.php');
+			} else if($PAGE->theme->settings->togglemarketing==3 && isloggedin()) {
+				require_once(dirname(__FILE__).'/includes/marketingspots.php');
+			}
+		?>
+		<!-- End Marketing Spots -->
 
-	<div id="wrapper">
+		<!-- Start Middle Blocks -->
+		<?php
+			if($PAGE->theme->settings->frontpagemiddleblocks==1) {
+				require_once(dirname(__FILE__).'/includes/middleblocks.php');
+			} else if($PAGE->theme->settings->frontpagemiddleblocks==2 && !isloggedin()) {
+				require_once(dirname(__FILE__).'/includes/middleblocks.php');
+			} else if($PAGE->theme->settings->frontpagemiddleblocks==3 && isloggedin()) {
+				require_once(dirname(__FILE__).'/includes/middleblocks.php');
+			}
+		?>
+		<!-- End Middle Blocks -->
 
+		<!-- Start Frontpage Content -->
+		<?php if($PAGE->theme->settings->usefrontcontent ==1) {
+			echo $PAGE->theme->settings->frontcontentarea;
+			?>
+			<div class="bor" style="margin-top: 10px;"></div>
+		<?php }?>
+		<!-- End Frontpage Content -->
 
+	    <div id="page-content" class="row-fluid">
+	    	<?php if ($hasfrontpageblocks==1) { ?>
+	        <section id="region-main" class="span8 pull-right">
+	        <?php } else { ?>
+	        <section id="region-main" class="span8 desktop-first-column">
+	        <?php } ?>
+	        	<div id="page-navbar" class="clearfix">
+	            	<div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
+	            	<nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+	        	</div>
+	            <?php
+	            echo $OUTPUT->course_content_header();
+	            echo $OUTPUT->main_content();
+	            echo $OUTPUT->course_content_footer();
+	            ?>
+	        </section>
+	        <?php
+	        if ($hasfrontpageblocks==1) {
+	        	echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column');
+	        } else {
+	        	echo $OUTPUT->blocks('side-pre', 'span4 pull-right');
+	        }
+	        ?>
+	    </div>
 
-	<!-- About SECTION -->
-	<section class="parallax-section" id="quote" style="padding-top:2%;">
-		<div>
-			<section class="centered-wrapper">
-				<div class="space"></div>
+	    <!-- End Main Regions -->
 
-				<h2 class="parallax-quote">"Helping Students improve grades in USA, Canada, UK, Singapore and Australia."</h2>
-
-				<div class="space"></div>
-			</section>
+	    <?php if (is_siteadmin()) { ?>
+		<div class="hidden-blocks">
+	    	<div class="row-fluid">
+	        	<h4><?php echo get_string('visibleadminonly', 'theme_essential') ?></h4>
+	            <?php
+	                echo $OUTPUT->essentialblocks('hidden-dock');
+	            ?>
+	    	</div>
 		</div>
-	</section>
+		<?php } ?>
 
-	<!-- CONTACT SECTION -->
-	<section class="parallax-section" id="login">
-		<div>
-		<div class="centered-wrapper">
-			<div class="space"></div>
 
-			<h1 class="section-title"><span class="log-in">Log in</span> or <span class="sign-up">sign up</span></h1>
+		<footer id="page-footer" class="container-fluid">
+			<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
+		</footer>
 
-			<div class="percent-one-half box fadeInLeft rightDashBorder">
-				<div id="contactform">
-					<div id="message"></div>
-					<form method="post" action="" name="cform" id="cform">
-						<fieldset>
-							<input id="name" type="text" name="username" placeholder="User Name"/>
+	    <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
-							<input type="password" name="password" id="password" placeholder="Password"/>
-						</fieldset>
-
-						<fieldset>
-							<input type="submit" name="login" value="Sign In" id="submit" class="button black"/>
-						</fieldset>
-
-					</form>
-				</div><!--end contactform-->
-			</div>
-
-			<div class="percent-one-half column-last box fadeInRight">
-
-				<a href="Twitter" class="auth-twitter">Sign in with Twitter</a>
-
-				<a href="Twitter" class="auth-twitter">Sign in with Facebook</a>
-
-				<a href="Twitter" class="auth-twitter">Sign in with Google</a>
-
-				<a href="Twitter" class="auth-twitter">Sign in with OpenID</a>
-
-			</div>
-
-			<div class="double-space"></div>
-		</div>
-		</div>
-	</section>
-
-	<!-- SERVICES SECTION -->
-	<section class="parallax-section" id="services">
-		<div>
-
-			<section class="centered-wrapper">
-
-				<div class="double-space"></div>
-
-				<h1 class="section-title"><a href="K12">K-12 Tutoring</a></h1>
-
-				<div class="space"></div>
-
-				<ul class="homepage-services box fadeInUp">
-					<li class="dt-service-wrapper percent-one-third">
-						<div class="dt-service-item">
-							<i class="fa fa-plus-circle"></i>
-							<h3 class="service-title">Math</h3>
-						</div>
-						<div class="dt-service-hover">
-							<i class="fa fa-plus-circle"></i>
-							<h3>Math</h3>
-							<p>Our Math tutors have advanced degrees in Math and have expertise in a wide range of topics such as:
-
-Trigonometry,
-2-D and 3-D Geometry,
-Co-ordinate Geometry,
-Calculus,
-Statistics,
-Probability,
-Permutations and Combinations,
-Venn Diagrams and
-Integrated Reasoning
-
-</p>
-							<p><a href="" class="button black">Try Now</a></p>
-						</div>
-					</li>
-
-					<li class="dt-service-wrapper percent-one-third">
-						<div class="dt-service-item">
-							<i class="fa fa-font"></i>
-							<h3 class="service-title">English</h3>
-						</div>
-						<div class="dt-service-hover">
-							<i class="fa fa-font"></i>
-							<h3>English</h3>
-							<p>At Top Grader, our tutors know what it takes to improve your English language skills. All our tutors possess a Master degree in English and are well-versed in teaching English. You can take LIVE tutoring classes with our tutors in the following topics:
-
-Reading Comprehension,
-Critical Reading,
-Essay Writing,
-Creative Writing,
-Poetry,
-Vocabulary Building and
-Grammar
-
-</p>
-							<p>Choose from our 4-Hour, 8-Hour, or 12-Hour K-12 tutoring plans. link here</p>
-						</div>
-					</li>
-
-					<li class="dt-service-wrapper percent-one-third">
-						<div class="dt-service-item">
-							<i class="fa fa-flask"></i>
-							<h3 class="service-title">Science</h3>
-						</div>
-						<div class="dt-service-hover">
-							<i class="fa fa-flask"></i>
-							<h3>Science</h3>
-							<p>The tutors at Top Grader are professional, master degree holders in Physics, Chemistry, Biology, and other scientific fields. They can help you with your homework, assignments, and learning in every science topic. Some of the topics that you can get LIVE help in are:
-Laws of motion
-Friction
-Force
-Mechanics
-Thermodynamics
-Work, Power, and Energy
-Heat
-...
-
-</p>
-							<p>You can choose from our 4-Hour, 8-Hour, or 12-Hour K-12 tutoring plans here.</p>
-						</div>
-					</li>
-
-
-				<div class="double-space"></div>
-
-			</section>
-		</div>
-	</section>
-
-	<!-- SERVICES SECTION -->
-	<section class="parallax-section" id="projectbg">
-		<div>
-
-			<section class="centered-wrapper">
-
-				<div class="double-space"></div>
-
-				<h1 class="section-title"><a href="TestPrep">Test Prep</a></h1>
-
-				<div class="space"></div>
-
-				<ul class="homepage-services box fadeInUp">
-					<li class="dt-service-wrapper percent-one-sixth">
-						<div class="dt-service-item">
-							<i>&nbsp</i>
-							<h3 class="service-title">SCAT</h3>
-						</div>
-						<div class="dt-service-hover">
-							<i class="fa fa-book"></i>
-							<h3>SCAT</h3>
-							<p>8 out of 10 students enrolled with us have scored a 90+ percentile on the SCAT ! Top Grader is the pioneer in online SCAT preparation, our structured approach to testprep has helped hundreds of students ace the SCAT with 90+ percentile!</p>
-
-						</div>
-					</li>
-
-					<li class="dt-service-wrapper percent-one-sixth">
-						<div class="dt-service-item">
-							<i>&nbsp</i>
-							<h3 class="service-title">SAT</h3>
-						</div>
-						<div class="dt-service-hover">
-							<i class="fa fa-book"></i>
-							<h3>SAT</h3>
-							<p>The SAT Reasoning Test is a 3 hours and 45 minutes test and has three divisions – Math, Critical Reading, and Writing.</p>
-						</div>
-					</li>
-
-					<li class="dt-service-wrapper percent-one-sixth">
-						<div class="dt-service-item">
-							<i>&nbsp</i>
-							<h3 class="service-title">ACT</h3>
-						</div>
-						<div class="dt-service-hover">
-							<i class="fa fa-book"></i>
-							<h3>ACT</h3>
-							<p>The ACT, like SAT is a standardized test for assessment of college readiness of students for undergraduate courses in the United States. The ACT consists of four multiple-choice sections of English, Math, Reading, and Science.</p>
-
-						</div>
-					</li>
-
-					<li class="dt-service-wrapper percent-one-sixth">
-						<div class="dt-service-item">
-							<i>&nbsp</i>
-							<h3 class="service-title">GRE</h3>
-						</div>
-						<div class="dt-service-hover">
-							<i class="fa fa-book"></i>
-							<h3>GRE</h3>
-							<p>The GRE tutors at Top Grader have had Math and English Language as their favourite subject in their undergraduate and Master courses. They are well-versed with the GRE test structure, topics tested, and the strategies that can improve a student’s scores on the test.</p>
-
-						</div>
-					</li>
-
-					<li class="dt-service-wrapper percent-one-sixth">
-						<div class="dt-service-item">
-							<i>&nbsp</i>
-							<h3 class="service-title">GMAT</h3>
-						</div>
-						<div class="dt-service-hover">
-							<i class="fa fa-book"></i>
-							<h3>GMAT</h3>
-							<p>Like GRE, our GMAT tutors are experts in Math and Critical Reasoning. Some of the GMAT tutors are senior professionals with several years of experience teaching Math Reasoning at top test preparation coaching institutes for business schools.</p>
-
-						</div>
-					</li>
-					<li class="dt-service-wrapper percent-one-sixth">
-						<div class="dt-service-item">
-							<i>&nbsp</i>
-							<h3 class="service-title">Other Test Prep</h3>
-						</div>
-						<div class="dt-service-hover">
-							<i class="fa fa-book"></i>
-							<h3>Other Test Prep</h3>
-							<p>Top Grader also helps students prepare for other well know standardized tests such as the NJ ASK, FCAT, ISAT, STAR, TAKS, TERRANOVA, HSPT, etc.</p>
-
-						</div>
-					</li>
-
-
-				<div class="double-space"></div>
-
-			</section>
-		</div>
-	</section>
-
-
-	<!-- TESTIMONIALS SECTION -->
-	<section id="testimonials" class="clear">
-		<section class="centered-wrapper">
-			<div class="double-space"></div>
-
-			<h1 class="section-title">Testimonials</h1>
-			<div class="space"></div>
-
-			<div class="testimonials-carousel">
-				<div id="owl-testimonials" class="owl-carousel box fadeInDown">
-					<div class="testimonial-item">
-						<p>Top Grader helped me get 90 percentile in SCAT. The website is great. </p>
-						<p><span class="testimonial-name">JOHN DOE</span>, <span class="testimonial-position">Company CEO</span></p>
-					</div>
-					<div class="testimonial-item">
-						<p>We have been very much impressed by Patti Studio. They grasped our needs and produced a stunning design. Needless to say we are extremely satisfied with the results. Thank you!â€�</p>
-						<p><span class="testimonial-name">ELENA GONZALES</span>, <span class="testimonial-position">Envato Team</span></p>
-					</div>
-					<div class="testimonial-item">
-						<p>The work they made impressed me on multiple levels. I have been very happy about the whole process and they have done a great job. They was fast to deliver new ideas and always helpful with our questions!â€�</p>
-						<p><span class="testimonial-name">RICHARD BRENNAN</span>, <span class="testimonial-position">Linda Marketing Team</span></p>
-					</div>
-				</div>
-			</div><!--end carousel-->
-			<div class="double-space"></div>
-		</section>
-	</section>
-
-	<!-- CONTACT SECTION -->
-	<section class="parallax-section" id="contact">
-		<div>
-		<section class="centered-wrapper">
-			<div class="double-space"></div>
-
-			<h1 class="section-title">Contact US</h1>
-			<div class="space"></div>
-			<div class="percent-one-half box fadeInLeft">
-				<h3 class="title-bg"><span>Contact Info</span></h3>
-				<ul class="contact-info">
-					<li><i class="fa fa-map-marker"></i>
-
-							Top Grader India Ltd<br/>
-							2 Fawn Brake Avenue<br/>
-							S.N. Marg<br/>
-							Lucknow 226001<br/>
-							India<br/>
-
-					</li>
-					<li><i class="fa fa-phone"></i>1800-626-9803</li>
-					<li><i class="fa fa-envelope"></i><a href="mailto:">info@top-grader.com</a></li>
-				</ul>
-			</div>
-
-			<div class="percent-one-half column-last box fadeInRight">
-				<div id="contactform">
-					<div id="message"></div>
-					<form method="post" action="" name="cform" id="cform">
-						<fieldset class="percent-one-half">
-							<input id="name" type="text" name="name" placeholder="Name"/>
-						</fieldset>
-						<fieldset class="percent-one-half column-last">
-							<input type="email" name="email" id="email" placeholder="Email"/>
-						</fieldset>
-						<fieldset class="clean">
-							<textarea name="comments" id="comments" placeholder="Message"></textarea>
-						</fieldset>
-						<fieldset>
-							<input type="submit" name="send" value="SEND" id="submit" class="button black"/>
-						</fieldset>
-					</form>
-				</div><!--end contactform-->
-			</div>
-
-			<div class="double-space"></div>
-		</section>
-		</div>
-	</section>
-
-
-</div><!--end wrapper-->
-
-	<!-- JQUERY SCRIPTS -->
-
-	<script type="text/javascript" src="twitter/jquery.tweet.min.js"></script>
-	<script type="text/javascript" src="js/jquery.contact.js"></script>
-
-	<script type="text/javascript" src="js/scripts-bottom.js"></script>
-
-
-	<!-- ISOTOPE -->
-	<script type="text/javascript" src="js/jquery.isotope.min.js"></script>
-	<script type="text/javascript" src="js/custom-isotope.js"></script>
-
-	<!-- REVOLUTION SLIDER -->
-	<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
-	<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-	<script type="text/javascript" src="js/custom-revolution.js"></script>
-
-	<!-- CUSTOM -->
-	<script type="text/javascript" src="js/custom.js"></script>
-<?php endif ?>
-
-    <div id="page-content" class="row-fluid">
-    	<?php if ($hasfrontpageblocks==1) { ?>
-        <section id="region-main" class="span8 pull-right">
-        <?php } else { ?>
-        <section id="region-main" class="span8 desktop-first-column">
-        <?php } ?>
-        	<div id="page-navbar" class="clearfix">
-            	<div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
-            	<nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-        	</div>
-            <?php
-            echo $OUTPUT->course_content_header();
-            echo $OUTPUT->main_content();
-            echo $OUTPUT->course_content_footer();
-            ?>
-        </section>
-        <?php
-        if ($hasfrontpageblocks==1) {
-        	echo $OUTPUT->blocks('side-pre', 'span4 desktop-first-column');
-        } else {
-        	echo $OUTPUT->blocks('side-pre', 'span4 pull-right');
-        }
-        ?>
-    </div>
-
-    <!-- End Main Regions -->
-
-    <?php if (is_siteadmin()) { ?>
-	<div class="hidden-blocks">
-    	<div class="row-fluid">
-        	<h4><?php echo get_string('visibleadminonly', 'theme_essential') ?></h4>
-            <?php
-                echo $OUTPUT->essentialblocks('hidden-dock');
-            ?>
-    	</div>
 	</div>
+
+	<!-- Start Google Analytics -->
+	<?php if ($hasanalytics) { ?>
+		<?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
 	<?php } ?>
+	<!-- End Google Analytics -->
 
+	<script type="text/javascript">
+	jQuery(document).ready(function() {
+	    var offset = 220;
+	    var duration = 500;
+	    jQuery(window).scroll(function() {
+	        if (jQuery(this).scrollTop() > offset) {
+	            jQuery('.back-to-top').fadeIn(duration);
+	        } else {
+	            jQuery('.back-to-top').fadeOut(duration);
+	        }
+	    });
 
-	<footer id="page-footer" class="container-fluid">
-		<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
-	</footer>
+	    jQuery('.back-to-top').click(function(event) {
+	        event.preventDefault();
+	        jQuery('html, body').animate({scrollTop: 0}, duration);
+	        return false;
+	    })
+	});
+	</script>
 
-    <?php echo $OUTPUT->standard_end_of_body_html() ?>
-
-</div>
-
-<!-- Start Google Analytics -->
-<?php if ($hasanalytics) { ?>
-	<?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
-<?php } ?>
-<!-- End Google Analytics -->
-
-<script type="text/javascript">
-jQuery(document).ready(function() {
-    var offset = 220;
-    var duration = 500;
-    jQuery(window).scroll(function() {
-        if (jQuery(this).scrollTop() > offset) {
-            jQuery('.back-to-top').fadeIn(duration);
-        } else {
-            jQuery('.back-to-top').fadeOut(duration);
-        }
-    });
-
-    jQuery('.back-to-top').click(function(event) {
-        event.preventDefault();
-        jQuery('html, body').animate({scrollTop: 0}, duration);
-        return false;
-    })
-});
-</script>
-
-</body>
+	</body>
+<?php endif ?>
 </html>
