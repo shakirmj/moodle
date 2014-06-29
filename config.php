@@ -17,8 +17,8 @@ $CFG->dboptions = array (
   'dbsocket' => '',
 );
 
-$CFG->wwwroot   = 'http://localhost/moodle';
-$CFG->dataroot  = 'C:\\wamp\\moodledata';
+$CFG->wwwroot   = 'http://ec2-54-88-79-82.compute-1.amazonaws.com/moodle';
+$CFG->dataroot  = '/media/moodledata';
 $CFG->admin     = 'admin';
 
 $CFG->directorypermissions = 0777;
