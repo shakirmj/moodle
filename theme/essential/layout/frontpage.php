@@ -124,6 +124,7 @@
                         <div class="large-6  columns submit-wrap">
                             <input type="submit" value="Sign Up">
                         </div>
+                        <?php require_once($CFG->dirroot . '/auth/googleoauth2/lib.php'); auth_googleoauth2_display_buttons(); ?>
                     </div>
                 </form>
 				</div>
