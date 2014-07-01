@@ -139,7 +139,7 @@
                 </div>
             </div>
 
-            <!-- Header Menu -->
+                        <!-- Header Menu -->
             <header id="top-header">
                 <div class="row">
                     <div class="large-12 columns">
@@ -169,13 +169,46 @@
 
         </section>
 
+		<section id="results">
+			<!-- Parallax -->
+			<div class="parallax parallax-counters">
+				
+
+				<div class="row">
+					<div class="large-12 columns">
+						<h4>Our Results</h4>
+						
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="large-3 columns medium-6 count-holder">
+						<div class="counter counter-one"></div><div>%</div>
+						<p>90+ percentile score in SCAT</p>
+					</div>
+					<div class="large-3 columns medium-6 count-holder">
+						<div class="counter counter-two"></div><div>%</div>
+						<p>Improved Grades</p>
+					</div>
+					<div class="large-3 columns medium-6 count-holder">
+						<div class="counter counter-three"></div><div>%</div>
+						<p>Improved Problem Solving Skills</p>
+					</div>
+					<div class="large-3 columns medium-6 count-holder">
+						<div class="counter counter-four"></div><div>%</div>
+						<p>Satisifed Parents</p>
+					</div>
+				</div>
+
+			</div>
+		</section>
+	
         <section id="our-company">
             <div class="row waypoint-element">
                 <div class="large-12 columns homepage-two-subtitle">
                     <h4>K-12 <span>Tutoring</span></h4>
                     <p>K-12 is a designation for the sum of primary and secondary education. It is used in the United States, Canada, Turkey, the Philippines, and Australia.
                     You can choose from our 4-Hour, 8-Hour, or 12-Hour K-12 tutoring plans for help in homework, assignments, test preparation, or to master a particular topic.</p>
-                    <p><a href="#" class="try-now-button">Try Now</a><a href="#" class="try-now-button">Buy Now</a></p>
                 </div>
             </div>
 
@@ -183,17 +216,20 @@
                 <div class="large-4 medium-6 columns">
                     <img src="img/company1.png" height="71" width="126" alt="Featured Image">
                     <h6><span>Math</span></h6>
-                    <p>We work with you step by step and help you solve problems. We do not do it for you but do it with you and coach you as you progress, teaching you key concepts and helping you internalize them. Not only that, we identify your weaker spots and give you practice problems that you can solve independently at your own leisure.</p>
+                    <p>We work with you step by step and help you solve problems. We do not do it for you but do it with you and coach you as you progress, teaching you key concepts and helping you internalize them.</p>
+					<p style="padding-top: 10px;"><a href="#" class="try-now-button">Try Now</a><a href="#" class="try-now-button">Buy Now</a></p>
                 </div>
                 <div class="large-4 medium-6 columns">
                     <img src="img/company2.png" alt="Featured Image" width="126" height="71">
                     <h6><span>Science</span></h6>
                     <p>The tutors at Top Grader are professional, master degree holders in Physics, Chemistry, Biology, and other scientific fields. They can help you with your homework, assignments, and learning in every science topic.</p>
+					<p style="padding-top: 10px;"><a href="#" class="try-now-button">Try Now</a><a href="#" class="try-now-button">Buy Now</a></p>
                 </div>
                 <div class="large-4 medium-6 columns">
                     <img src="img/company3.png" alt="Featured Image" width="126" height="71">
                     <h6><span>English</span></h6>
                     <p>At Top Grader, our tutors know what it takes to improve your English language skills. All our tutors possess a Master degree in English and are well-versed in teaching English Grammar, Literature, Reading, Writing, etc.</p>
+					<p style="padding-top: 10px;"><a href="#" class="try-now-button">Try Now</a><a href="#" class="try-now-button">Buy Now</a></p>
                 </div>
 
             </div>
@@ -217,8 +253,11 @@
                         <div class="large-offset-6 columns"></div>
                         <div class="large-6 columns member-info">
                             <h5>SCAT</h5>
-                            <p><strong>8 out of 10</strong> students enrolled with us &nbsp &nbsp&nbsphave scored a <strong>90+</strong> percentile on the SCAT. SCAT is a standardized test designed by CTY (Center for Talented Youth)  of John Hopkins University to help academically gifted children take off to the next level in academics.</p>
+                            <p><strong>8 out of 10</strong> students enrolled with us &nbsp &nbsp&nbsphave scored a <strong>90+</strong> percentile on the SCAT. We are the pioneers in online SCAT preparation, our structured approach to testprep has helped students ace the SCAT with 90+ percentile!</p>
                             <ul class="social-links">
+								<li><a href="#" target="_blank" title="Read More">
+                                    Read More
+                                </a></li>
                                 <li><a href="#" target="_blank" title="Try for Free">
                                     Try
                                 </a></li>
@@ -235,8 +274,11 @@
                         <div class="large-offset-6 columns"></div>
                         <div class="large-6 columns member-info">
                             <h5>SAT</h5>
-                            <p>&nbsp&nbsp&nbsp&nbspThe SAT is a standardized test required by many US colleges and universities as part of their admission requirements for undergraduate courses. The score a student gets on the SAT is often used to predict a student's performance in undergraduate studies in college.</p>
+                            <p>&nbsp&nbsp&nbsp&nbspOur SAT tutors have spent several years mastering concepts, tricks, and strategies that can help a student solve Math problems faster and answer critical reading questions accurately, resulting in a higher score.</p>
                             <ul class="social-links">
+								<li><a href="#" target="_blank" title="Read More">
+                                    Read More
+                                </a></li>
                                 <li><a href="#" target="_blank" title="Try for Free">
                                     Try
                                 </a></li>
@@ -255,8 +297,11 @@
                     <div class="row">
                         <div class="large-6 columns member-info">
                             <h5>&nbspACT</h5>
-                            <p>Top Grader is home to senior tutors who are adept at ACT test preparation.  Our ACT tutors hold a Master in Math, English, and Science subjects so you can be assured that you will be prepared well for your test. In addition to learning key concepts, you will learn the tips and tricks to solve Math problems faster and answer reading questions accurately.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                            <p>Top Grader is home to senior tutors who are adept at ACT test preparation.  Our ACT tutors hold a Master in Math, English, and Science subjects so you can be assured that you will be prepared well for your test.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
                             <ul class="social-links">
+							    <li><a href="#" target="_blank" title="Read More">
+                                    Read More
+                                </a></li>
                                 <li><a href="#" target="_blank" title="Try for Free">
                                     Try
                                 </a></li>
@@ -273,9 +318,12 @@
                     <div class="row">
                         <div class="large-6 columns member-info">
                             <h5>&nbspGRE</h5>
-                            <p>The GRE tutors at Top Grader have had Math and English Language as their favourite subject in their undergraduate and Master courses. They are well-versed with the GRE test structure, topics tested, and the strategies that can improve a student's scores on the test. It also requires stamina and focus that can be attained only through a "lot" of practice.</p>
+                            <p>The GRE tutors at Top Grader have had Math and English Language as their favourite subject in their undergraduate and Master courses. They are well-versed with the GRE test structure, topics tested, and the strategies that can improve a student's scores on the test.</p>
 
                             <ul class="social-links">
+								<li><a href="#" target="_blank" title="Read More">
+                                    Read More
+                                </a></li>
                                 <li><a href="#" target="_blank" title="Try for Free">
                                     Try
                                 </a></li>
@@ -295,9 +343,12 @@
                     	<div class="large-offset-6 columns"></div>
                         <div class="large-6 columns member-info">
                             <h5>GMAT</h5>
-                            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Like GRE, our GMAT tutors are &nbsp&nbsp&nbsp&nbsp&nbsp&nbspexperts in Math and Critical &nbsp&nbsp&nbsp&nbspReasoning. Some of the GMAT tutors are senior professionals with several years of experience teaching Math Reasoning at top test preparation coaching institutes for business schools.  You will be able to ace the GMAT by learning new strategies and skills to crack the toughest of problems on the exam!</p>
+                            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Like GRE, our GMAT tutors are &nbsp&nbsp&nbsp&nbsp&nbsp&nbspexperts in Math and Critical &nbsp&nbsp&nbsp&nbspReasoning. Some of the GMAT tutors are senior professionals with several years of experience teaching Math Reasoning at top test preparation coaching institutes for business schools. </p>
 
                             <ul class="social-links">
+								<li><a href="#" target="_blank" title="Read More">
+                                    Read More
+                                </a></li>
                                 <li><a href="#" target="_blank" title="Try for Free">
                                     Try
                                 </a></li>
@@ -314,9 +365,12 @@
                     	<div class="large-offset-6 columns"></div>
                         <div class="large-6 columns member-info">
                             <h5>Others</h5>
-                            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTop Grader also helps students &nbsp&nbsp&nbsp&nbsp&nbsp&nbspprepare for other well know &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspstandardized tests such as the NJ ASK, FCAT, ISAT, STAR, TAKS, &nbsp&nbsp&nbsp&nbsp&nbspTERRANOVA, HSPT, etc. You can &nbsp&nbsp&nbsp&nbspchoose from our monthly 4-Hour, 8-Hour, and 12-Hour plans. Each test prep plan comes with a diagnostic test to assess your strengths and areas of improvement followed by a customized course that includes lessons, worksheets, practice tests, and full length tests.</p>
+                            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTop Grader also helps students &nbsp&nbsp&nbsp&nbsp&nbsp&nbspprepare for other well know &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspstandardized tests such as the NJ ASK, FCAT, ISAT, STAR, TAKS, &nbsp&nbsp&nbsp&nbsp&nbspTERRANOVA, HSPT, etc. You can &nbsp&nbsp&nbsp&nbspchoose from our monthly 4-Hour, 8-Hour, and 12-Hour plans. </p>
 
                             <ul class="social-links">
+								<li><a href="#" target="_blank" title="Read More">
+                                    Read More
+                                </a></li>
                                 <li><a href="#" target="_blank" title="Try for Free">
                                     Try
                                 </a></li>
@@ -330,41 +384,6 @@
                 </div>
 			</div>
         </section>
-
-		<section id="results">
-        <!-- Parallax -->
-        <div class="parallax parallax-counters">
-            <div class="parallax-overlay"></div>
-
-            <div class="row">
-                <div class="large-12 columns">
-                    <h4>Our Results</h4>
-                    <p</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="large-3 columns medium-6 count-holder">
-                    <div class="counter counter-one"></div><div>%</div>
-                    <p>90+ percentile score in SCAT</p>
-                </div>
-                <div class="large-3 columns medium-6 count-holder">
-                    <div class="counter counter-two"></div><div>%</div>
-                    <p>Improved Grades</p>
-                </div>
-                <div class="large-3 columns medium-6 count-holder">
-                    <div class="counter counter-three"></div><div>%</div>
-                    <p>Improved Problem Solving Skills</p>
-                </div>
-                <div class="large-3 columns medium-6 count-holder">
-                    <div class="counter counter-four"></div><div>%</div>
-                    <p>Satisifed Parents</p>
-                </div>
-            </div>
-
-        </div>
-	</section>
-
 
         <section id="tutors">
             <div class="row">
