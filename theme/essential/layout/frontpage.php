@@ -217,19 +217,19 @@
                     <img src="img/company1.png" height="71" width="126" alt="Featured Image">
                     <h6><span>Math</span></h6>
                     <p>We work with you step by step and help you solve problems. We do not do it for you but do it with you and coach you as you progress, teaching you key concepts and helping you internalize them.</p>
-					<p style="padding-top: 10px;"><a href="#" class="try-now-button">Try Now</a><a href="#" class="try-now-button">Buy Now</a></p>
+					<p style="padding-top: 10px;"><a href="course/view.php?id=6" class="try-now-button">Try Now</a><a href="#" class="try-now-button">Buy Now</a></p>
                 </div>
                 <div class="large-4 medium-6 columns">
                     <img src="img/company2.png" alt="Featured Image" width="126" height="71">
                     <h6><span>Science</span></h6>
                     <p>The tutors at Top Grader are professional, master degree holders in Physics, Chemistry, Biology, and other scientific fields. They can help you with your homework, assignments, and learning in every science topic.</p>
-					<p style="padding-top: 10px;"><a href="#" class="try-now-button">Try Now</a><a href="#" class="try-now-button">Buy Now</a></p>
+					<p style="padding-top: 10px;"><a href="course/view.php?id=7" class="try-now-button">Try Now</a><a href="#" class="try-now-button">Buy Now</a></p>
                 </div>
                 <div class="large-4 medium-6 columns">
                     <img src="img/company3.png" alt="Featured Image" width="126" height="71">
                     <h6><span>English</span></h6>
                     <p>At Top Grader, our tutors know what it takes to improve your English language skills. All our tutors possess a Master degree in English and are well-versed in teaching English Grammar, Literature, Reading, Writing, etc.</p>
-					<p style="padding-top: 10px;"><a href="#" class="try-now-button">Try Now</a><a href="#" class="try-now-button">Buy Now</a></p>
+					<p style="padding-top: 10px;"><a href="course/view.php?id=11" class="try-now-button">Try Now</a><a href="#" class="try-now-button">Buy Now</a></p>
                 </div>
 
             </div>
