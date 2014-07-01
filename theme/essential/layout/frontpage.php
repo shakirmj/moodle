@@ -1,4 +1,4 @@
-<?php if (!isloggedin()): ?>
+<?php if (!isloggedin() || isguestuser()): ?>
 <!DOCTYPE html>
 <!--[if IEMobile 7 ]> <html dir="ltr" lang="en-US"class="no-js iem7"> <![endif]-->
 <!--[if lt IE 7 ]> <html dir="ltr" lang="en-US" class="no-js ie6 oldie"> <![endif]-->
