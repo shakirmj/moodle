@@ -61,6 +61,7 @@
                     <li><a href="#tutors">Our Tutors</a></li>
                     <li><a href="#results">Our Results</a></li>
                     <li><a href="#section-six">Pricing</a></li>
+					<li><a href="#section-six">Login</a></li>
           </ul>
         </div>
 
@@ -149,10 +150,10 @@
                         <div class="skew-wrapper"></div>
                         <ul id="nav-menu">
                             <li><a href="#">Home</a></li>
+							<li><a href="#results">Our Results</a></li>
                             <li><a href="#our-company">K-12</a></li>
                             <li><a href="#amazing-team">Test Prep</a></li>
                             <li><a href="#tutors">Our Tutors</a></li>
-                            <li><a href="#results">Our Results</a></li>
                             <li><a href="#section-six">Pricing</a></li>
                         </ul>
                     </div>
@@ -182,17 +183,17 @@
                 <div class="large-4 medium-6 columns">
                     <img src="img/company1.png" height="71" width="126" alt="Featured Image">
                     <h6><span>Math</span></h6>
-                    <p>Homework is a fact of life. When it comes to Math, hands on practice is the only way to learn. You cannot become good at Math just by reading a book. You have to do your homework and practice solving the problems on your own. This is where we can help you. We work with you step by step and help you solve problems. We do not do it for you but do it with you and coach you as you progress, teaching you key concepts and helping you internalize them. Not only that, we identify your weaker spots and give you practice problems that you can solve independently at your own leisure.</p>
+                    <p>We work with you step by step and help you solve problems. We do not do it for you but do it with you and coach you as you progress, teaching you key concepts and helping you internalize them. Not only that, we identify your weaker spots and give you practice problems that you can solve independently at your own leisure.</p>
                 </div>
                 <div class="large-4 medium-6 columns">
                     <img src="img/company2.png" alt="Featured Image" width="126" height="71">
                     <h6><span>Science</span></h6>
-                    <p>Science is everywhere, in the glass of water we drink as well as the air we breathe. The facts that make science so interesting are not always easy to comprehend as they involve learning theorems and understanding the logic behind formulas and equations. The tutors at Top Grader are professional, master degree holders in Physics, Chemistry, Biology, and other scientific fields. They can help you with your homework, assignments, and learning in every science topic.</p>
+                    <p>The tutors at Top Grader are professional, master degree holders in Physics, Chemistry, Biology, and other scientific fields. They can help you with your homework, assignments, and learning in every science topic.</p>
                 </div>
                 <div class="large-4 medium-6 columns">
                     <img src="img/company3.png" alt="Featured Image" width="126" height="71">
                     <h6><span>English</span></h6>
-                    <p>It is no secret that English is the most widely used language across the world and mastering it is only going to benefit you whether it is your personal or professional sphere of life. At Top Grader, our tutors know what it takes to improve your English language skills. All our tutors possess a Master degree in English and are well-versed in teaching English Grammar, Literature, Reading, Writing, etc.</p>
+                    <p>At Top Grader, our tutors know what it takes to improve your English language skills. All our tutors possess a Master degree in English and are well-versed in teaching English Grammar, Literature, Reading, Writing, etc.</p>
                 </div>
 
             </div>
