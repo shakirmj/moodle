@@ -97,7 +97,13 @@ foreach ($forms as $form) {
 
 if (!$forms) {
     if (isguestuser()) {
-        notice(get_string('noguestaccess', 'enrol'), get_login_url());
+
+    	echo '<div class="signupform">';
+                   echo '<form action="signup.php" method="get" id="signup">';
+                   echo '<div><input type="submit" value="Create Account To Enroll" /></div>';
+                   echo '</form>';
+                 echo '</div>';
+
     } else {
         notice(get_string('notenrollable', 'enrol'), "$CFG->wwwroot/index.php");
     }
