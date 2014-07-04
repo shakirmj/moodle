@@ -3464,7 +3464,6 @@ Homepage Two Page - Top
 #section-four.homepage-two {
   position: absolute;
   left: 50%;
-  bottom: 60px;
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);

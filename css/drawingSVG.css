@@ -28,6 +28,7 @@ svg {
 .drawings {
 	position: relative;
 	max-height: 600px;
+	margin-top: 10%;
 	height: 600px;
 	width: 100%;
 }
