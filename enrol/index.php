@@ -99,7 +99,7 @@ if (!$forms) {
     if (isguestuser()) {
 
     	echo '<div class="signupform">';
-                   echo '<form action="signup.php" method="get" id="signup">';
+                   echo '<form action="../login/signup.php" method="get" id="signup">';
                    echo '<div><input type="submit" value="Create Account To Enroll" /></div>';
                    echo '</form>';
                  echo '</div>';
