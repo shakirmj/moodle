@@ -614,7 +614,7 @@
                     <div class="icon-holder">
                         <img src="img/contact3.png" alt="Featured Icon" width="50" height="50">
                     </div>
-                    <p>Lucknow, India</p>
+                    <p>India</p>
                 </div>
             </div>
 			<!-- Form Section -->
