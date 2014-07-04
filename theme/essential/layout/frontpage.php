@@ -76,7 +76,7 @@
                     <div class="text-container text-one">
                         <h4>Delivers Real <br> <span>Results</span></h4>
 
-                        <p>Start getting results with online tutoring today!<br> 1-on-1 interactive online tutoring for K - 12 <br> Homework Help in Math & Science<br> Test Prep - SCAT/SAT/ACT/GRE/GMAT/Other </p>
+                        <p>Start getting results with online tutoring today!<br> 1-on-1 online tutoring in a safe & secure environment <br> Professionally qualified tutors<br> Help with Math, Science, English, and AP subjects<br>Test preparation in  SCAT, SSAT, GT, SAT, ACT<br>100++ practice questions in each Testprep program </p>
                     </div>
 
                     <div class="large-12 columns holder-logo">
