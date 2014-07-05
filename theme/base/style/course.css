@@ -252,8 +252,6 @@ li.section.hidden span.commands a.editing_show {cursor:default;}
 .coursebox .enrolmenticons img,
 .coursebox .moreinfo img {margin:0 .2em;}
 .coursebox .content {clear:both;overflow: hidden;}
-.coursebox .content .summary,
-.coursebox .content .coursecat {}
 .coursebox .content .coursecat {text-align:right;clear:right;}
 .coursebox.remotecoursebox .remotecourseinfo {float:left;width: 40%;}
 .coursebox .content .courseimage img {max-width:100px;max-height:100px;}
