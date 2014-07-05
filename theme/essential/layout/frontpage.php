@@ -408,7 +408,7 @@
                 <div class="columns large-12 intro-text">
                     <h2>Choose your tutoring plan!</h2>
                     <div class="img-mockups waypoint-mockups">
-                        <img src="img/mockup3.png" height="470" width="297" alt="Featured Mockup">
+                        <img src="img/money-back_65.gif" height="106" width="145" alt="Featured Mockup">
                     </div>
                     <p><strong>Money Back Guarantee</strong> If you are not satisfied with our tutoring service you can choose to opt out before the start of your third tutoring session. We will refund the entire amount, no questions asked!</p>
                     <h3>K-12</h3>
