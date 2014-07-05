@@ -104,6 +104,12 @@ if (!$forms) {
                    echo '</form>';
                  echo '</div>';
 
+                 echo '<div class="signupform">';
+                   echo '<form action="../login/index.php" method="get" id="signup">';
+                   echo '<div><input type="submit" value="Log in To Enroll" /></div>';
+                   echo '</form>';
+                 echo '</div>';
+
     } else {
         notice(get_string('notenrollable', 'enrol'), "$CFG->wwwroot/index.php");
     }
