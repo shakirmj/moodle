@@ -255,13 +255,13 @@
                             <h5>SCAT</h5>
                             <p><strong>8 out of 10</strong> students enrolled with us &nbsp &nbsp&nbsphave scored a <strong>90+</strong> percentile on the SCAT. We are the pioneers in online SCAT preparation, our structured approach to testprep has helped students ace the SCAT with 90+ percentile!</p>
                             <ul class="social-links">
-								<li><a href="course/view.php?id=12" target="_blank" title="Read More">
+								<li><a href="course/view.php?id=12" title="Read More">
                                     Read More
                                 </a></li>
-                                <li><a href="course/view.php?id=12" target="_blank" title="Try for Free">
+                                <li><a href="course/view.php?id=12" title="Try for Free">
                                     Try
                                 </a></li>
-                                <li><a href="#" target="_blank" title="Buy Now">
+                                <li><a href="#" title="Buy Now">
                                     Buy
                                 </a></li>
                             </ul>
@@ -276,13 +276,13 @@
                             <h5>SAT</h5>
                             <p>&nbsp&nbsp&nbsp&nbspOur SAT tutors have spent several years mastering concepts, tricks, and strategies that can help a student solve Math problems faster and answer critical reading questions accurately, resulting in a higher score.</p>
                             <ul class="social-links">
-								<li><a href="course/view.php?id=13" target="_blank" title="Read More">
+								<li><a href="course/view.php?id=13" title="Read More">
                                     Read More
                                 </a></li>
-                                <li><a href="course/view.php?id=13" target="_blank" title="Try for Free">
+                                <li><a href="course/view.php?id=13" title="Try for Free">
                                     Try
                                 </a></li>
-                                <li><a href="#" target="_blank" title="Buy Now">
+                                <li><a href="#" title="Buy Now">
                                     Buy
                                 </a></li>
                             </ul>
@@ -299,13 +299,13 @@
                             <h5>&nbspACT</h5>
                             <p>Top Grader is home to senior tutors who are adept at ACT test preparation.  Our ACT tutors hold a Master in Math, English, and Science subjects so you can be assured that you will be prepared well for your test.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
                             <ul class="social-links">
-							    <li><a href="course/view.php?id=14" target="_blank" title="Read More">
+							    <li><a href="course/view.php?id=14" title="Read More">
                                     Read More
                                 </a></li>
-                                <li><a href="course/view.php?id=14" target="_blank" title="Try for Free">
+                                <li><a href="course/view.php?id=14" title="Try for Free">
                                     Try
                                 </a></li>
-                                <li><a href="#" target="_blank" title="Buy Now">
+                                <li><a href="#" title="Buy Now">
                                     Buy
                                 </a></li>
                             </ul>
@@ -321,13 +321,13 @@
                             <p>The GRE tutors at Top Grader have had Math and English Language as their favourite subject in their undergraduate and Master courses. They are well-versed with the GRE test structure, topics tested, and the strategies that can improve a student's scores on the test.</p>
 
                             <ul class="social-links">
-								<li><a href="course/view.php?id=15" target="_blank" title="Read More">
+								<li><a href="course/view.php?id=15" title="Read More">
                                     Read More
                                 </a></li>
-                                <li><a href="course/view.php?id=15" target="_blank" title="Try for Free">
+                                <li><a href="course/view.php?id=15" title="Try for Free">
                                     Try
                                 </a></li>
-                                <li><a href="#" target="_blank" title="Buy Now">
+                                <li><a href="#" title="Buy Now">
                                     Buy
                                 </a></li>
                             </ul>
@@ -346,13 +346,13 @@
                             <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Like GRE, our GMAT tutors are &nbsp&nbsp&nbsp&nbsp&nbsp&nbspexperts in Math and Critical &nbsp&nbsp&nbsp&nbspReasoning. Some of the GMAT tutors are senior professionals with several years of experience teaching Math Reasoning at top test preparation coaching institutes for business schools. </p>
 
                             <ul class="social-links">
-								<li><a href="course/view.php?id=16" target="_blank" title="Read More">
+								<li><a href="course/view.php?id=16" title="Read More">
                                     Read More
                                 </a></li>
-                                <li><a href="course/view.php?id=16" target="_blank" title="Try for Free">
+                                <li><a href="course/view.php?id=16" title="Try for Free">
                                     Try
                                 </a></li>
-                                <li><a href="#" target="_blank" title="Buy Now">
+                                <li><a href="#" title="Buy Now">
                                     Buy
                                 </a></li>
                             </ul>
@@ -368,13 +368,13 @@
                             <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTop Grader also helps students &nbsp&nbsp&nbsp&nbsp&nbsp&nbspprepare for other well know &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspstandardized tests such as the NJ ASK, FCAT, ISAT, STAR, TAKS, &nbsp&nbsp&nbsp&nbsp&nbspTERRANOVA, HSPT, etc. You can &nbsp&nbsp&nbsp&nbspchoose from our monthly 4-Hour, 8-Hour, and 12-Hour plans. </p>
 
                             <ul class="social-links">
-								<li><a href="#" target="_blank" title="Read More">
+								<li><a href="#" title="Read More">
                                     Read More
                                 </a></li>
-                                <li><a href="#" target="_blank" title="Try for Free">
+                                <li><a href="#" title="Try for Free">
                                     Try
                                 </a></li>
-                                <li><a href="#" target="_blank" title="Buy Now">
+                                <li><a href="#" title="Buy Now">
                                     Buy
                                 </a></li>
                             </ul>
