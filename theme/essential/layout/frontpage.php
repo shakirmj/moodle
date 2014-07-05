@@ -255,10 +255,10 @@
                             <h5>SCAT</h5>
                             <p><strong>8 out of 10</strong> students enrolled with us &nbsp &nbsp&nbsphave scored a <strong>90+</strong> percentile on the SCAT. We are the pioneers in online SCAT preparation, our structured approach to testprep has helped students ace the SCAT with 90+ percentile!</p>
                             <ul class="social-links">
-								<li><a href="#" target="_blank" title="Read More">
+								<li><a href="course/view.php?id=12" target="_blank" title="Read More">
                                     Read More
                                 </a></li>
-                                <li><a href="#" target="_blank" title="Try for Free">
+                                <li><a href="course/view.php?id=12" target="_blank" title="Try for Free">
                                     Try
                                 </a></li>
                                 <li><a href="#" target="_blank" title="Buy Now">
@@ -276,10 +276,10 @@
                             <h5>SAT</h5>
                             <p>&nbsp&nbsp&nbsp&nbspOur SAT tutors have spent several years mastering concepts, tricks, and strategies that can help a student solve Math problems faster and answer critical reading questions accurately, resulting in a higher score.</p>
                             <ul class="social-links">
-								<li><a href="#" target="_blank" title="Read More">
+								<li><a href="course/view.php?id=13" target="_blank" title="Read More">
                                     Read More
                                 </a></li>
-                                <li><a href="#" target="_blank" title="Try for Free">
+                                <li><a href="course/view.php?id=13" target="_blank" title="Try for Free">
                                     Try
                                 </a></li>
                                 <li><a href="#" target="_blank" title="Buy Now">
@@ -299,10 +299,10 @@
                             <h5>&nbspACT</h5>
                             <p>Top Grader is home to senior tutors who are adept at ACT test preparation.  Our ACT tutors hold a Master in Math, English, and Science subjects so you can be assured that you will be prepared well for your test.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
                             <ul class="social-links">
-							    <li><a href="#" target="_blank" title="Read More">
+							    <li><a href="course/view.php?id=14" target="_blank" title="Read More">
                                     Read More
                                 </a></li>
-                                <li><a href="#" target="_blank" title="Try for Free">
+                                <li><a href="course/view.php?id=14" target="_blank" title="Try for Free">
                                     Try
                                 </a></li>
                                 <li><a href="#" target="_blank" title="Buy Now">
@@ -321,10 +321,10 @@
                             <p>The GRE tutors at Top Grader have had Math and English Language as their favourite subject in their undergraduate and Master courses. They are well-versed with the GRE test structure, topics tested, and the strategies that can improve a student's scores on the test.</p>
 
                             <ul class="social-links">
-								<li><a href="#" target="_blank" title="Read More">
+								<li><a href="course/view.php?id=15" target="_blank" title="Read More">
                                     Read More
                                 </a></li>
-                                <li><a href="#" target="_blank" title="Try for Free">
+                                <li><a href="course/view.php?id=15" target="_blank" title="Try for Free">
                                     Try
                                 </a></li>
                                 <li><a href="#" target="_blank" title="Buy Now">
@@ -346,10 +346,10 @@
                             <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Like GRE, our GMAT tutors are &nbsp&nbsp&nbsp&nbsp&nbsp&nbspexperts in Math and Critical &nbsp&nbsp&nbsp&nbspReasoning. Some of the GMAT tutors are senior professionals with several years of experience teaching Math Reasoning at top test preparation coaching institutes for business schools. </p>
 
                             <ul class="social-links">
-								<li><a href="#" target="_blank" title="Read More">
+								<li><a href="course/view.php?id=16" target="_blank" title="Read More">
                                     Read More
                                 </a></li>
-                                <li><a href="#" target="_blank" title="Try for Free">
+                                <li><a href="course/view.php?id=16" target="_blank" title="Try for Free">
                                     Try
                                 </a></li>
                                 <li><a href="#" target="_blank" title="Buy Now">
@@ -391,7 +391,6 @@
                     <h4>Our <span>Tutors</span> <br></h4>
                     <p><strong>Handpicked  <span>Qualified Tutors</span></strong><br>All our tutors hold at least a Master Degree except for elementary school Math and Science tutors for which we have Graduates in Math or Engineering subjects. All our tutors go through a exhaustive qualification process that includes testing on subject knowledge, tutoring experience, training session and certification process. We also do a detailed background and reference check on our tutors.</p>
                     <p><strong>Know the <span>state and school district curriculum</span></strong><br> Our tutors have experience teaching students in different states and school districts. The worksheets and study material used by our tutors is aligned to the student's curriculum that is followed in his/her school. In addition, our tutors have a full resource library they can access any time.</p>
-                    <a href="#">Read More</a>
                     <br>
                 </div>
                 <div class="large-6 columns">
