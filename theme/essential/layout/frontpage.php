@@ -97,7 +97,7 @@
                     <div class="text-container text-two large-5">
                         <h4><span>Get Better Tutoring<br></span> Get Better Results</h4>
 
-                        <p>Not Sure? Take a 30 minutes free trial session <br> <a href="#" class="try-now-button">Try Now</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <p>Not Sure? Take a 30 minutes free trial session <br> <a href="course/index.php?categoryid=5" class="try-now-button">Try Now</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                         <img src="img/contact2.png" alt="Featured Icon" width="25" height="25">1800 626 9803</p>
 					<div class="form-section large-8">
 						<form action="<?php echo $CFG->httpswwwroot; ?>/login/index.php" method="post" id="login" <?php echo $autocomplete; ?>>
@@ -172,12 +172,12 @@
 		<section id="results">
 			<!-- Parallax -->
 			<div class="parallax parallax-counters">
-				
+
 
 				<div class="row">
 					<div class="large-12 columns">
 						<h4>Our Results</h4>
-						
+
 					</div>
 				</div>
 
@@ -202,7 +202,7 @@
 
 			</div>
 		</section>
-	
+
         <section id="our-company">
             <div class="row waypoint-element">
                 <div class="large-12 columns homepage-two-subtitle">
